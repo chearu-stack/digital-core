@@ -101,6 +101,7 @@
       wake_on_demand_knowledge_base:'KNOWLEDGE BASE / VOGE',
       vds_live_frontend:'LIVE FRONTEND / VDS',
       protected_contour:'ЗАЩИЩЁННЫЙ КОНТУР / ДОСТУП ПО ЗАПРОСУ',
+      protected_vds_isolated_contour:'ЗАЩИЩЁННЫЙ СЕРВЕР / ИЗОЛИРОВАННЫЙ КОНТУР',
       live_static_tool:'LIVE / ИНЖЕНЕРНЫЙ ИНСТРУМЕНТ',
       engineering_module:'ENGINEERING MODULE', research_debt:'R&D / ТЕХНИЧЕСКИЙ ДОЛГ',
       research_core_architecture:'CORE ARCHITECTURE / R&D', research_prototype:'ARCHITECTURE / R&D'
@@ -109,6 +110,7 @@
       live_static_ecommerce:'LIVE SITE / E-COMMERCE', live_static_archive:'LIVE SITE / ARCHIVE', live_static_showcase:'LIVE SITE / SHOWCASE',
       b2b_offer:'B2B OFFER / PRESENTATION', live_client_constructor_pdf:'LIVE / PDF CONSTRUCTOR',
       wake_on_demand_knowledge_base:'KNOWLEDGE BASE / VOGE', vds_live_frontend:'LIVE FRONTEND / VDS',
+      protected_vds_isolated_contour:'PROTECTED VDS / ISOLATED CONTOUR',
       protected_contour:'PROTECTED ACCESS / ON REQUEST', live_static_tool:'LIVE / ENGINEERING TOOL',
       engineering_module:'ENGINEERING MODULE', research_debt:'R&D / TECHNICAL DEBT',
       research_core_architecture:'CORE ARCHITECTURE / R&D', research_prototype:'ARCHITECTURE / R&D'
@@ -241,29 +243,36 @@
     card.href = '#project-details';
     card.dataset.projectOpen = project.id;
     if (featured) {
-      const art = element('div', 'project-art art-' + (project.art || 'wisdom'));
-      art.setAttribute('aria-hidden', 'true');
-      if (safeMediaPath(project.cover_image)) {
-        const cover = element('img', 'project-art-image');
-        cover.src = project.cover_image;
-        cover.alt = '';
-        cover.loading = 'lazy';
-        cover.decoding = 'async';
-        art.append(cover);
+      card.dataset.project = project.id;
+      card.dataset.meshImage = safeMediaPath(project.cover_image) ? project.cover_image : '';
+      const ambientHex = typeof project.ambient_color === 'string' && /^#[0-9a-f]{6}$/i.test(project.ambient_color)
+        ? project.ambient_color
+        : '#587b43';
+      card.dataset.meshColor = ambientHex.slice(1).match(/.{2}/g).map((channel) => parseInt(channel, 16)).join(',');
+      card.style.setProperty('--project-glow-rgb', card.dataset.meshColor);
+      const previewPath = safeMediaPath(project.cover_image)
+        ? project.cover_image
+        : (Array.isArray(project.screenshots) ? project.screenshots.find(safeMediaPath) : null);
+      if (previewPath) {
+        const preview = element('img', 'project-hover-preview');
+        preview.src = previewPath;
+        preview.alt = '';
+        preview.loading = 'lazy';
+        preview.decoding = 'async';
+        preview.setAttribute('aria-hidden', 'true');
+        card.append(preview);
       }
-      card.append(art);
       const number = element('div', 'project-number');
       number.append(element('span', '', String(index + 1).padStart(2, '0') + ' / ' + String(state.projects.flagship_projects.length).padStart(2, '0')));
       number.append(element('span', '', displayMode(project)));
       card.append(number);
       const body = element('div', 'project-body');
-      body.append(element('div', 'project-meta', categoryLabel(project.category) + ' \u00b7 ' + displayMode(project)));
+      body.append(element('div', 'project-meta', categoryLabel(project.category)));
       body.append(element('h3', '', state.language === 'ru' ? project.name : project.name_en));
-      body.append(element('p', '', state.language === 'ru' ? project.description : project.description_en));
-      const tags = element('div', 'project-tags');
-      (state.language === 'ru' ? [] : (project.tech_stack || []).slice(0, 4)).forEach((tag) => tags.append(element('span', '', tag)));
-      body.append(tags);
-      card.append(body, element('span', 'card-arrow', '↗'));
+      card.append(body);
+      const summary = element('div', 'project-summary');
+      summary.append(element('p', 'project-description', state.language === 'ru' ? project.description : project.description_en));
+      card.append(summary, element('span', 'card-arrow', '↗'));
     } else {
       card.append(element('span', 'row-num', String(index + 1).padStart(2, '0')));
       const title = element('span', '');
@@ -377,7 +386,7 @@
       frame.setAttribute('allow', 'fullscreen');
       demoSection.append(frame);
     } else if (project.display_mode === 'on_demand_knowledge_presentation') demoSection.append(addI18nText('p', 'detail-empty', 'presentationNotice'));
-    else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode === 'protected_contour' || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
+    else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode.startsWith('protected') || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
     detailRoot.append(demoSection);
 
     const screenshots = Array.isArray(project.screenshots) ? project.screenshots.filter(safeMediaPath) : [];

@@ -24,36 +24,41 @@
     const dominant=[...bins.values()].sort((a,b)=>b.count*(.2+b.saturation/b.count*3)-a.count*(.2+a.saturation/a.count*3))[0];
     return dominant?[Math.round(dominant.red/dominant.count),Math.round(dominant.green/dominant.count),Math.round(dominant.blue/dominant.count)]:null;
   };
-  const makeThumbnail = (card, index) => {
-    const art = card.querySelector('.project-art');
-    const cover = art.querySelector('.project-art-image');
-    if (cover) {
-      const extractCover = () => { try { const dominant = extractDominant(cover); if (dominant) extracted.set(card.dataset.project, dominant); } catch (error) { extracted.set(card.dataset.project, palette[index % palette.length]); } };
-      if (cover.complete && cover.naturalWidth) extractCover();
-      else cover.addEventListener('load', extractCover, { once: true });
-      return;
-    }
-    const thumb = document.createElement('canvas');
-    thumb.width = 240; thumb.height = 180; thumb.className = 'thumbnail-canvas'; thumb.setAttribute('aria-hidden','true');
-    art.prepend(thumb);
-    const ctx = thumb.getContext('2d', {willReadFrequently:true});
-    const color = palette[index % palette.length];
-    ctx.fillStyle = `rgb(${Math.round(color[0]*.23)},${Math.round(color[1]*.23)},${Math.round(color[2]*.23)})`;
-    ctx.fillRect(0,0,thumb.width,thumb.height);
-    for(let i=0;i<9;i++){
-      const x=25+(i*61)%210, y=22+(i*47)%155, radius=12+(i*17)%55;
-      const glow=ctx.createRadialGradient(x,y,0,x,y,radius);
-      glow.addColorStop(0,`rgba(${color[0]},${color[1]},${color[2]},${.42-(i%3)*.1})`);
-      glow.addColorStop(1,`rgba(${color[0]},${color[1]},${color[2]},0)`);
-      ctx.fillStyle=glow;ctx.fillRect(0,0,thumb.width,thumb.height);
-    }
-    try { const dominant=extractDominant(thumb); if(dominant)extracted.set(card.dataset.project,dominant); } catch(error) { extracted.set(card.dataset.project,color); }
+  const sampledCards = new WeakSet();
+  const parseRgb = (value) => {
+    if (typeof value !== 'string' || !/^\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*$/.test(value)) return null;
+    const channels = value.split(',').map((channel) => Number(channel.trim()));
+    return channels.every((channel) => channel >= 0 && channel <= 255) ? channels : null;
+  };
+  const applyCardColor = (card, color) => {
+    const rgb = color.map((channel) => Math.max(0, Math.min(255, Math.round(channel))));
+    card.style.setProperty('--project-glow-rgb', rgb.join(', '));
+    extracted.set(card.dataset.project, rgb);
+  };
+  const sampleProjectColor = (card, index) => {
+    if (sampledCards.has(card)) return;
+    sampledCards.add(card);
+    const fallback = parseRgb(card.dataset.meshColor) || palette[index % palette.length];
+    applyCardColor(card, fallback);
+    const imagePath = card.dataset.meshImage;
+    if (!imagePath) return;
+    const image = new Image();
+    image.onload = () => {
+      try {
+        const dominant = extractDominant(image);
+        if (dominant) applyCardColor(card, fallback.map((channel, index) => channel * 0.72 + dominant[index] * 0.28));
+      } catch (error) {
+        applyCardColor(card, fallback);
+      }
+    };
+    image.onerror = () => applyCardColor(card, fallback);
+    image.src = imagePath;
   };
   const draw = (time) => { context.clearRect(0,0,width,height); const color = ambientColor; for (let i=0;i<5;i++){const x=width*(.18+((i*37)%70)/100)+Math.sin(time*.00013+i*2)*width*.08;const y=height*(.22+((i*23)%58)/100)+Math.cos(time*.00011+i)*height*.08;const radius=Math.max(width,height)*(.16+(i%3)*.045);const g=context.createRadialGradient(x,y,0,x,y,radius);g.addColorStop(0,`rgba(${color[0]},${color[1]},${color[2]},${i===0?.18:.09})`);g.addColorStop(1,`rgba(${color[0]},${color[1]},${color[2]},0)`);context.fillStyle=g;context.fillRect(0,0,width,height);} raf=requestAnimationFrame(draw); };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const observedCards = new WeakSet();
   const meshObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const id=entry.target.dataset.meshSource==='hero'?'hero':entry.target.dataset.project;const color=extracted.get(id);if(color)ambientColor=color;}),{threshold:.35}) : null;
-  const observeCards = () => document.querySelectorAll('.project-card').forEach((card,index)=>{if(!card.querySelector('.thumbnail-canvas'))makeThumbnail(card,index);if(meshObserver&&!observedCards.has(card)){meshObserver.observe(card);observedCards.add(card);}});
+  const observeCards = () => document.querySelectorAll('.project-card').forEach((card,index)=>{sampleProjectColor(card,index);if(meshObserver&&!observedCards.has(card)){meshObserver.observe(card);observedCards.add(card);}});
   const cardObserver = new MutationObserver(observeCards);
   cardObserver.observe(document.getElementById('featured-grid'),{childList:true});
   observeCards();

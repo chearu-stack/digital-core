@@ -15,13 +15,16 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "live_static_ecommerce",
-      "art": "farm",
       "github_url": null,
       "demo_url": "https://chearu-stack.github.io/vpfarm/",
       "is_private": true,
       "visibility_status": "verified",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/vpfarm/vpfarm-showcase.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#587b43",
+      "cover_image": "assets/images/projects/vpfarm/vpfarm-showcase.png"
     },
     {
       "id": "bibliotheca",
@@ -38,13 +41,16 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "live_static_archive",
-      "art": "library",
       "github_url": null,
       "demo_url": "https://chearu-stack.github.io/bibliotheca/",
       "is_private": true,
       "visibility_status": "verified",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/bibliotheca/bibliotheca-preview.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#a66a4e",
+      "cover_image": "assets/images/projects/bibliotheca/bibliotheca-preview.png"
     },
     {
       "id": "faralab",
@@ -61,13 +67,16 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "live_static_showcase",
-      "art": "nova",
       "github_url": null,
       "demo_url": "https://chearu-stack.github.io/faralab/",
       "is_private": true,
       "visibility_status": "verified",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/faralab/faralab-showcase.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#72879b",
+      "cover_image": "assets/images/projects/faralab/faralab-showcase.png"
     },
     {
       "id": "fvk-content-factory",
@@ -85,17 +94,18 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "b2b_offer",
-      "art": "fvk",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
       "screenshots": [
+        "assets/images/projects/fvk-content-factory/factory-screen.png",
         "assets/images/projects/fvk-content-factory/factory-story.png"
       ],
       "architecture_diagram": null,
       "contact_email": "ea52@bk.ru",
-      "cover_image": "assets/images/projects/fvk-content-factory/factory-story.png"
+      "cover_image": "assets/images/projects/fvk-content-factory/factory-screen.png",
+      "ambient_color": "#a7624e"
     },
     {
       "id": "herbarium-ai",
@@ -112,13 +122,16 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "live_client_constructor_pdf",
-      "art": "herbarium",
       "github_url": null,
       "demo_url": "https://chearu-stack.github.io/herbarium/",
       "is_private": true,
       "visibility_status": "verified",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/herbarium-ai/herbarium-constructor.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#798d50",
+      "cover_image": "assets/images/projects/herbarium-ai/herbarium-constructor.png"
     },
     {
       "id": "techbase-os",
@@ -136,22 +149,25 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "on_demand_knowledge_presentation",
-      "art": "voge",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
-      "screenshots": [],
+      "screenshots": [
+        "assets/images/projects/techbase-os/voge-knowledge-base.png"
+      ],
       "architecture_diagram": null,
-      "presentation_url": "https://techbase-os.streamlit.app/"
+      "presentation_url": "https://techbase-os.streamlit.app/",
+      "ambient_color": "#657680",
+      "cover_image": "assets/images/projects/techbase-os/voge-knowledge-base.png"
     },
     {
       "id": "piceatom",
-      "name": "Мирный Атом",
-      "name_en": "Peaceful Atom",
+      "name": "Закрытая система контроля",
+      "name_en": "Protected Control System",
       "category": "web_interface",
-      "description": "Демонстрационный цифровой продукт с отдельным интерфейсом, размещённый на собственном сервере.",
-      "description_en": "A demonstration product with an independent frontend deployed on its own VDS environment.",
+      "description": "Изолированный серверный контур системы контроля. Подробный показ предоставляется по запросу.",
+      "description_en": "An isolated server environment for a control system. A detailed walkthrough is available on request.",
       "tech_stack": [
         "HTML",
         "CSS",
@@ -159,14 +175,17 @@
       ],
       "status": "Implemented",
       "status_en": "Implemented",
-      "display_mode": "vds_live_frontend",
-      "art": "atom",
+      "display_mode": "protected_vds_isolated_contour",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/protected-control-system/control-system.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#536f86",
+      "cover_image": "assets/images/projects/protected-control-system/control-system.png"
     },
     {
       "id": "rf-smeta",
@@ -182,7 +201,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "protected_contour",
-      "art": "diana",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -191,7 +209,8 @@
         "assets/images/projects/estimate-suite/estimate-screen.png"
       ],
       "architecture_diagram": null,
-      "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png"
+      "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png",
+      "ambient_color": "#7b8589"
     }
   ],
   "catalog": [
@@ -209,7 +228,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "live_static_tool",
-      "art": "farm",
       "github_url": null,
       "demo_url": "https://chearu-stack.github.io/stroy-calc/",
       "is_private": true,
@@ -231,7 +249,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "engineering_module",
-      "art": "wisdom",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -253,7 +270,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "engineering_module",
-      "art": "wisdom",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -275,7 +291,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "research_debt",
-      "art": "fvk",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -297,7 +312,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "research_core_architecture",
-      "art": "wisdom",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -319,7 +333,6 @@
       "status": "Implemented",
       "status_en": "Implemented",
       "display_mode": "research_prototype",
-      "art": "diana",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
