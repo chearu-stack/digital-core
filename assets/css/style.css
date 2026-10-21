@@ -340,9 +340,9 @@ html[lang="ru"] .row-title{letter-spacing:0}
 .about-logo{display:block;width:64px;height:64px;object-fit:cover;border-radius:50%;border:1px solid #70684f}
 /* Mobile modal swipe behavior */
 .swipe-indicator { display: none; }
-@media (max-width: 767px) {
+@media (max-width: 767px), (hover: none) and (pointer: coarse) {
   .project-dialog .dialog-close,
-  .media-dialog .dialog-close { display: none; }
+  .media-dialog .dialog-close { display: none !important; visibility: hidden; pointer-events: none; }
   .swipe-indicator {
     display: block;
     width: 42px;

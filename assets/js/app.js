@@ -125,8 +125,10 @@
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
+  const isPublicCatalogProject = (project) => project.id !== 'vk-bot-fsm-engine'
+    && project.display_mode !== 'research_internal_engine';
   const allProjects = () => state.projects
-    ? [...state.projects.flagship_projects, ...state.projects.catalog]
+    ? [...state.projects.flagship_projects, ...state.projects.catalog.filter(isPublicCatalogProject)]
     : [];
 
   const catalogCacheKey = 'digital-core-project-catalog-v1';
@@ -297,8 +299,9 @@
     const featuredCount = String(state.projects.flagship_projects.length).padStart(2, '0');
     $('#featured-count').textContent = featuredCount + ' / 2022–26';
 
-    const categories = ['all', ...new Set(state.projects.catalog.map((item) => item.category))];
-    const tags = state.language === 'ru' ? [] : [...new Set(state.projects.catalog.flatMap((item) => item.tech_stack || []))].sort((a, b) => a.localeCompare(b));
+    const publicCatalog = state.projects.catalog.filter(isPublicCatalogProject);
+    const categories = ['all', ...new Set(publicCatalog.map((item) => item.category))];
+    const tags = state.language === 'ru' ? [] : [...new Set(publicCatalog.flatMap((item) => item.tech_stack || []))].sort((a, b) => a.localeCompare(b));
     const filterKeys = [...new Set([...categories, ...tags])];
     $('#filters').replaceChildren(...filterKeys.map((key) => {
       const button = element('button', 'filter-btn' + (key === state.category ? ' active' : ''), categoryLabel(key));
@@ -308,7 +311,7 @@
     }));
 
     const query = state.query.toLocaleLowerCase();
-    const matches = state.projects.catalog.filter((item) => {
+    const matches = publicCatalog.filter((item) => {
       const categoryMatch = state.category === 'all'
         || (categories.includes(state.category) ? item.category === state.category : (item.tech_stack || []).includes(state.category));
       const searchable = [item.name, item.name_en, item.description, item.description_en, (item.tech_stack || []).join(' ')].join(' ').toLocaleLowerCase();
@@ -448,8 +451,9 @@
       closeDialog(dialog, dialog === mediaDialog ? mediaTrigger : previousFocus);
       return;
     }
-    if (event.target === projectDialog && !window.matchMedia('(max-width: 767px)').matches) closeDialog(projectDialog, previousFocus);
-    if (event.target === mediaDialog && !window.matchMedia('(max-width: 767px)').matches) closeDialog(mediaDialog, mediaTrigger);
+    const swipeOnlyMobile = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse)').matches;
+    if (event.target === projectDialog && !swipeOnlyMobile) closeDialog(projectDialog, previousFocus);
+    if (event.target === mediaDialog && !swipeOnlyMobile) closeDialog(mediaDialog, mediaTrigger);
   });
 
   $('#lang-switch').addEventListener('click', () => applyLanguage(state.language === 'ru' ? 'en' : 'ru'));
@@ -490,7 +494,7 @@
 })();
 // Mobile-only swipe navigation for project and media dialogs.
 window.addEventListener('DOMContentLoaded', () => {
-  const mobile = window.matchMedia('(max-width: 767px)');
+  const mobile = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse)');
   const projectDialog = document.getElementById('project-dialog');
   const mediaDialog = document.getElementById('media-dialog');
   if (!projectDialog || !mediaDialog) return;

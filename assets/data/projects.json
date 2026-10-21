@@ -1,7 +1,19 @@
 {
   "technical_debt": [
-    { "module_id": "internal-dialog-state-engine", "status": "R&D / INTERNAL ENGINE", "items": ["Isolated testing is required for resumed state restoration."] },
-    { "module_id": "techbase-os", "status": "optimization_pending", "items": ["Optimize vectorization for automatic RAG search across local manuals."] },
+    {
+      "module_id": "internal-dialog-state-engine",
+      "status": "R&D / INTERNAL ENGINE",
+      "items": [
+        "Isolated testing is required for resumed state restoration."
+      ]
+    },
+    {
+      "module_id": "techbase-os",
+      "status": "optimization_pending",
+      "items": [
+        "Optimize vectorization for automatic RAG search across local manuals."
+      ]
+    },
     {
       "module_id": "project-modal-highlights",
       "status": "backlog",
@@ -369,7 +381,9 @@
       "status": "Закрытый модуль R&D",
       "status_en": "Closed R&D module",
       "display_mode": "research_internal_engine",
-      "technical_debt": ["Isolated testing is required for resumed state restoration."],
+      "technical_debt": [
+        "Isolated testing is required for resumed state restoration."
+      ],
       "github_url": null,
       "demo_url": null,
       "is_private": true,
