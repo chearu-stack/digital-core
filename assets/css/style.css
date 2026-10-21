@@ -7,7 +7,7 @@
 @media(prefers-reduced-motion:reduce){.hero-visual,.hero-visual img,.visual-focus{transition:none}}
 
 .project-dialog,.media-dialog{color:var(--ink);background:#171815;border:1px solid #535647;padding:0;box-shadow:0 24px 100px #000c}
-.project-dialog{width:min(95vw,1600px);max-width:95vw;max-height:min(92dvh,1000px);overflow:auto}
+.project-dialog{width:min(90vw,1600px);max-width:90vw;max-height:min(92dvh,1000px);overflow:auto}
 .project-dialog::backdrop,.media-dialog::backdrop{background:rgba(5,6,5,.82);backdrop-filter:blur(8px)}
 .project-dialog-shell{padding:clamp(20px,4vw,42px)}
 .dialog-topline{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:13px}
@@ -238,9 +238,15 @@ html[lang="ru"] .row-title{letter-spacing:0}
 
 /* Project-specific color fog stays behind the structured card content. */
 .project-card {
-  background-color: #111512;
+  background-color: #151917;
   background-image: none;
   box-shadow: inset 0 1px 0 rgba(221, 239, 198, 0.035);
+}
+.project-card .project-summary {
+  margin: auto -22px -22px;
+  padding: 16px 22px 22px;
+  background: transparent;
+  transition: background 0.35s ease;
 }
 .project-card .project-hover-preview {
   position: absolute;
@@ -251,7 +257,7 @@ html[lang="ru"] .row-title{letter-spacing:0}
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: brightness(0.42) saturate(0.88);
+  filter: brightness(0.72) saturate(1.02);
   transition: opacity 0.45s ease, filter 0.45s ease, transform 0.7s ease;
   transform: scale(1.025);
   pointer-events: none;
@@ -262,14 +268,13 @@ html[lang="ru"] .row-title{letter-spacing:0}
   content: "";
   inset: -18%;
   pointer-events: none;
-  opacity: 0.78;
+  opacity: 0.96;
   transform: scale(1.04);
-  filter: blur(28px);
+  filter: blur(24px);
   background:
-    linear-gradient(180deg, rgba(8, 10, 9, 0.42), rgba(8, 10, 9, 0.56)),
-    radial-gradient(ellipse at 18% 18%, rgba(var(--project-glow-rgb, 88, 123, 67), 0.34), transparent 48%),
-    radial-gradient(ellipse at 82% 78%, rgba(var(--project-glow-rgb, 88, 123, 67), 0.2), transparent 44%),
-    linear-gradient(145deg, #18201a, #111512 68%, #171a16);
+    radial-gradient(ellipse at 18% 18%, rgba(var(--project-glow-rgb, 88, 123, 67), 0.15), transparent 58%),
+    radial-gradient(ellipse at 82% 78%, rgba(var(--project-glow-rgb, 88, 123, 67), 0.1), transparent 58%),
+    linear-gradient(145deg, rgba(var(--project-glow-rgb, 88, 123, 67), 0.035), rgba(12, 15, 14, 0.02));
   transition: opacity 0.3s ease, transform 0.5s ease;
 }
 .project-card::after {
@@ -295,14 +300,26 @@ html[lang="ru"] .row-title{letter-spacing:0}
 }
 .project-card:hover::before,
 .project-card:focus-visible::before {
-  opacity: 0.82;
+  opacity: 0.52;
   transform: scale(1.08);
 }
 .project-card:hover .project-hover-preview,
 .project-card:focus-visible .project-hover-preview {
-  opacity: 0.58;
-  filter: brightness(0.48) saturate(0.92);
+  opacity: 0.82;
+  filter: brightness(0.78) saturate(1.08);
   transform: scale(1.06);
+}
+.project-card:hover .project-summary,
+.project-card:focus-visible .project-summary {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+}
+.project-card:hover .project-number,
+.project-card:hover .project-body,
+.project-card:hover .card-arrow,
+.project-card:focus-visible .project-number,
+.project-card:focus-visible .project-body,
+.project-card:focus-visible .card-arrow {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -312,4 +329,12 @@ html[lang="ru"] .row-title{letter-spacing:0}
   .project-card .project-hover-preview {
     transition: none;
   }
+  .project-card .project-summary {
+    transition: none;
+  }
 }
+
+.brand-logo{display:block;width:40px;height:40px;flex:none;object-fit:cover;border-radius:50%;border:1px solid #70684f;box-shadow:0 0 18px rgba(190,165,105,.12)}
+.brand-mark,.about-mark{display:none}
+.about-stamp{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.about-logo{display:block;width:64px;height:64px;object-fit:cover;border-radius:50%;border:1px solid #70684f}

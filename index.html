@@ -17,7 +17,7 @@
 <body>
   <div class="mesh" aria-hidden="true"><canvas id="mesh-canvas"></canvas><div class="mesh-grain"></div></div>
   <header class="topbar wrap">
-    <a class="brand" href="#top" aria-label="Цифровое ядро — наверх" data-i18n-aria="brandAria"><span class="brand-mark" data-i18n="brandMark">ЦЯ</span><span class="brand-caption" data-i18n="brandCaption">ЦИФРОВОЕ<br>ЯДРО</span></a>
+    <a class="brand" href="#top" aria-label="Цифровое ядро — наверх" data-i18n-aria="brandAria"><img class="brand-logo" src="assets/images/brand-logo.jpg" alt="" width="40" height="40" aria-hidden="true"><span class="brand-mark" data-i18n="brandMark">ЦЯ</span><span class="brand-caption" data-i18n="brandCaption">ЦИФРОВОЕ<br>ЯДРО</span></a>
     <nav class="main-nav" aria-label="Основная навигация"><a href="#work" data-i18n="navWork">Работы</a><a href="#catalog" data-i18n="navCatalog">Каталог</a><a href="#about" data-i18n="navAbout">Подход</a></nav>
     <div class="top-actions"><button class="lang-switch" id="lang-switch" type="button" aria-label="Выбрать язык">EN <span>↗</span></button><a class="contact-link" href="#contact"><span data-i18n="contact">Обсудить проект</span><span aria-hidden="true">↗</span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button></div>
   </header>
@@ -31,7 +31,6 @@
           <div class="hero-location" aria-label="Географическое положение">
             <span class="location-label" data-i18n="locationLabel">ЛОКАЦИЯ</span>
             <span class="location-city" data-i18n="locationCity">Павлово, Нижегородская область</span>
-            <span class="location-address" data-i18n="locationAddress">ул. 5-я Северная, д. 11</span>
             <span class="location-coordinates" data-i18n="locationCoordinates">55°58′ N · 43°04′ E</span>
           </div>
           <a href="#work" class="round-link" aria-label="Смотреть проекты" data-i18n-aria="workLinkLabel">↓</a>
@@ -57,7 +56,7 @@
       <div class="catalog-status" id="catalog-status" role="status" aria-live="polite" hidden><span id="catalog-status-message"></span><button class="catalog-retry" id="catalog-retry" type="button" data-i18n="retryCatalog">Повторить загрузку</button></div>
       <div class="catalog-list" id="catalog-list" aria-live="polite"></div><p class="empty-state" id="empty-state" hidden data-i18n="empty">Ничего не найдено. Попробуйте изменить фильтр.</p>
     </section>
-    <section class="about-section wrap" id="about"><div class="about-stamp"><span class="about-mark" data-i18n="brandMark">ЦЯ</span><br><span>2026</span></div><div><span class="kicker" data-i18n="sectionAboutKicker">03 / ПРИНЦИПЫ</span><h2 data-i18n="aboutTitle">Сначала ясность.<br><em>Затем — система.</em></h2></div><p data-i18n="aboutCopy">Исследую задачу, выделяю главное и проектирую понятное решение. В основе — аккуратная инженерия, детерминированная логика и интерфейс, который не мешает работе.</p><div class="principles"><span>01 <b data-i18n="principleOne">ЯСНОСТЬ</b></span><span>02 <b data-i18n="principleTwo">НАДЁЖНОСТЬ</b></span><span>03 <b data-i18n="principleThree">МАСТЕРСТВО</b></span></div></section>
+    <section class="about-section wrap" id="about"><div class="about-stamp"><img class="about-logo" src="assets/images/brand-logo.jpg" alt="" width="64" height="64" aria-hidden="true"><span class="about-mark" data-i18n="brandMark">ЦЯ</span><br><span>2026</span></div><div><span class="kicker" data-i18n="sectionAboutKicker">03 / ПРИНЦИПЫ</span><h2 data-i18n="aboutTitle">Сначала ясность.<br><em>Затем — система.</em></h2></div><p data-i18n="aboutCopy">Исследую задачу, выделяю главное и проектирую понятное решение. В основе — аккуратная инженерия, детерминированная логика и интерфейс, который не мешает работе.</p><div class="principles"><span>01 <b data-i18n="principleOne">ЯСНОСТЬ</b></span><span>02 <b data-i18n="principleTwo">НАДЁЖНОСТЬ</b></span><span>03 <b data-i18n="principleThree">МАСТЕРСТВО</b></span></div></section>
     <footer class="footer wrap" id="contact"><div><span class="kicker" data-i18n="sectionFooterKicker">04 / СВЯЗЬ</span><h2 data-i18n="footerTitle">Есть задача?<br><em>Давайте разберём.</em></h2></div><button class="footer-cta" id="open-bot" type="button"><span data-i18n="footerCta">Обсудить проект</span><span>↗</span></button><div class="footer-bottom"><span data-i18n="copyright">ЦИФРОВОЕ ЯДРО 2026</span><span data-i18n="footerNote">СОБРАНО С ВНИМАНИЕМ К ДЕТАЛЯМ</span><a href="#top" data-i18n="backToTop">ВВЕРХ ↑</a></div></footer>
   </main>
   <div id="bot-root"></div>

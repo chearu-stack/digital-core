@@ -23,7 +23,7 @@
         "assets/images/projects/vpfarm/vpfarm-showcase.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#587b43",
+      "ambient_color": "#22c55e",
       "cover_image": "assets/images/projects/vpfarm/vpfarm-showcase.png"
     },
     {
@@ -49,7 +49,7 @@
         "assets/images/projects/bibliotheca/bibliotheca-preview.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#a66a4e",
+      "ambient_color": "#b45309",
       "cover_image": "assets/images/projects/bibliotheca/bibliotheca-preview.png"
     },
     {
@@ -75,7 +75,7 @@
         "assets/images/projects/faralab/faralab-showcase.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#72879b",
+      "ambient_color": "#38bdf8",
       "cover_image": "assets/images/projects/faralab/faralab-showcase.png"
     },
     {
@@ -105,7 +105,7 @@
       "architecture_diagram": null,
       "contact_email": "ea52@bk.ru",
       "cover_image": "assets/images/projects/fvk-content-factory/factory-screen.png",
-      "ambient_color": "#a7624e"
+      "ambient_color": "#34d399"
     },
     {
       "id": "herbarium-ai",
@@ -130,7 +130,7 @@
         "assets/images/projects/herbarium-ai/herbarium-constructor.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#798d50",
+      "ambient_color": "#84cc16",
       "cover_image": "assets/images/projects/herbarium-ai/herbarium-constructor.png"
     },
     {
@@ -184,7 +184,7 @@
         "assets/images/projects/protected-control-system/control-system.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#536f86",
+      "ambient_color": "#94a3b8",
       "cover_image": "assets/images/projects/protected-control-system/control-system.png"
     },
     {
@@ -210,7 +210,7 @@
       ],
       "architecture_diagram": null,
       "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png",
-      "ambient_color": "#7b8589"
+      "ambient_color": "#94a3b8"
     }
   ],
   "catalog": [
