@@ -121,6 +121,8 @@
   Object.assign(copy.ru, {"heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","detailStatus":"\u0420\u0435\u0436\u0438\u043c","detailNoMedia":"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0451\u043d\u043d\u044b\u0435 \u0441\u0445\u0435\u043c\u044b \u0438 \u0441\u043d\u0438\u043c\u043a\u0438 \u044d\u043a\u0440\u0430\u043d\u0430 \u043f\u043e\u043a\u0430 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u044b.","detailMediaUnavailable":"\u0424\u0430\u0439\u043b \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d.","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"}});
   displayModes.ru = {"live_static_ecommerce":"\u0416\u0418\u0412\u041e\u0419 \u0421\u0410\u0419\u0422 / \u041a\u0410\u0422\u0410\u041b\u041e\u0413 \u0418 \u0417\u0410\u042f\u0412\u041a\u0418","live_static_archive":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0410\u0420\u0425\u0418\u0412","live_static_showcase":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u041f\u041e\u041a\u0410\u0417 \u0423\u0421\u041b\u0423\u0413","b2b_offer":"\u041f\u0420\u0415\u0414\u041b\u041e\u0416\u0415\u041d\u0418\u0415 \u0414\u041b\u042f \u0411\u0418\u0417\u041d\u0415\u0421\u0410","live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 PDF","wake_on_demand_knowledge_base":"\u0411\u0410\u0417\u0410 \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","on_demand_knowledge_presentation":"\u041f\u0420\u0415\u0417\u0415\u041d\u0422\u0410\u0426\u0418\u042f \u0411\u0410\u0417\u042b \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041c\u041e\u0416\u0415\u0422 \u0417\u0410\u041d\u042f\u0422\u042c \u0412\u0420\u0415\u041c\u042f","vds_live_frontend":"\u0412\u0415\u0411-\u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420","protected_contour":"\u0417\u0410\u0429\u0418\u0429\u0401\u041d\u041d\u042b\u0419 \u0414\u041e\u0421\u0422\u0423\u041f / \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","live_static_tool":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0420\u0410\u0421\u0427\u0401\u0422\u042b","engineering_module":"\u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u041c\u041e\u0414\u0423\u041b\u042c","research_debt":"\u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415 / \u0422\u0415\u0425\u041d\u0418\u0427\u0415\u0421\u041a\u0418\u0419 \u0414\u041e\u041b\u0413","research_core_architecture":"\u041e\u0421\u041d\u041e\u0412\u041d\u0410\u042f \u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u0410 / \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415","research_prototype":"\u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u041d\u042b\u0419 \u041f\u0420\u041e\u0422\u041e\u0422\u0418\u041f"};
   Object.assign(displayModes.ru, {"live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 \u0414\u041e\u041a\u0423\u041c\u0415\u041d\u0422\u041e\u0412 \u041f\u0414\u0424","vds_live_frontend":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420"});
+  displayModes.ru.research_internal_engine = 'R&D / INTERNAL ENGINE';
+  displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
   const allProjects = () => state.projects
@@ -446,8 +448,8 @@
       closeDialog(dialog, dialog === mediaDialog ? mediaTrigger : previousFocus);
       return;
     }
-    if (event.target === projectDialog) closeDialog(projectDialog, previousFocus);
-    if (event.target === mediaDialog) closeDialog(mediaDialog, mediaTrigger);
+    if (event.target === projectDialog && !window.matchMedia('(max-width: 767px)').matches) closeDialog(projectDialog, previousFocus);
+    if (event.target === mediaDialog && !window.matchMedia('(max-width: 767px)').matches) closeDialog(mediaDialog, mediaTrigger);
   });
 
   $('#lang-switch').addEventListener('click', () => applyLanguage(state.language === 'ru' ? 'en' : 'ru'));
@@ -486,3 +488,64 @@
   $('#catalog-retry').addEventListener('click', loadProjectCatalog);
   loadProjectCatalog();
 })();
+// Mobile-only swipe navigation for project and media dialogs.
+window.addEventListener('DOMContentLoaded', () => {
+  const mobile = window.matchMedia('(max-width: 767px)');
+  const projectDialog = document.getElementById('project-dialog');
+  const mediaDialog = document.getElementById('media-dialog');
+  if (!projectDialog || !mediaDialog) return;
+
+  for (const dialog of [projectDialog, mediaDialog]) {
+    const shell = dialog.querySelector('.project-dialog-shell, .media-dialog-shell');
+    if (shell && !shell.querySelector('.swipe-indicator')) {
+      const handle = document.createElement('div');
+      handle.className = 'swipe-indicator';
+      handle.setAttribute('aria-hidden', 'true');
+      shell.prepend(handle);
+    }
+  }
+
+  let currentProjectId = null;
+  document.addEventListener('click', (event) => {
+    const opener = event.target.closest('[data-project-open]');
+    if (opener) currentProjectId = opener.dataset.projectOpen;
+  }, true);
+
+  const starts = new WeakMap();
+  for (const dialog of [projectDialog, mediaDialog]) {
+    dialog.addEventListener('cancel', (event) => {
+      if (mobile.matches) event.preventDefault();
+    });
+    dialog.addEventListener('touchstart', (event) => {
+      if (!mobile.matches || event.touches.length !== 1) return;
+      starts.set(dialog, {
+        x: event.touches[0].clientX,
+        y: event.touches[0].clientY,
+        top: dialog.querySelector('.project-dialog-shell')?.scrollTop ?? dialog.scrollTop
+      });
+    }, { passive: true });
+    dialog.addEventListener('touchend', (event) => {
+      if (!mobile.matches || !event.changedTouches.length) return;
+      const start = starts.get(dialog);
+      starts.delete(dialog);
+      if (!start) return;
+      const dx = event.changedTouches[0].clientX - start.x;
+      const dy = event.changedTouches[0].clientY - start.y;
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < 64) return;
+
+      if (dialog === projectDialog && Math.abs(dx) > Math.abs(dy)) {
+        const openers = [...document.querySelectorAll('[data-project-open]')];
+        const index = openers.findIndex((item) => item.dataset.projectOpen === currentProjectId);
+        const next = openers[index + (dx < 0 ? 1 : -1)];
+        if (next) next.click();
+        return;
+      }
+
+      if (dy > 0 && (dialog === mediaDialog || start.top <= 0)) {
+        const closeButton = dialog.querySelector('[data-close-dialog]');
+        if (closeButton) closeButton.click();
+        else dialog.close();
+      }
+    }, { passive: true });
+  }
+});

@@ -338,3 +338,28 @@ html[lang="ru"] .row-title{letter-spacing:0}
 .brand-mark,.about-mark{display:none}
 .about-stamp{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .about-logo{display:block;width:64px;height:64px;object-fit:cover;border-radius:50%;border:1px solid #70684f}
+/* Mobile modal swipe behavior */
+.swipe-indicator { display: none; }
+@media (max-width: 767px) {
+  .project-dialog .dialog-close,
+  .media-dialog .dialog-close { display: none; }
+  .swipe-indicator {
+    display: block;
+    width: 42px;
+    height: 4px;
+    margin: 8px auto 14px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.72);
+    flex: 0 0 auto;
+  }
+  .project-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 92dvh;
+    margin: auto 0 0;
+    border-radius: 18px 18px 0 0;
+    overscroll-behavior: contain;
+  }
+  .project-dialog-shell { max-height: 92dvh; overflow-y: auto; }
+  .media-dialog-shell { padding-top: 8px; }
+}

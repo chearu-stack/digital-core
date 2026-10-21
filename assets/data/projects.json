@@ -1,4 +1,8 @@
 {
+  "technical_debt": [
+    { "module_id": "internal-dialog-state-engine", "status": "R&D / INTERNAL ENGINE", "items": ["Isolated testing is required for resumed state restoration."] },
+    { "module_id": "techbase-os", "status": "optimization_pending", "items": ["Optimize vectorization for automatic RAG search across local manuals."] }
+  ],
   "flagship_projects": [
     {
       "id": "vpfarm",
@@ -279,8 +283,8 @@
     },
     {
       "id": "vk-bot-fsm-engine",
-      "name": "Система управления диалогами",
-      "name_en": "VK Bot FSM Engine",
+      "name": "Внутренний движок состояний",
+      "name_en": "Internal Dialog State Engine",
       "category": "fsm",
       "description": "Исследовательский модуль детерминированного управления диалогами и состояниями.",
       "description_en": "A deterministic FSM engine for chat bots. This remains R&D technical debt.",
@@ -290,7 +294,8 @@
       ],
       "status": "Implemented",
       "status_en": "Implemented",
-      "display_mode": "research_debt",
+      "display_mode": "research_internal_engine",
+      "technical_debt": ["Isolated testing is required for resumed state restoration."],
       "github_url": null,
       "demo_url": null,
       "is_private": true,
