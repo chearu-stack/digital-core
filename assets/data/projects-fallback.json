@@ -5,7 +5,7 @@
       "name": "Ваша Птица Ферма",
       "name_en": "Your Poultry Farm",
       "category": "commerce",
-      "description": "Полнофункциональная коммерческая веб-платформа агро-комплекса с каталогом, фильтрацией и системой заявок.",
+      "description": "Полнофункциональная коммерческая платформа агрокомплекса: каталог продукции, фильтрация и приём заявок.",
       "description_en": "A commercial farm web platform with a product catalog, filtering, and customer inquiry flow.",
       "tech_stack": [
         "HTML",
@@ -25,10 +25,10 @@
     },
     {
       "id": "bibliotheca",
-      "name": "Bibliotheca",
+      "name": "Авторский литературный архив",
       "name_en": "Bibliotheca",
       "category": "web_interface",
-      "description": "Авторский цифровой архив прозы и поэзии с тематическими разделами и профилем автора.",
+      "description": "Цифровой архив прозы и поэзии с тематическими разделами и страницей автора.",
       "description_en": "An author-run digital archive of prose and poetry with themed collections and an author profile.",
       "tech_stack": [
         "HTML",
@@ -48,10 +48,10 @@
     },
     {
       "id": "faralab",
-      "name": "FARALAB",
+      "name": "Сервис по автомобильному свету",
       "name_en": "FARALAB",
       "category": "web_interface",
-      "description": "Премиальный веб-сервис студии автосвета: визуальный каталог, расчет стоимости и запись на обслуживание.",
+      "description": "Сайт студии автомобильного света: каталог работ, расчёт стоимости и запись на обслуживание.",
       "description_en": "A premium automotive lighting studio website with a visual catalog, price estimator, and service booking.",
       "tech_stack": [
         "HTML",
@@ -74,7 +74,7 @@
       "name": "Фабрика ВК-контента",
       "name_en": "VK Content Factory",
       "category": "ai_automation",
-      "description": "Система подготовки контента: от сырых тезисов до черновиков с сохранением авторского контроля.",
+      "description": "Система подготовки публикаций: от исходных тезисов до черновиков с сохранением авторского контроля.",
       "description_en": "A B2B content preparation system that turns raw notes into drafts while preserving human editorial control.",
       "tech_stack": [
         "Python",
@@ -90,16 +90,19 @@
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
-      "screenshots": [],
+      "screenshots": [
+        "assets/images/projects/fvk-content-factory/factory-story.png"
+      ],
       "architecture_diagram": null,
-      "contact_email": "ea52@bk.ru"
+      "contact_email": "ea52@bk.ru",
+      "cover_image": "assets/images/projects/fvk-content-factory/factory-story.png"
     },
     {
       "id": "herbarium-ai",
-      "name": "Herbarium AI",
+      "name": "Конструктор гербарных листов",
       "name_en": "Herbarium AI",
       "category": "ai_automation",
-      "description": "Живой клиентский конструктор гербарных листов с ручным заполнением и генерацией PDF. DeepSeek AI опционален; без ключа ручной режим полностью работоспособен.",
+      "description": "Инструмент для ручного составления гербарных листов и создания документов в формате ПДФ. Искусственный интеллект можно подключить дополнительно; без него ручная сборка работает полностью.",
       "description_en": "A working client-side herbarium sheet constructor with manual entry and PDF generation. DeepSeek AI is optional; the manual workflow remains fully usable without an API key.",
       "tech_stack": [
         "JavaScript",
@@ -119,10 +122,10 @@
     },
     {
       "id": "techbase-os",
-      "name": "TechBase OS",
+      "name": "База знаний для СТО и мотодилеров",
       "name_en": "TechBase OS",
       "category": "ai_automation",
-      "description": "Презентация инфраструктурной базы знаний для СТО и мотодилеров на примере VOGE: индексация мануалов и RAG-поиск.",
+      "description": "Презентация базы технических знаний на примере мото$6иклов VOGE: поиск по руководствам и ответы с опорой на содержание документов.",
       "description_en": "A presentation of an infrastructure knowledge base for service centers and motorcycle dealers, using VOGE manuals to demonstrate indexing and RAG search.",
       "tech_stack": [
         "Python",
@@ -132,21 +135,22 @@
       ],
       "status": "Implemented",
       "status_en": "Implemented",
-      "display_mode": "wake_on_demand_knowledge_base",
+      "display_mode": "on_demand_knowledge_presentation",
       "art": "voge",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
       "screenshots": [],
-      "architecture_diagram": null
+      "architecture_diagram": null,
+      "presentation_url": "https://techbase-os.streamlit.app/"
     },
     {
       "id": "piceatom",
       "name": "Мирный Атом",
       "name_en": "Peaceful Atom",
       "category": "web_interface",
-      "description": "Демонстрационный веб-продукт с независимым фронтендом, развернутым в собственном VDS-контуре.",
+      "description": "Демонстрационный цифровой продукт с отдельным интерфейсом, размещённый на собственном сервере.",
       "description_en": "A demonstration product with an independent frontend deployed on its own VDS environment.",
       "tech_stack": [
         "HTML",
@@ -166,10 +170,10 @@
     },
     {
       "id": "rf-smeta",
-      "name": "Смета",
+      "name": "Сметный комплекс",
       "name_en": "Estimate Suite",
       "category": "construction",
-      "description": "Профессиональный сметный расчетный комплекс для строительства; доступ по запросу в защищенном контуре.",
+      "description": "Профессиональная система расчёта строительных смет. Доступ предоставляется по запросу в защищённом контуре.",
       "description_en": "A professional construction estimating suite available on request through a protected access channel.",
       "tech_stack": [
         "Construction",
@@ -183,17 +187,20 @@
       "demo_url": null,
       "is_private": true,
       "visibility_status": "not_applicable",
-      "screenshots": [],
-      "architecture_diagram": null
+      "screenshots": [
+        "assets/images/projects/estimate-suite/estimate-screen.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png"
     }
   ],
   "catalog": [
     {
       "id": "stroy-calc",
-      "name": "Stroy-Calc",
+      "name": "Строительные расчёты",
       "name_en": "Stroy-Calc",
       "category": "construction",
-      "description": "Модуль инженерных и строительных расчетов.",
+      "description": "Инструмент быстрых инженерных и строительных расчётов.",
       "description_en": "An engineering and construction calculation tool.",
       "tech_stack": [
         "Construction",
@@ -212,10 +219,10 @@
     },
     {
       "id": "money-wise",
-      "name": "MoneyWise Core",
+      "name": "Расчёт личных финансов",
       "name_en": "MoneyWise Core",
       "category": "ai_automation",
-      "description": "Вычислительный модуль личных финансов с Decimal-точностью.",
+      "description": "Вычислительный модуль личных финансов с точной десятичной арифметикой.",
       "description_en": "A personal finance calculation module using Decimal arithmetic.",
       "tech_stack": [
         "Python",
@@ -234,10 +241,10 @@
     },
     {
       "id": "order-sniper",
-      "name": "Order-Sniper",
+      "name": "Анализ вакансий",
       "name_en": "Order-Sniper",
       "category": "ai_automation",
-      "description": "Автономный модуль анализа вакансий и валидации требований по локальной базе проектов.",
+      "description": "Инструмент сопоставления требований вакансий с локальной базой проектов.",
       "description_en": "An autonomous job analysis module that validates requirements against a local project database.",
       "tech_stack": [
         "Python",
@@ -256,10 +263,10 @@
     },
     {
       "id": "vk-bot-fsm-engine",
-      "name": "VK Bot FSM Engine",
+      "name": "Система управления диалогами",
       "name_en": "VK Bot FSM Engine",
       "category": "fsm",
-      "description": "Детерминированный FSM-движок чат-ботов. Технический долг, R&D.",
+      "description": "Исследовательский модуль детерминированного управления диалогами и состояниями.",
       "description_en": "A deterministic FSM engine for chat bots. This remains R&D technical debt.",
       "tech_stack": [
         "Python",
@@ -278,10 +285,10 @@
     },
     {
       "id": "core-wisdom",
-      "name": "core_wisdom",
+      "name": "Маршрутизация команд",
       "name_en": "core_wisdom",
       "category": "architecture_docs",
-      "description": "Диспетчер команд и архитектурная маршрутизация.",
+      "description": "Диспетчер команд с проверкой правил доступа и маршрутизацией разрешённых действий.",
       "description_en": "A command dispatcher and architecture routing prototype.",
       "tech_stack": [
         "Python",
@@ -300,10 +307,10 @@
     },
     {
       "id": "diana",
-      "name": "diana",
+      "name": "Архитектурный исследовательский прототип",
       "name_en": "diana",
       "category": "architecture_docs",
-      "description": "Архитектурный исследовательский прототип.",
+      "description": "Исследовательская разработка архитектуры обработки торговых команд и проверки правил.",
       "description_en": "An architecture research prototype.",
       "tech_stack": [
         "Architecture",
@@ -320,6 +327,5 @@
       "screenshots": [],
       "architecture_diagram": null
     }
-  ],
-  "fallback_updated_at": "2026-10-21"
+  ]
 }

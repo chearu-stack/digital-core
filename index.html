@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10100e">
   <meta name="description" content="Инженерные продукты, цифровые сервисы и экспериментальные инструменты.">
-  <title>Digital Core — инженерия цифровых продуктов</title>
+  <title>Цифровое ядро — инженерные решения</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,9 +17,9 @@
 <body>
   <div class="mesh" aria-hidden="true"><canvas id="mesh-canvas"></canvas><div class="mesh-grain"></div></div>
   <header class="topbar wrap">
-    <a class="brand" href="#top" aria-label="Digital Core — наверх"><span class="brand-mark">D<span>·</span>C</span><span class="brand-caption">DIGITAL<br>CORE</span></a>
+    <a class="brand" href="#top" aria-label="Цифровое ядро — наверх" data-i18n-aria="brandAria"><span class="brand-mark" data-i18n="brandMark">ЦЯ</span><span class="brand-caption" data-i18n="brandCaption">ЦИФРОВОЕ<br>ЯДРО</span></a>
     <nav class="main-nav" aria-label="Основная навигация"><a href="#work" data-i18n="navWork">Работы</a><a href="#catalog" data-i18n="navCatalog">Каталог</a><a href="#about" data-i18n="navAbout">Подход</a></nav>
-    <div class="top-actions"><button class="lang-switch" id="lang-switch" type="button" aria-label="Switch language">EN <span>↗</span></button><a class="contact-link" href="#contact"><span data-i18n="contact">Обсудить проект</span><span aria-hidden="true">↗</span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button></div>
+    <div class="top-actions"><button class="lang-switch" id="lang-switch" type="button" aria-label="Выбрать язык">EN <span>↗</span></button><a class="contact-link" href="#contact"><span data-i18n="contact">Обсудить проект</span><span aria-hidden="true">↗</span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button></div>
   </header>
   <main id="top">
     <section class="hero wrap" id="hero">
@@ -27,7 +27,7 @@
       <h1 data-i18n="heroTitle">Сложные системы.<br><em>Простые интерфейсы.</em></h1>
       <div class="hero-showcase">
         <div class="hero-intro">
-          <p class="hero-copy" data-i18n="heroCopy">Проектирую и собираю цифровые продукты — от локальных AI-систем до сервисов, которыми удобно пользоваться каждый день.</p>
+          <p class="hero-copy" data-i18n="heroCopy">Проектирую и создаю цифровые продукты — от систем искусственного интеллекта до понятных и удобных в работе сервисов.</p>
           <div class="hero-location" aria-label="Географическое положение">
             <span class="location-label" data-i18n="locationLabel">ЛОКАЦИЯ</span>
             <span class="location-city" data-i18n="locationCity">Павлово, Нижегородская область</span>
@@ -36,35 +36,34 @@
           </div>
           <a href="#work" class="round-link" aria-label="Смотреть проекты" data-i18n-aria="workLinkLabel">↓</a>
         </div>
-        <a class="hero-visual" href="#work" data-mesh-source="hero" aria-label="Инженерная визуализация Digital Core — перейти к проектам" data-i18n-aria="heroVisualLabel">
+        <a class="hero-visual" href="#work" data-mesh-source="hero" aria-label="Схема цифрового ядра — перейти к проектам" data-i18n-aria="heroVisualLabel">
           <img id="hero-anchor" src="assets/images/hero-anchor.webp" alt="Инженерная цифровая структура с неоновыми линиями на тёмном фоне" data-i18n-alt="heroImageAlt" width="1376" height="768" fetchpriority="high">
           <span class="visual-frame visual-frame-top" aria-hidden="true"></span>
           <span class="visual-frame visual-frame-bottom" aria-hidden="true"></span>
           <span class="visual-label" data-i18n="heroVisualCaption">СИСТЕМЫ · ДАННЫЕ · ИНТЕРФЕЙСЫ</span>
-          <span class="visual-index" aria-hidden="true">DC—01 / 55.9678° N · 43.0768° E</span>
+          <span class="visual-index" data-i18n="heroCoordinates" aria-hidden="true">ЯДРО—01 / 55.9678° СШ · 43.0768° ВД</span>
           <span class="visual-focus" aria-hidden="true">↗</span>
         </a>
       </div>
-      <div class="hero-rule"><span data-i18n="scroll">ЛИСТАЙТЕ, ЧТОБЫ ИССЛЕДОВАТЬ</span><span>SCROLL TO EXPLORE&nbsp; ↓</span></div>
+      <div class="hero-rule"><span data-i18n="scroll">ЛИСТАЙТЕ, ЧТОБЫ ИССЛЕДОВАТЬ</span><span data-i18n="scrollHint">ЛИСТАЙТЕ ВНИЗ ↓</span></div>
     </section>
     <section class="work-section wrap" id="work">
-      <div class="section-heading"><div><span class="kicker">01 / SELECTED WORK</span><h2 data-i18n="workTitle">Избранные проекты<span class="muted">.</span></h2></div><span class="section-count" id="featured-count">08&nbsp; / &nbsp;2022&#8211;26</span></div>
+      <div class="section-heading"><div><span class="kicker" data-i18n="sectionWorkKicker">01 / ИЗБРАННЫЕ РЕШЕНИЯ</span><h2 data-i18n="workTitle">Избранные проекты<span class="muted">.</span></h2></div><span class="section-count" id="featured-count">08&nbsp; / &nbsp;2022&#8211;26</span></div>
       <div class="featured-grid" id="featured-grid" aria-live="polite"></div>
     </section>
     <section class="catalog-section wrap" id="catalog">
-      <div class="section-heading"><div><span class="kicker">02 / ENGINEERING INDEX</span><h2 data-i18n="catalogTitle">Инженерный индекс<span class="muted">.</span></h2></div><p class="section-note" data-i18n="catalogCopy">Инструменты, архитектурные заметки<br>и рабочие пространства.</p></div>
+      <div class="section-heading"><div><span class="kicker" data-i18n="sectionCatalogKicker">02 / ИНЖЕНЕРНЫЙ УКАЗАТЕЛЬ</span><h2 data-i18n="catalogTitle">Инженерный индекс<span class="muted">.</span></h2></div><p class="section-note" data-i18n="catalogCopy">Инструменты, архитектурные заметки<br>и рабочие пространства.</p></div>
       <div class="catalog-toolbar"><div class="filters" id="filters" role="group" aria-label="Фильтр каталога"></div><label class="search-box"><span>⌕</span><input id="catalog-search" type="search" placeholder="Поиск по каталогу" data-i18n-placeholder="search" aria-label="Поиск по каталогу"><kbd>/</kbd></label></div>
-      <div class="catalog-status" id="catalog-status" role="status" aria-live="polite" hidden><span id="catalog-status-message"></span><button class="catalog-retry" id="catalog-retry" type="button" data-i18n="retryCatalog">Повторить загрузку</button></div>
       <div class="catalog-status" id="catalog-status" role="status" aria-live="polite" hidden><span id="catalog-status-message"></span><button class="catalog-retry" id="catalog-retry" type="button" data-i18n="retryCatalog">Повторить загрузку</button></div>
       <div class="catalog-list" id="catalog-list" aria-live="polite"></div><p class="empty-state" id="empty-state" hidden data-i18n="empty">Ничего не найдено. Попробуйте изменить фильтр.</p>
     </section>
-    <section class="about-section wrap" id="about"><div class="about-stamp">DC<br><span>2026</span></div><div><span class="kicker">03 / PRINCIPLES</span><h2 data-i18n="aboutTitle">Сначала ясность.<br><em>Затем — система.</em></h2></div><p data-i18n="aboutCopy">Исследую задачу, выделяю главное и проектирую понятное решение. В основе — аккуратная инженерия, детерминированная логика и интерфейс, который не мешает работе.</p><div class="principles"><span>01 <b>CLARITY</b></span><span>02 <b>RELIABILITY</b></span><span>03 <b>CRAFT</b></span></div></section>
-    <footer class="footer wrap" id="contact"><div><span class="kicker">04 / NEXT STEP</span><h2 data-i18n="footerTitle">Есть задача?<br><em>Давайте разберём.</em></h2></div><button class="footer-cta" id="open-bot" type="button"><span data-i18n="footerCta">Обсудить проект</span><span>↗</span></button><div class="footer-bottom"><span>© DIGITAL CORE 2026</span><span data-i18n="footerNote">СОБРАНО С ВНИМАНИЕМ К ДЕТАЛЯМ</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+    <section class="about-section wrap" id="about"><div class="about-stamp"><span class="about-mark" data-i18n="brandMark">ЦЯ</span><br><span>2026</span></div><div><span class="kicker" data-i18n="sectionAboutKicker">03 / ПРИНЦИПЫ</span><h2 data-i18n="aboutTitle">Сначала ясность.<br><em>Затем — система.</em></h2></div><p data-i18n="aboutCopy">Исследую задачу, выделяю главное и проектирую понятное решение. В основе — аккуратная инженерия, детерминированная логика и интерфейс, который не мешает работе.</p><div class="principles"><span>01 <b data-i18n="principleOne">ЯСНОСТЬ</b></span><span>02 <b data-i18n="principleTwo">НАДЁЖНОСТЬ</b></span><span>03 <b data-i18n="principleThree">МАСТЕРСТВО</b></span></div></section>
+    <footer class="footer wrap" id="contact"><div><span class="kicker" data-i18n="sectionFooterKicker">04 / СВЯЗЬ</span><h2 data-i18n="footerTitle">Есть задача?<br><em>Давайте разберём.</em></h2></div><button class="footer-cta" id="open-bot" type="button"><span data-i18n="footerCta">Обсудить проект</span><span>↗</span></button><div class="footer-bottom"><span data-i18n="copyright">ЦИФРОВОЕ ЯДРО 2026</span><span data-i18n="footerNote">СОБРАНО С ВНИМАНИЕМ К ДЕТАЛЯМ</span><a href="#top" data-i18n="backToTop">ВВЕРХ ↑</a></div></footer>
   </main>
   <div id="bot-root"></div>
   <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title" data-i18n-aria="projectDialogLabel">
     <div class="project-dialog-shell">
-      <div class="dialog-topline"><span class="kicker" data-i18n="projectDetailKicker">PROJECT FILE / DETAIL VIEW</span><button class="dialog-close" type="button" data-close-dialog aria-label="Закрыть" data-i18n-aria="dialogClose">×</button></div>
+      <div class="dialog-topline"><span class="kicker" data-i18n="projectDetailKicker">ПРОЕКТ / ПОДРОБНОСТИ</span><button class="dialog-close" type="button" data-close-dialog aria-label="Закрыть" data-i18n-aria="dialogClose">×</button></div>
       <div class="project-detail" id="project-detail"></div>
     </div>
   </dialog>

@@ -26,6 +26,13 @@
   };
   const makeThumbnail = (card, index) => {
     const art = card.querySelector('.project-art');
+    const cover = art.querySelector('.project-art-image');
+    if (cover) {
+      const extractCover = () => { try { const dominant = extractDominant(cover); if (dominant) extracted.set(card.dataset.project, dominant); } catch (error) { extracted.set(card.dataset.project, palette[index % palette.length]); } };
+      if (cover.complete && cover.naturalWidth) extractCover();
+      else cover.addEventListener('load', extractCover, { once: true });
+      return;
+    }
     const thumb = document.createElement('canvas');
     thumb.width = 240; thumb.height = 180; thumb.className = 'thumbnail-canvas'; thumb.setAttribute('aria-hidden','true');
     art.prepend(thumb);

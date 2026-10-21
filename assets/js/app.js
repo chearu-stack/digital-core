@@ -15,7 +15,7 @@
       statuses:{'Рабочий проект':'В РАБОТЕ','Прототип':'ПРОТОТИП','Архитектурная концепция':'АРХИТЕКТУРНАЯ КОНЦЕПЦИЯ','Демо требует подтверждения':'ДЕМО НЕ ПРОВЕРЕНО','Публикация требует подтверждения':'ПУБЛИКАЦИЯ НЕ ПРОВЕРЕНА','Не проверен':'НЕ ПРОВЕРЕН','Черновик':'ЧЕРНОВИК'},
       projectDetailKicker:'КАРТОЧКА ПРОЕКТА / ПОДРОБНОСТИ',dialogClose:'Закрыть окно',projectDialogLabel:'Подробная информация о проекте',mediaDialogLabel:'Полноэкранный просмотр изображения',
       detailStatus:'Статус',detailCategory:'Направление',detailStack:'Технологии',detailMedia:'Визуальные материалы',detailArchitecture:'Архитектура и схема',
-      detailScreenshots:'Скриншоты',detailNoMedia:'Подтверждённые схемы и скриншоты пока не добавлены.',
+      detailScreenshots:'Скриншоты',detailNoMedia:'Подтверждённые схемы и снимки экрана пока не добавлены.',
       detailSource:'Исходный код',detailSourceUnavailable:'Публичная ссылка на репозиторий отсутствует или не прошла проверку. Ссылка на код скрыта.',
       githubAction:'GitHub / Исходный код',detailDemo:'Живое демо',openExternal:'Открыть демо отдельно ↗',demoUnavailable:'Демо-ссылка не подтверждена.',
       openImage:'Открыть изображение',detailMediaUnavailable:'Файл визуального материала недоступен.'
@@ -40,7 +40,11 @@
       openImage:'View image',detailMediaUnavailable:'This media file is unavailable.'
     }
   };
-  Object.assign(copy.ru, {locationLabel:'ЛОКАЦИЯ',locationCity:'Павлово, Нижегородская область',locationAddress:'ул. 5-я Северная, д. 11',locationCoordinates:'55°58′ N · 43°04′ E',workLinkLabel:'Смотреть проекты',heroVisualLabel:'Инженерная визуализация Digital Core — перейти к проектам',heroImageAlt:'Инженерная цифровая структура с неоновыми линиями на тёмном фоне',heroVisualCaption:'СИСТЕМЫ · ДАННЫЕ · ИНТЕРФЕЙСЫ'});
+  Object.assign(copy.ru, {"heroCopy":"\u041f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u0443\u044e \u0438 \u0441\u043e\u0437\u0434\u0430\u044e \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u2014 \u043e\u0442 \u0441\u0438\u0441\u0442\u0435\u043c \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0438\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0430 \u0434\u043e \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0445 \u0438 \u0443\u0434\u043e\u0431\u043d\u044b\u0445 \u0432 \u0440\u0430\u0431\u043e\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432.","catalogCopy":"\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u044b\u0435 \u0437\u0430\u043c\u0435\u0442\u043a\u0438<br>\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430.","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0432\u0435\u0431-\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"},"projectDetailKicker":"\u041f\u0420\u041e\u0415\u041a\u0422 / \u041f\u041e\u0414\u0420\u041e\u0411\u041d\u041e\u0421\u0422\u0418","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","detailScreenshots":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f","detailSource":"\u041e\u0442\u043a\u0440\u044b\u0442\u044b\u0439 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailSourceUnavailable":"\u041e\u0442\u043a\u0440\u044b\u0442\u0430\u044f \u0441\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434 \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430; \u043a\u043e\u0434 \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f.","githubAction":"\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailDemo":"\u041f\u043e\u043a\u0430\u0437 \u043f\u0440\u043e\u0435\u043a\u0442\u0430","openExternal":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043a\u0430\u0437 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197","demoUnavailable":"\u041e\u0431\u0449\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0439 \u043f\u043e\u043a\u0430\u0437 \u043d\u0435 \u043f\u0440\u0435\u0434\u0443\u0441\u043c\u043e\u0442\u0440\u0435\u043d.","accessByRequest":"\u0414\u043e\u0441\u0442\u0443\u043f \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443.","presentationTitle":"\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u0431\u0430\u0437\u044b \u0437\u043d\u0430\u043d\u0438\u0439","openPresentation":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044e \u2197","presentationNotice":"\u041f\u043e\u043a\u0430\u0437 \u0440\u0430\u0437\u043c\u0435\u0449\u0451\u043d \u043d\u0430 \u0432\u043d\u0435\u0448\u043d\u0435\u043c \u0441\u0435\u0440\u0432\u0438\u0441\u0435; \u043f\u0435\u0440\u0432\u044b\u0439 \u0437\u0430\u043f\u0443\u0441\u043a \u043c\u043e\u0436\u0435\u0442 \u0437\u0430\u043d\u044f\u0442\u044c \u0432\u0440\u0435\u043c\u044f.","heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","heroImageAlt":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0441 \u0441\u0432\u0435\u0442\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u043b\u0438\u043d\u0438\u044f\u043c\u0438 \u043d\u0430 \u0442\u0451\u043c\u043d\u043e\u043c \u0444\u043e\u043d\u0435","heroVisualCaption":"\u0421\u0418\u0421\u0422\u0415\u041c\u042b \u00b7 \u0414\u0410\u041d\u041d\u042b\u0415 \u00b7 \u0418\u041d\u0422\u0415\u0420\u0424\u0415\u0419\u0421\u042b","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitch":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","heroLabel":"\u041d\u0415\u0417\u0410\u0412\u0418\u0421\u0418\u041c\u0410\u042f \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u0410\u042f \u041f\u0420\u0410\u041a\u0422\u0418\u041a\u0410","heroRule":"\u041b\u0418\u0421\u0422\u0410\u0419\u0422\u0415, \u0427\u0422\u041e\u0411\u042b \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u0422\u042c","sectionWorkKicker":"01 / \u0418\u0417\u0411\u0420\u0410\u041d\u041d\u042b\u0415 \u0420\u0415\u0428\u0415\u041d\u0418\u042f","sectionCatalogKicker":"02 / \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u0423\u041a\u0410\u0417\u0410\u0422\u0415\u041b\u042c","sectionAboutKicker":"03 / \u041f\u0420\u0418\u041d\u0426\u0418\u041f\u042b","sectionFooterKicker":"04 / \u0421\u0412\u042f\u0417\u042c","principleOne":"\u042f\u0421\u041d\u041e\u0421\u0422\u042c","principleTwo":"\u041d\u0410\u0414\u0401\u0416\u041d\u041e\u0421\u0422\u042c","principleThree":"\u041c\u0410\u0421\u0422\u0415\u0420\u0421\u0422\u0412\u041e","backToTop":"\u0412\u0412\u0415\u0420\u0425 \u2191","copyright":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415 \u042f\u0414\u0420\u041e 2026","dialogClose":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043e\u043a\u043d\u043e","aboutCopy":"\u042f \u0438\u0437\u0443\u0447\u0430\u044e \u0437\u0430\u0434\u0430\u0447\u0443, \u0432\u044b\u0434\u0435\u043b\u044f\u044e \u0433\u043b\u0430\u0432\u043d\u043e\u0435 \u0438 \u0441\u043e\u0437\u0434\u0430\u044e \u044f\u0441\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435. \u0412 \u043e\u0441\u043d\u043e\u0432\u0435 \u2014 \u0430\u043a\u043a\u0443\u0440\u0430\u0442\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430, \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0438 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043d\u0435 \u043c\u0435\u0448\u0430\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u0435."});
+  Object.assign(copy.ru, {"heroIndex":"? 001 ? 026","scrollHint":"\u041b\u0418\u0421\u0422\u0410\u0419\u0422\u0415 \u0412\u041d\u0418\u0417 \u2193","languageSwitchLabel":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","locationCoordinates":"55\u00b058\u2032 \u0441. \u0448. \u00b7 43\u00b004\u2032 \u0432. \u0434."});
+  Object.assign(copy.en, {"brandMark":"DC","brandCaption":"DIGITAL<br>CORE","brandAria":"Digital Core ? back to top","heroIndex":"NO. 001 ? 026","heroCoordinates":"CORE?01 / 55.9678? N ? 43.0768? E","scrollHint":"SCROLL TO EXPLORE ?","sectionWorkKicker":"01 / SELECTED WORK","sectionCatalogKicker":"02 / ENGINEERING INDEX","sectionAboutKicker":"03 / PRINCIPLES","sectionFooterKicker":"04 / NEXT STEP","principleOne":"CLARITY","principleTwo":"RELIABILITY","principleThree":"CRAFT","copyright":"DIGITAL CORE 2026","backToTop":"BACK TO TOP ?","languageSwitchLabel":"Switch language","menuOpen":"Open menu","presentationTitle":"Knowledge base presentation","openPresentation":"Open presentation ?","presentationNotice":"This presentation is hosted externally; its first launch may take a little time."});
+  Object.assign(copy.ru, {locationLabel:'АДРЕС',locationCity:'Павлово, Нижегородская область',locationAddress:'ул. 5-я Северная, д. 11',locationCoordinates:'55°58′ N · 43°04′ E',workLinkLabel:'Смотреть проекты',heroVisualLabel:'Инженерная визуализация Digital Core — перейти к проектам',heroImageAlt:'Инженерная цифровая структура с неоновыми линиями на тёмном фоне',heroVisualCaption:'СИСТЕМЫ · ДАННЫЕ · ИНТЕРФЕЙСЫ'});
+  Object.assign(copy.ru, {locationCoordinates:'55\u00b058\u2032 \u0441. \u0448. \xb7 43\u00b004\u2032 \u0432. \u0434.'});
   Object.assign(copy.en, {locationLabel:'LOCATION',locationCity:'Pavlovo, Nizhny Novgorod Oblast',locationAddress:'11 5th Severnaya Street',locationCoordinates:'55°58′ N · 43°04′ E',workLinkLabel:'Explore projects',heroVisualLabel:'Digital Core engineering visualization — view projects',heroImageAlt:'Engineered digital structure with neon lines against a dark background',heroVisualCaption:'SYSTEMS · DATA · INTERFACES'});
   const $ = (selector) => document.querySelector(selector);
   const projectDialog = $('#project-dialog');
@@ -110,6 +114,11 @@
       research_core_architecture:'CORE ARCHITECTURE / R&D', research_prototype:'ARCHITECTURE / R&D'
     }
   };
+  Object.assign(copy.ru, {"heroIndex":"\u2116 001 \u2014 026","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitchLabel":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","detailStatus":"\u0420\u0435\u0436\u0438\u043c","locationCoordinates":"55\u00b058\u2032 \u0441. \u0448. \u00b7 43\u00b004\u2032 \u0432. \u0434."});
+  Object.assign(copy.en, {"brandAria":"Digital Core \u2014 back to top","heroIndex":"No. 001 \u2014 026","heroCoordinates":"CORE\u201401 / 55.9678\u00b0 N \u00b7 43.0768\u00b0 E","scrollHint":"SCROLL TO EXPLORE \u2193","backToTop":"BACK TO TOP \u2191","openPresentation":"Open presentation \u2197"});
+  Object.assign(copy.ru, {"heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","detailStatus":"\u0420\u0435\u0436\u0438\u043c","detailNoMedia":"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0451\u043d\u043d\u044b\u0435 \u0441\u0445\u0435\u043c\u044b \u0438 \u0441\u043d\u0438\u043c\u043a\u0438 \u044d\u043a\u0440\u0430\u043d\u0430 \u043f\u043e\u043a\u0430 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u044b.","detailMediaUnavailable":"\u0424\u0430\u0439\u043b \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d.","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"}});
+  displayModes.ru = {"live_static_ecommerce":"\u0416\u0418\u0412\u041e\u0419 \u0421\u0410\u0419\u0422 / \u041a\u0410\u0422\u0410\u041b\u041e\u0413 \u0418 \u0417\u0410\u042f\u0412\u041a\u0418","live_static_archive":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0410\u0420\u0425\u0418\u0412","live_static_showcase":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u041f\u041e\u041a\u0410\u0417 \u0423\u0421\u041b\u0423\u0413","b2b_offer":"\u041f\u0420\u0415\u0414\u041b\u041e\u0416\u0415\u041d\u0418\u0415 \u0414\u041b\u042f \u0411\u0418\u0417\u041d\u0415\u0421\u0410","live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 PDF","wake_on_demand_knowledge_base":"\u0411\u0410\u0417\u0410 \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","on_demand_knowledge_presentation":"\u041f\u0420\u0415\u0417\u0415\u041d\u0422\u0410\u0426\u0418\u042f \u0411\u0410\u0417\u042b \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041c\u041e\u0416\u0415\u0422 \u0417\u0410\u041d\u042f\u0422\u042c \u0412\u0420\u0415\u041c\u042f","vds_live_frontend":"\u0412\u0415\u0411-\u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420","protected_contour":"\u0417\u0410\u0429\u0418\u0429\u0401\u041d\u041d\u042b\u0419 \u0414\u041e\u0421\u0422\u0423\u041f / \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","live_static_tool":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0420\u0410\u0421\u0427\u0401\u0422\u042b","engineering_module":"\u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u041c\u041e\u0414\u0423\u041b\u042c","research_debt":"\u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415 / \u0422\u0415\u0425\u041d\u0418\u0427\u0415\u0421\u041a\u0418\u0419 \u0414\u041e\u041b\u0413","research_core_architecture":"\u041e\u0421\u041d\u041e\u0412\u041d\u0410\u042f \u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u0410 / \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415","research_prototype":"\u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u041d\u042b\u0419 \u041f\u0420\u041e\u0422\u041e\u0422\u0418\u041f"};
+  Object.assign(displayModes.ru, {"live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 \u0414\u041e\u041a\u0423\u041c\u0415\u041d\u0422\u041e\u0412 \u041f\u0414\u0424","vds_live_frontend":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420"});
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
   const allProjects = () => state.projects
@@ -199,6 +208,7 @@
   const applyLanguage = (language) => {
     state.language = language;
     document.documentElement.lang = language;
+    document.title = language === 'ru' ? '\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f' : 'Digital Core \u2014 engineering products';
     document.querySelectorAll('[data-i18n]').forEach((node) => {
       const value = copy[language][node.dataset.i18n];
       if (value) node.innerHTML = value;
@@ -213,6 +223,9 @@
       node.setAttribute('aria-label', copy[language][node.dataset.i18nAria] || '');
     });
     $('#lang-switch').innerHTML = language === 'ru' ? 'EN <span>↗</span>' : 'RU <span>↗</span>';
+    $('#lang-switch').setAttribute('aria-label', copy[language].languageSwitchLabel || (language === 'ru' ? '\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a' : 'Switch language'));
+    $('#menu-toggle').setAttribute('aria-label', language === 'ru' ? '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e' : 'Open menu');
+    window.LeadBot?.setLanguage(language);
     if (state.projects) render();
     if (activeProject) renderProjectDetail(activeProject);
     if (!catalogStatus.hidden) setCatalogStatus(
@@ -230,6 +243,14 @@
     if (featured) {
       const art = element('div', 'project-art art-' + (project.art || 'wisdom'));
       art.setAttribute('aria-hidden', 'true');
+      if (safeMediaPath(project.cover_image)) {
+        const cover = element('img', 'project-art-image');
+        cover.src = project.cover_image;
+        cover.alt = '';
+        cover.loading = 'lazy';
+        cover.decoding = 'async';
+        art.append(cover);
+      }
       card.append(art);
       const number = element('div', 'project-number');
       number.append(element('span', '', String(index + 1).padStart(2, '0') + ' / ' + String(state.projects.flagship_projects.length).padStart(2, '0')));
@@ -240,7 +261,7 @@
       body.append(element('h3', '', state.language === 'ru' ? project.name : project.name_en));
       body.append(element('p', '', state.language === 'ru' ? project.description : project.description_en));
       const tags = element('div', 'project-tags');
-      (project.tech_stack || []).slice(0, 4).forEach((tag) => tags.append(element('span', '', tag)));
+      (state.language === 'ru' ? [] : (project.tech_stack || []).slice(0, 4)).forEach((tag) => tags.append(element('span', '', tag)));
       body.append(tags);
       card.append(body, element('span', 'card-arrow', '↗'));
     } else {
@@ -250,7 +271,7 @@
       title.append(element('span', 'row-description', state.language === 'ru' ? project.description : project.description_en));
       card.append(title);
       const tags = element('span', 'row-tags');
-      (project.tech_stack || []).slice(0, 3).forEach((tag) => tags.append(element('span', '', tag)));
+      (state.language === 'ru' ? [] : (project.tech_stack || []).slice(0, 3)).forEach((tag) => tags.append(element('span', '', tag)));
       card.append(tags);
       card.append(element('span', 'row-status', displayMode(project)));
       card.append(element('span', 'row-arrow', '↗'));
@@ -266,7 +287,7 @@
     $('#featured-count').textContent = featuredCount + ' / 2022–26';
 
     const categories = ['all', ...new Set(state.projects.catalog.map((item) => item.category))];
-    const tags = [...new Set(state.projects.catalog.flatMap((item) => item.tech_stack || []))].sort((a, b) => a.localeCompare(b));
+    const tags = state.language === 'ru' ? [] : [...new Set(state.projects.catalog.flatMap((item) => item.tech_stack || []))].sort((a, b) => a.localeCompare(b));
     const filterKeys = [...new Set([...categories, ...tags])];
     $('#filters').replaceChildren(...filterKeys.map((key) => {
       const button = element('button', 'filter-btn' + (key === state.category ? ' active' : ''), categoryLabel(key));
@@ -328,14 +349,16 @@
     const facts = element('dl', 'project-facts');
     addDefinition(facts, text('detailStatus'), displayMode(project));
     addDefinition(facts, text('detailCategory'), categoryLabel(project.category));
-    if ((project.tech_stack || []).length) addDefinition(facts, text('detailStack'), project.tech_stack.join(' · '));
+    if (state.language !== 'ru' && (project.tech_stack || []).length) addDefinition(facts, text('detailStack'), project.tech_stack.join(' \u00b7 '));
     detailRoot.append(facts);
 
     const actions = element('div', 'project-actions');
     const githubUrl = project.is_private === false ? publicGithubUrl(project.github_url) : null;
     if (githubUrl) addLink(actions, text('githubAction'), githubUrl, 'detail-action github-action');
     const demoUrl = safeHttpsUrl(project.demo_url);
+    const presentationUrl = safeHttpsUrl(project.presentation_url);
     if (demoUrl) addLink(actions, text('openExternal'), demoUrl.href, 'detail-action external-action');
+    if (presentationUrl && project.display_mode === 'on_demand_knowledge_presentation') addLink(actions, text('openPresentation'), presentationUrl.href, 'detail-action external-action');
     if (typeof project.contact_email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(project.contact_email)) {
       const label = state.language === 'ru' ? '\u041e\u0431\u0441\u0443\u0434\u0438\u0442\u044c \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435' : 'Discuss implementation';
       addLink(actions, label, 'mailto:' + project.contact_email, 'detail-action contact-action');
@@ -343,7 +366,7 @@
     if (actions.childElementCount) detailRoot.append(actions);
 
     const demoSection = element('section', 'detail-section');
-    demoSection.append(addI18nText('h3', '', 'detailDemo'));
+    demoSection.append(addI18nText('h3', '', project.display_mode === 'on_demand_knowledge_presentation' ? 'presentationTitle' : 'detailDemo'));
     if (demoUrl) {
       const frame = element('iframe', 'demo-frame');
       frame.src = demoUrl.href;
@@ -353,7 +376,8 @@
       frame.setAttribute('sandbox', 'allow-scripts allow-forms');
       frame.setAttribute('allow', 'fullscreen');
       demoSection.append(frame);
-    } else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode === 'protected_contour' || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
+    } else if (project.display_mode === 'on_demand_knowledge_presentation') demoSection.append(addI18nText('p', 'detail-empty', 'presentationNotice'));
+    else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode === 'protected_contour' || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
     detailRoot.append(demoSection);
 
     const screenshots = Array.isArray(project.screenshots) ? project.screenshots.filter(safeMediaPath) : [];
