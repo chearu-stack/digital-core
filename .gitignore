@@ -30,3 +30,11 @@ assets/images/hero-anchor.jpg
 *.env
 *.pem
 *.key
+
+# Keep unprocessed root uploads out of the deployable repository.
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.svg
+/*.avif
