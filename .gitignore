@@ -1,0 +1,32 @@
+# ИНТЕЛЛЕКТУАЛЬНАЯ СОБСТВЕННОСТЬ И ДОКУМЕНТАЦИЯ (НЕ ДЛЯ СЕРВЕРА/ГИТа)
+*.md
+*.docx
+*.doc
+*.pdf
+*.txt
+PROJECT_CHARTER.md
+ROADMAP.md
+README.md
+
+# СЛУЖЕБНЫЕ И ВРЕМЕННЫЕ ФАЙЛЫ
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.bat
+start-local.bat
+audit_report.json
+resilience_standard_v2.1.json
+херо блок.jpg
+assets/images/hero-anchor.jpg
+
+# НАСТРОЙКИ СРЕДЫ И IDE
+.vscode/
+.idea/
+*.swp
+
+# СЕКРЕТЫ И КОНФИГУРАЦИИ
+*.env
+*.pem
+*.key
