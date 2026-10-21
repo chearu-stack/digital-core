@@ -231,7 +231,6 @@
     $('#lang-switch').innerHTML = language === 'ru' ? 'EN <span>↗</span>' : 'RU <span>↗</span>';
     $('#lang-switch').setAttribute('aria-label', copy[language].languageSwitchLabel || (language === 'ru' ? '\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a' : 'Switch language'));
     $('#menu-toggle').setAttribute('aria-label', language === 'ru' ? '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e' : 'Open menu');
-    window.LeadBot?.setLanguage(language);
     if (state.projects) render();
     if (activeProject) renderProjectDetail(activeProject);
     if (!catalogStatus.hidden) setCatalogStatus(
@@ -478,7 +477,6 @@
       $('#catalog-search').focus();
     }
   });
-  $('#open-bot').addEventListener('click', () => window.LeadBot?.open());
 
   document.querySelectorAll('[data-i18n]').forEach((node) => {
     const value = copy.ru[node.dataset.i18n];
