@@ -1,7 +1,81 @@
 {
   "technical_debt": [
     { "module_id": "internal-dialog-state-engine", "status": "R&D / INTERNAL ENGINE", "items": ["Isolated testing is required for resumed state restoration."] },
-    { "module_id": "techbase-os", "status": "optimization_pending", "items": ["Optimize vectorization for automatic RAG search across local manuals."] }
+    { "module_id": "techbase-os", "status": "optimization_pending", "items": ["Optimize vectorization for automatic RAG search across local manuals."] },
+    {
+      "module_id": "project-modal-highlights",
+      "status": "backlog",
+      "title": "Add a resolved-tasks / engineering-impact column to project details",
+      "scope": [
+        "Add a required highlights string array to every project object in the primary and fallback registries.",
+        "Validate highlights during catalog loading and keep both registries synchronized.",
+        "Render a third project-detail metadata block beside Mode and Direction.",
+        "Use a three-column desktop layout and a vertically stacked mobile layout with resilient text wrapping.",
+        "Provide engineering-impact highlights for the eight flagship projects; define equivalent highlights for catalog modules when applying the schema."
+      ],
+      "project_highlights": {
+        "vpfarm": [
+          "Integrate inventory and livestock accounting using SQLite or Supabase.",
+          "Account for 152-FZ requirements when processing personal data in inquiry forms.",
+          "Optimize catalog loading and mobile form operation for slow or unstable connections."
+        ],
+        "bibliotheca": [
+          "Keep archive browsing in an autonomous static environment without mandatory external dependencies.",
+          "Serve pages without relying on heavy relational databases.",
+          "Reduce availability dependence on external servers and APIs."
+        ],
+        "faralab": [
+          "Calculate service costs based on optics type and complexity.",
+          "Accept inquiries quickly with background spam-bot protection.",
+          "Adapt service browsing and inquiry submission to mobile devices."
+        ],
+        "vk_factory": [
+          "Transform source audio notes and raw notes into publication drafts through a content pipeline.",
+          "Preserve author style, structure, and source logic using PPC methodology and the Hard Outcome principle.",
+          "Control processing stages and require editor acceptance before publication."
+        ],
+        "herbarium": [
+          "Build document layouts in a client-side browser constructor.",
+          "Validate user fields and control document element generation.",
+          "Assemble and export vector PDF documents in the browser."
+        ],
+        "techbase": [
+          "Search technical PDF manuals and service-equipment documentation with RAG.",
+          "Keep the knowledge base in an organization-controlled environment.",
+          "Speed up retrieval of specifications, torque values, and service diagrams."
+        ],
+        "closed_control": [
+          "Operate an isolated control environment on a private VDS server.",
+          "Avoid external counters, metrics, and public entry points as required by the project architecture.",
+          "Protect communication channels and apply role-based access control."
+        ],
+        "rf_smeta": [
+          "Use Decimal arithmetic for exact financial calculations and avoid binary floating-point errors.",
+          "Protect access to estimates with access keys.",
+          "Automate generation and validation of construction-control questionnaires."
+        ]
+      },
+      "acceptance_criteria": [
+        "Primary and fallback registries contain equivalent project records and highlights arrays.",
+        "Invalid or missing highlights data is handled during catalog loading.",
+        "Project details show Mode, Direction, and Engineering Impact without overlap on desktop or mobile."
+      ]
+    },
+    {
+      "module_id": "vk-bot-public-ui",
+      "status": "closed_r_and_d",
+      "scope": [
+        "Keep the VK bot as a closed R&D module in Tier 2.",
+        "Remove all public VK bot call-to-action controls and active external links.",
+        "Keep repository, demo, and presentation URLs null and mark the module private.",
+        "The separate website lead-assistant widget is not the VK bot and remains independent."
+      ],
+      "acceptance_criteria": [
+        "The Tier 2 entry is labeled as a closed R&D module.",
+        "The entry exposes no active VK bot links or call buttons.",
+        "Primary and fallback records remain identical."
+      ]
+    }
   ],
   "flagship_projects": [
     {
@@ -287,13 +361,13 @@
       "name_en": "Internal Dialog State Engine",
       "category": "fsm",
       "description": "Исследовательский модуль детерминированного управления диалогами и состояниями.",
-      "description_en": "A deterministic FSM engine for chat bots. This remains R&D technical debt.",
+      "description_en": "A closed internal FSM module for researching dialog-state handling.",
       "tech_stack": [
         "Python",
         "FSM"
       ],
-      "status": "Implemented",
-      "status_en": "Implemented",
+      "status": "Закрытый модуль R&D",
+      "status_en": "Closed R&D module",
       "display_mode": "research_internal_engine",
       "technical_debt": ["Isolated testing is required for resumed state restoration."],
       "github_url": null,
