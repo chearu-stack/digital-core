@@ -241,12 +241,22 @@
       "name": "Закрытая система контроля",
       "name_en": "Protected Control System",
       "category": "web_interface",
-      "description": "Изолированный серверный контур системы контроля. Подробный показ предоставляется по запросу.",
-      "description_en": "An isolated server environment for a control system. A detailed walkthrough is available on request.",
+      "description": "По проекту описание можно дополнить так. Я разделил реализованное и заложенное в проект: изолированный VDS и меры защиты описаны как целевая архитектура, но развёртывания и настройки безопасности в репозитории пока нет. Изолированное размещение на частном VDS, защищённые каналы и ролевое управление — целевые требования проекта. Внешние счётчики и публичные точки входа не подключены в текущем прототипе; окончательная конфигурация контура и средств защиты должна быть определена при развёртывании.",
+      "description_en": "The project description can be expanded as follows. I have separated implemented elements from planned ones: the isolated VDS and security measures are described as target architecture, but deployment and security configuration are not yet present in the repository. Isolated hosting on a private VDS, secure channels, and role-based access are project requirements. External counters and public entry points are not connected in the current prototype; the final configuration of the environment and security measures is to be determined during deployment.",
       "tech_stack": [
-        "HTML",
+        "React 19",
+        "TypeScript",
+        "Vite",
         "CSS",
-        "JavaScript"
+        "HTML",
+        "Python",
+        "FastAPI",
+        "Uvicorn",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "psycopg",
+        "Node.js",
+        "npm"
       ],
       "status": "Implemented",
       "status_en": "Implemented",
@@ -262,14 +272,18 @@
       "ambient_color": "#94a3b8",
       "cover_image": "assets/images/projects/protected-control-system/control-system.png",
       "highlights": [
-        "Работать в изолированной среде управления на частном сервере VDS.",
-        "Исключить внешние счётчики, метрики и публичные точки входа согласно архитектуре проекта.",
-        "Защищать каналы связи и применять ролевое управление доступом."
+        "Предварительный план системы и минимальное техническое задание.",
+        "Архитектурные решения по размещению во внутреннем контуре, ролям, аудиту, хранению данных и резервному копированию.",
+        "Описание процессов и целевой модели управления задачами.",
+        "Дорожная карта внедрения, RACI и аналитическая записка.",
+        "Исходные Excel-материалы и связанные файлы для переноса бизнес-логики — нужны для сверки; их логика ещё не перенесена в систему."
       ],
       "highlights_en": [
-        "Operate an isolated control environment on a private VDS server.",
-        "Avoid external counters, metrics, and public entry points as required by the project architecture.",
-        "Protect communication channels and apply role-based access control."
+        "Preliminary system plan and minimum technical specification.",
+        "Architectural decisions for deployment within an internal environment, roles, auditing, data storage, and backups.",
+        "Descriptions of processes and the target task-management model.",
+        "Implementation roadmap, RACI, and an analytical note.",
+        "Original Excel materials and related files for transferring business logic; they are needed for cross-checking, and their logic has not yet been transferred into the system."
       ]
     },
     {
