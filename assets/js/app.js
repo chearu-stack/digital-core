@@ -23,7 +23,7 @@
     en: {
       navWork:'Work',navCatalog:'Catalog',navAbout:'Approach',contact:'Start a conversation',
       heroLabel:'INDEPENDENT ENGINEERING PRACTICE',heroTitle:'Complex systems.<br><em>Simple interfaces.</em>',
-      heroCopy:'I design and build digital products — from local AI systems to services that feel natural to use every day.',
+      heroCopy:'I design and build digital products. I specialize in integrating AI solutions (RAG, agents) into existing business processes. I do not promise "magic"; I build tools that work.',
       scroll:'SCROLL TO EXPLORE',workTitle:'Selected work',catalogTitle:'Engineering index',
       catalogCopy:'Tools, architecture notes<br>and active workspaces.',search:'Search the catalog',
       empty:'No results. Try changing the filter.',retryCatalog:'Retry loading',catalogLoading:'Loading the project catalog…',catalogCached:'Showing the saved catalog copy from {date}.',catalogFallback:'Showing the bundled fallback catalog from {date}.',catalogLoadError:'The catalog could not be loaded. Please try again.',aboutTitle:'Clarity first.<br><em>Then the system.</em>',
