@@ -269,14 +269,18 @@
         "Распределять работы по категориям, рассчитывать объёмы и стоимость.",
         "Сопоставлять позиции со справочниками.",
         "Сохранять сметы и историю работы.",
-        "Экспортировать результаты в Excel и PDF."
+        "Экспортировать результаты в Excel и PDF.",
+        "Потенциал экономии — до 30% времени на подготовку смет.",
+        "Оценка ROI и KPI по времени подготовки сметы и трудозатратам."
       ],
       "highlights_en": [
         "Generate estimate line items from descriptions of repair work.",
         "Group work items by category and calculate quantities and costs.",
         "Match line items against reference catalogs.",
         "Save estimates and work history.",
-        "Export results to Excel and PDF."
+        "Export results to Excel and PDF.",
+        "Potential savings of up to 30% of the time spent preparing estimates.",
+        "Assess ROI and KPIs based on estimate preparation time and labor per request."
       ]
     },
     {
