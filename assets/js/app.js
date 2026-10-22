@@ -33,7 +33,7 @@
       filters:{all:'All',ai_automation:'AI / Automation',commerce:'Commerce',web_interface:'Web',architecture_docs:'Architecture',fsm:'FSM',construction:'Construction'},
       statuses:{'Рабочий проект':'IN PROGRESS','Прототип':'PROTOTYPE','Архитектурная концепция':'ARCHITECTURE CONCEPT','Демо требует подтверждения':'DEMO UNVERIFIED','Публикация требует подтверждения':'DEPLOYMENT UNVERIFIED','Не проверен':'UNVERIFIED','Черновик':'DRAFT'},
       projectDetailKicker:'PROJECT FILE / DETAIL VIEW',dialogClose:'Close dialog',projectDialogLabel:'Project details',mediaDialogLabel:'Full-screen image viewer',
-      detailStatus:'Status',detailCategory:'Focus',detailStack:'Technology',detailMedia:'Visual proof',detailArchitecture:'Architecture diagram',
+      detailStatus:'Mode',detailCategory:'Direction',detailStack:'Technology stack',detailHighlights:'Problems addressed',detailMedia:'Visual proof',detailArchitecture:'Architecture diagram',
       detailScreenshots:'Screenshots',detailNoMedia:'Verified diagrams and screenshots have not been added yet.',
       detailSource:'Source code',detailSourceUnavailable:'A public repository URL is missing or has not passed validation. The code link is hidden.',
       githubAction:'GitHub / Source code',detailDemo:'Live demo',openExternal:'Open demo in a new tab ↗',demoUnavailable:'The demo URL has not been verified.',
@@ -125,6 +125,7 @@
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
+  Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438' });
   const isPublicCatalogProject = (project) => project.id !== 'vk-bot-fsm-engine'
     && project.display_mode !== 'research_internal_engine';
   const allProjects = () => state.projects
@@ -132,10 +133,16 @@
     : [];
 
   const catalogCacheKey = 'digital-core-project-catalog-v1';
+  const isValidProject = (project) => project && typeof project.id === 'string' && typeof project.name === 'string'
+    && Array.isArray(project.tech_stack) && project.tech_stack.every((item) => typeof item === 'string')
+    && Array.isArray(project.highlights) && project.highlights.length > 0
+    && project.highlights.every((item) => typeof item === 'string' && item.trim().length > 0)
+    && Array.isArray(project.highlights_en) && project.highlights_en.length === project.highlights.length
+    && project.highlights_en.every((item) => typeof item === 'string' && item.trim().length > 0);
   const isValidCatalog = (data) => data && Array.isArray(data.flagship_projects)
     && Array.isArray(data.catalog)
-    && data.flagship_projects.every((project) => project && typeof project.id === 'string' && typeof project.name === 'string')
-    && data.catalog.every((project) => project && typeof project.id === 'string' && typeof project.name === 'string');
+    && data.flagship_projects.every(isValidProject)
+    && data.catalog.every(isValidProject);
   const requestJson = async (url, timeoutMs = 5000) => {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
@@ -362,8 +369,27 @@
     const facts = element('dl', 'project-facts');
     addDefinition(facts, text('detailStatus'), displayMode(project));
     addDefinition(facts, text('detailCategory'), categoryLabel(project.category));
-    if (state.language !== 'ru' && (project.tech_stack || []).length) addDefinition(facts, text('detailStack'), project.tech_stack.join(' \u00b7 '));
+    const highlightSource = state.language === 'ru' ? project.highlights : project.highlights_en;
+    const highlights = Array.isArray(highlightSource) ? highlightSource.filter((item) => typeof item === 'string' && item.trim()) : [];
+    if (highlights.length) {
+      const wrapper = element('div', 'detail-fact detail-highlights');
+      wrapper.append(element('dt', '', text('detailHighlights')));
+      const list = element('ul', 'detail-highlight-list');
+      highlights.forEach((item) => list.append(element('li', '', item)));
+      wrapper.append(list);
+      facts.append(wrapper);
+    }
     detailRoot.append(facts);
+
+    const techStack = Array.isArray(project.tech_stack) ? project.tech_stack.filter((item) => typeof item === 'string' && item.trim()) : [];
+    if (techStack.length) {
+      const stackSection = element('section', 'detail-stack-section');
+      stackSection.append(addI18nText('h3', '', 'detailStack'));
+      const tags = element('ul', 'detail-stack-tags');
+      techStack.forEach((item) => tags.append(element('li', 'detail-stack-tag', item)));
+      stackSection.append(tags);
+      detailRoot.append(stackSection);
+    }
 
     const actions = element('div', 'project-actions');
     const githubUrl = project.is_private === false ? publicGithubUrl(project.github_url) : null;
