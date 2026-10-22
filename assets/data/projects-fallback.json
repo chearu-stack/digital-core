@@ -1,5 +1,5 @@
 {
-  "fallback_updated_at": "2026-10-22",
+  "fallback_updated_at": "2026-10-23",
   "technical_debt": [],
   "flagship_projects": [
     {
@@ -238,15 +238,18 @@
     },
     {
       "id": "piceatom",
-      "name": "Закрытая система контроля",
-      "name_en": "Protected Control System",
+      "name": "Сметная программа для закрытого использования",
+      "name_en": "Cost Estimating Software for Restricted Use",
       "category": "web_interface",
-      "description": "Изолированный серверный контур системы контроля. Подробный показ предоставляется по запросу.",
-      "description_en": "An isolated server environment for a control system. A detailed walkthrough is available on request.",
+      "description": "Программа автоматизирует подготовку смет на ремонтные работы: преобразует описание работ в позиции сметы, помогает рассчитать объёмы и стоимость, сохраняет результаты и формирует выгрузки. Доступ предоставляется по логину и паролю. Проект закрыт соглашением о неразглашении; демонстрация — по согласованию.",
+      "description_en": "The program automates the preparation of repair-work cost estimates: it turns work descriptions into estimate line items, helps calculate quantities and costs, stores results and produces exports. Access is by login and password. The project is covered by a non-disclosure agreement; demonstration by arrangement.",
       "tech_stack": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "Python",
+        "Streamlit",
+        "SQLite",
+        "Docker",
+        "LLM API",
+        "Excel/PDF"
       ],
       "status": "Implemented",
       "status_en": "Implemented",
@@ -262,14 +265,18 @@
       "ambient_color": "#94a3b8",
       "cover_image": "assets/images/projects/protected-control-system/control-system.png",
       "highlights": [
-        "Работать в изолированной среде управления на частном сервере VDS.",
-        "Исключить внешние счётчики, метрики и публичные точки входа согласно архитектуре проекта.",
-        "Защищать каналы связи и применять ролевое управление доступом."
+        "Формировать позиции сметы из описаний ремонтных работ.",
+        "Распределять работы по категориям, рассчитывать объёмы и стоимость.",
+        "Сопоставлять позиции со справочниками.",
+        "Сохранять сметы и историю работы.",
+        "Экспортировать результаты в Excel и PDF."
       ],
       "highlights_en": [
-        "Operate an isolated control environment on a private VDS server.",
-        "Avoid external counters, metrics, and public entry points as required by the project architecture.",
-        "Protect communication channels and apply role-based access control."
+        "Generate estimate line items from descriptions of repair work.",
+        "Group work items by category and calculate quantities and costs.",
+        "Match line items against reference catalogs.",
+        "Save estimates and work history.",
+        "Export results to Excel and PDF."
       ]
     },
     {
