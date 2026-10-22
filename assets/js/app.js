@@ -15,11 +15,10 @@
       statuses:{'Рабочий проект':'В РАБОТЕ','Прототип':'ПРОТОТИП','Архитектурная концепция':'АРХИТЕКТУРНАЯ КОНЦЕПЦИЯ','Демо требует подтверждения':'ДЕМО НЕ ПРОВЕРЕНО','Публикация требует подтверждения':'ПУБЛИКАЦИЯ НЕ ПРОВЕРЕНА','Не проверен':'НЕ ПРОВЕРЕН','Черновик':'ЧЕРНОВИК'},
       projectDetailKicker:'КАРТОЧКА ПРОЕКТА / ПОДРОБНОСТИ',dialogClose:'Закрыть окно',projectDialogLabel:'Подробная информация о проекте',mediaDialogLabel:'Полноэкранный просмотр изображения',
       detailStatus:'Статус',detailCategory:'Направление',detailStack:'Технологии',detailMedia:'Визуальные материалы',detailArchitecture:'Архитектура и схема',
-      detailScreenshots:'Скриншоты',detailNoMedia:'Подтверждённые схемы и снимки экрана пока не добавлены.',
-      detailSource:'Исходный код',detailSourceUnavailable:'Публичная ссылка на репозиторий отсутствует или не прошла проверку. Ссылка на код скрыта.',
-      githubAction:'GitHub / Исходный код',detailDemo:'Живое демо',openExternal:'Открыть демо отдельно ↗',demoUnavailable:'Демо-ссылка не подтверждена.',
-      openImage:'Открыть изображение',detailMediaUnavailable:'Файл визуального материала недоступен.'
-    },
+      detailScreenshots:'Скриншоты',
+      detailSource:'Исходный код',
+      githubAction:'GitHub / Исходный код',detailDemo:'Живое демо',openExternal:'Открыть демо отдельно ↗',
+      openImage:'Открыть изображение'},
     en: {
       navWork:'Work',navCatalog:'Catalog',navAbout:'Approach',contact:'Start a conversation',
       heroLabel:'INDEPENDENT ENGINEERING PRACTICE',heroTitle:'Complex systems.<br><em>Simple interfaces.</em>',
@@ -34,15 +33,14 @@
       statuses:{'Рабочий проект':'IN PROGRESS','Прототип':'PROTOTYPE','Архитектурная концепция':'ARCHITECTURE CONCEPT','Демо требует подтверждения':'DEMO UNVERIFIED','Публикация требует подтверждения':'DEPLOYMENT UNVERIFIED','Не проверен':'UNVERIFIED','Черновик':'DRAFT'},
       projectDetailKicker:'PROJECT FILE / DETAIL VIEW',dialogClose:'Close dialog',projectDialogLabel:'Project details',mediaDialogLabel:'Full-screen image viewer',
       detailStatus:'Mode',detailCategory:'Direction',detailStack:'Technology stack',detailHighlights:'Problems addressed',detailMedia:'Visual proof',detailArchitecture:'Architecture diagram',
-      detailScreenshots:'Screenshots',detailNoMedia:'Verified diagrams and screenshots have not been added yet.',
-      detailSource:'Source code',detailSourceUnavailable:'A public repository URL is missing or has not passed validation. The code link is hidden.',
-      githubAction:'GitHub / Source code',detailDemo:'Live demo',openExternal:'Open demo in a new tab ↗',demoUnavailable:'The demo URL has not been verified.',
-      openImage:'View image',detailMediaUnavailable:'This media file is unavailable.'
-    }
+      detailScreenshots:'Screenshots',
+      detailSource:'Source code',
+      githubAction:'GitHub / Source code',detailDemo:'Live demo',openExternal:'Open demo in a new tab ↗',
+      openImage:'View image'}
   };
-  Object.assign(copy.ru, {"heroCopy":"Проектирую и создаю цифровые продукты. Специализация — интеграция ИИ-решений (RAG, агенты) в существующие бизнес-процессы. Не обещаю \"магию\", а строю работающие инструменты","catalogCopy":"\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u044b\u0435 \u0437\u0430\u043c\u0435\u0442\u043a\u0438<br>\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430.","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0432\u0435\u0431-\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"},"projectDetailKicker":"\u041f\u0420\u041e\u0415\u041a\u0422 / \u041f\u041e\u0414\u0420\u041e\u0411\u041d\u041e\u0421\u0422\u0418","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","detailScreenshots":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f","detailSource":"\u041e\u0442\u043a\u0440\u044b\u0442\u044b\u0439 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailSourceUnavailable":"\u041e\u0442\u043a\u0440\u044b\u0442\u0430\u044f \u0441\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434 \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430; \u043a\u043e\u0434 \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f.","githubAction":"\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailDemo":"\u041f\u043e\u043a\u0430\u0437 \u043f\u0440\u043e\u0435\u043a\u0442\u0430","openExternal":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043a\u0430\u0437 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197","demoUnavailable":"\u041e\u0431\u0449\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0439 \u043f\u043e\u043a\u0430\u0437 \u043d\u0435 \u043f\u0440\u0435\u0434\u0443\u0441\u043c\u043e\u0442\u0440\u0435\u043d.","accessByRequest":"\u0414\u043e\u0441\u0442\u0443\u043f \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443.","presentationTitle":"\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u0431\u0430\u0437\u044b \u0437\u043d\u0430\u043d\u0438\u0439","openPresentation":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044e \u2197","presentationNotice":"\u041f\u043e\u043a\u0430\u0437 \u0440\u0430\u0437\u043c\u0435\u0449\u0451\u043d \u043d\u0430 \u0432\u043d\u0435\u0448\u043d\u0435\u043c \u0441\u0435\u0440\u0432\u0438\u0441\u0435; \u043f\u0435\u0440\u0432\u044b\u0439 \u0437\u0430\u043f\u0443\u0441\u043a \u043c\u043e\u0436\u0435\u0442 \u0437\u0430\u043d\u044f\u0442\u044c \u0432\u0440\u0435\u043c\u044f.","heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","heroImageAlt":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0441 \u0441\u0432\u0435\u0442\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u043b\u0438\u043d\u0438\u044f\u043c\u0438 \u043d\u0430 \u0442\u0451\u043c\u043d\u043e\u043c \u0444\u043e\u043d\u0435","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitch":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","heroLabel":"\u041d\u0415\u0417\u0410\u0412\u0418\u0421\u0418\u041c\u0410\u042f \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u0410\u042f \u041f\u0420\u0410\u041a\u0422\u0418\u041a\u0410","heroRule":"\u041b\u0418\u0421\u0422\u0410\u0419\u0422\u0415, \u0427\u0422\u041e\u0411\u042b \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u0422\u042c","sectionWorkKicker":"01 / \u0418\u0417\u0411\u0420\u0410\u041d\u041d\u042b\u0415 \u0420\u0415\u0428\u0415\u041d\u0418\u042f","sectionCatalogKicker":"02 / \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u0423\u041a\u0410\u0417\u0410\u0422\u0415\u041b\u042c","sectionAboutKicker":"03 / \u041f\u0420\u0418\u041d\u0426\u0418\u041f\u042b","sectionFooterKicker":"04 / \u0421\u0412\u042f\u0417\u042c","principleOne":"\u042f\u0421\u041d\u041e\u0421\u0422\u042c","principleTwo":"\u041d\u0410\u0414\u0401\u0416\u041d\u041e\u0421\u0422\u042c","principleThree":"\u041c\u0410\u0421\u0422\u0415\u0420\u0421\u0422\u0412\u041e","backToTop":"\u0412\u0412\u0415\u0420\u0425 \u2191","copyright":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415 \u042f\u0414\u0420\u041e 2026","dialogClose":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043e\u043a\u043d\u043e","aboutCopy":"\u042f \u0438\u0437\u0443\u0447\u0430\u044e \u0437\u0430\u0434\u0430\u0447\u0443, \u0432\u044b\u0434\u0435\u043b\u044f\u044e \u0433\u043b\u0430\u0432\u043d\u043e\u0435 \u0438 \u0441\u043e\u0437\u0434\u0430\u044e \u044f\u0441\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435. \u0412 \u043e\u0441\u043d\u043e\u0432\u0435 \u2014 \u0430\u043a\u043a\u0443\u0440\u0430\u0442\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430, \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0438 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043d\u0435 \u043c\u0435\u0448\u0430\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u0435."});
+  Object.assign(copy.ru, {"heroCopy":"Проектирую и создаю цифровые продукты. Специализация — интеграция ИИ-решений (RAG, агенты) в существующие бизнес-процессы. Не обещаю \"магию\", а строю работающие инструменты","catalogCopy":"\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u044b\u0435 \u0437\u0430\u043c\u0435\u0442\u043a\u0438<br>\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430.","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0432\u0435\u0431-\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"},"projectDetailKicker":"\u041f\u0420\u041e\u0415\u041a\u0422 / \u041f\u041e\u0414\u0420\u041e\u0411\u041d\u041e\u0421\u0422\u0418","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","detailScreenshots":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f","detailSource":"\u041e\u0442\u043a\u0440\u044b\u0442\u044b\u0439 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","githubAction":"\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailDemo":"\u041f\u043e\u043a\u0430\u0437 \u043f\u0440\u043e\u0435\u043a\u0442\u0430","openExternal":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043a\u0430\u0437 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197","presentationTitle":"\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u0431\u0430\u0437\u044b \u0437\u043d\u0430\u043d\u0438\u0439","openPresentation":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044e \u2197","heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","heroImageAlt":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0441 \u0441\u0432\u0435\u0442\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u043b\u0438\u043d\u0438\u044f\u043c\u0438 \u043d\u0430 \u0442\u0451\u043c\u043d\u043e\u043c \u0444\u043e\u043d\u0435","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitch":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","heroLabel":"\u041d\u0415\u0417\u0410\u0412\u0418\u0421\u0418\u041c\u0410\u042f \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u0410\u042f \u041f\u0420\u0410\u041a\u0422\u0418\u041a\u0410","heroRule":"\u041b\u0418\u0421\u0422\u0410\u0419\u0422\u0415, \u0427\u0422\u041e\u0411\u042b \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u0422\u042c","sectionWorkKicker":"01 / \u0418\u0417\u0411\u0420\u0410\u041d\u041d\u042b\u0415 \u0420\u0415\u0428\u0415\u041d\u0418\u042f","sectionCatalogKicker":"02 / \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u0423\u041a\u0410\u0417\u0410\u0422\u0415\u041b\u042c","sectionAboutKicker":"03 / \u041f\u0420\u0418\u041d\u0426\u0418\u041f\u042b","sectionFooterKicker":"04 / \u0421\u0412\u042f\u0417\u042c","principleOne":"\u042f\u0421\u041d\u041e\u0421\u0422\u042c","principleTwo":"\u041d\u0410\u0414\u0401\u0416\u041d\u041e\u0421\u0422\u042c","principleThree":"\u041c\u0410\u0421\u0422\u0415\u0420\u0421\u0422\u0412\u041e","backToTop":"\u0412\u0412\u0415\u0420\u0425 \u2191","copyright":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415 \u042f\u0414\u0420\u041e 2026","dialogClose":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043e\u043a\u043d\u043e","aboutCopy":"\u042f \u0438\u0437\u0443\u0447\u0430\u044e \u0437\u0430\u0434\u0430\u0447\u0443, \u0432\u044b\u0434\u0435\u043b\u044f\u044e \u0433\u043b\u0430\u0432\u043d\u043e\u0435 \u0438 \u0441\u043e\u0437\u0434\u0430\u044e \u044f\u0441\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435. \u0412 \u043e\u0441\u043d\u043e\u0432\u0435 \u2014 \u0430\u043a\u043a\u0443\u0440\u0430\u0442\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430, \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0438 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043d\u0435 \u043c\u0435\u0448\u0430\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u0435."});
   Object.assign(copy.ru, {"heroIndex":"? 001 ? 026","languageSwitchLabel":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","locationCoordinates":"55\u00b058\u2032 \u0441. \u0448. \u00b7 43\u00b004\u2032 \u0432. \u0434."});
-  Object.assign(copy.en, {"brandMark":"DC","brandCaption":"DIGITAL<br>CORE","brandAria":"Digital Core ? back to top","heroIndex":"NO. 001 ? 026","heroCoordinates":"CORE?01 / 55.9678? N ? 43.0768? E","sectionWorkKicker":"01 / SELECTED WORK","sectionCatalogKicker":"02 / ENGINEERING INDEX","sectionAboutKicker":"03 / PRINCIPLES","sectionFooterKicker":"04 / NEXT STEP","principleOne":"CLARITY","principleTwo":"RELIABILITY","principleThree":"CRAFT","copyright":"DIGITAL CORE 2026","backToTop":"BACK TO TOP ?","languageSwitchLabel":"Switch language","menuOpen":"Open menu","presentationTitle":"Knowledge base presentation","openPresentation":"Open presentation ?","presentationNotice":"This presentation is hosted externally; its first launch may take a little time."});
+  Object.assign(copy.en, {"brandMark":"DC","brandCaption":"DIGITAL<br>CORE","brandAria":"Digital Core ? back to top","heroIndex":"NO. 001 ? 026","heroCoordinates":"CORE?01 / 55.9678? N ? 43.0768? E","sectionWorkKicker":"01 / SELECTED WORK","sectionCatalogKicker":"02 / ENGINEERING INDEX","sectionAboutKicker":"03 / PRINCIPLES","sectionFooterKicker":"04 / NEXT STEP","principleOne":"CLARITY","principleTwo":"RELIABILITY","principleThree":"CRAFT","copyright":"DIGITAL CORE 2026","backToTop":"BACK TO TOP ?","languageSwitchLabel":"Switch language","menuOpen":"Open menu","presentationTitle":"Knowledge base presentation","openPresentation":"Open presentation ?"});
   Object.assign(copy.ru, {locationLabel:'ЛОКАЦИЯ',locationCity:'Павлово, Нижегородская область',locationCoordinates:'55°58′ N · 43°04′ E',heroVisualLabel:'Инженерная визуализация Digital Core — перейти к проектам',heroImageAlt:'Инженерная цифровая структура с неоновыми линиями на тёмном фоне',heroSystems:'СИСТЕМЫ',heroData:'ДАННЫЕ',heroInterfaces:'ИНТЕРФЕЙСЫ'});
   Object.assign(copy.ru, {locationCoordinates:'55\u00b058\u2032 \u0441. \u0448. \xb7 43\u00b004\u2032 \u0432. \u0434.'});
   Object.assign(copy.en, {locationLabel:'ЛОКАЦИЯ',locationCity:'Pavlovo, Nizhny Novgorod Oblast',locationCoordinates:'55°58′ N · 43°04′ E',heroVisualLabel:'Digital Core engineering visualization — view projects',heroImageAlt:'Engineered digital structure with neon lines against a dark background',heroSystems:'SYSTEMS',heroData:'DATA',heroInterfaces:'INTERFACES'});
@@ -57,6 +55,7 @@
 
   const text = (key) => copy[state.language][key];
   const categoryLabel = (key) => copy[state.language].filters[key] || key;
+  const directionLabel = (project) => (state.language === 'ru' ? project.direction : project.direction_en) || categoryLabel(project.category);
   const safeHttpsUrl = (value) => {
     if (typeof value !== 'string' || !value.trim()) return null;
     try {
@@ -118,15 +117,17 @@
   };
   Object.assign(copy.ru, {"heroIndex":"\u2116 001 \u2014 026","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitchLabel":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","detailStatus":"\u0420\u0435\u0436\u0438\u043c","locationCoordinates":"55\u00b058\u2032 \u0441. \u0448. \u00b7 43\u00b004\u2032 \u0432. \u0434."});
   Object.assign(copy.en, {"brandAria":"Digital Core \u2014 back to top","heroIndex":"No. 001 \u2014 026","heroCoordinates":"CORE\u201401 / 55.9678\u00b0 N \u00b7 43.0768\u00b0 E","backToTop":"BACK TO TOP \u2191","openPresentation":"Open presentation \u2197"});
-  Object.assign(copy.ru, {"heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","detailStatus":"\u0420\u0435\u0436\u0438\u043c","detailNoMedia":"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0451\u043d\u043d\u044b\u0435 \u0441\u0445\u0435\u043c\u044b \u0438 \u0441\u043d\u0438\u043c\u043a\u0438 \u044d\u043a\u0440\u0430\u043d\u0430 \u043f\u043e\u043a\u0430 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u044b.","detailMediaUnavailable":"\u0424\u0430\u0439\u043b \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d.","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"}});
+  Object.assign(copy.ru, {"heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","detailStatus":"\u0420\u0435\u0436\u0438\u043c","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"}});
   displayModes.ru = {"live_static_ecommerce":"\u0416\u0418\u0412\u041e\u0419 \u0421\u0410\u0419\u0422 / \u041a\u0410\u0422\u0410\u041b\u041e\u0413 \u0418 \u0417\u0410\u042f\u0412\u041a\u0418","live_static_archive":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0410\u0420\u0425\u0418\u0412","live_static_showcase":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u041f\u041e\u041a\u0410\u0417 \u0423\u0421\u041b\u0423\u0413","b2b_offer":"\u041f\u0420\u0415\u0414\u041b\u041e\u0416\u0415\u041d\u0418\u0415 \u0414\u041b\u042f \u0411\u0418\u0417\u041d\u0415\u0421\u0410","live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 PDF","wake_on_demand_knowledge_base":"\u0411\u0410\u0417\u0410 \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","on_demand_knowledge_presentation":"\u041f\u0420\u0415\u0417\u0415\u041d\u0422\u0410\u0426\u0418\u042f \u0411\u0410\u0417\u042b \u0417\u041d\u0410\u041d\u0418\u0419 / \u0417\u0410\u041f\u0423\u0421\u041a \u041c\u041e\u0416\u0415\u0422 \u0417\u0410\u041d\u042f\u0422\u042c \u0412\u0420\u0415\u041c\u042f","vds_live_frontend":"\u0412\u0415\u0411-\u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420","protected_contour":"\u0417\u0410\u0429\u0418\u0429\u0401\u041d\u041d\u042b\u0419 \u0414\u041e\u0421\u0422\u0423\u041f / \u041f\u041e \u0417\u0410\u041f\u0420\u041e\u0421\u0423","live_static_tool":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u0421\u0410\u0419\u0422 / \u0420\u0410\u0421\u0427\u0401\u0422\u042b","engineering_module":"\u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u041c\u041e\u0414\u0423\u041b\u042c","research_debt":"\u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415 / \u0422\u0415\u0425\u041d\u0418\u0427\u0415\u0421\u041a\u0418\u0419 \u0414\u041e\u041b\u0413","research_core_architecture":"\u041e\u0421\u041d\u041e\u0412\u041d\u0410\u042f \u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u0410 / \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u041d\u0418\u0415","research_prototype":"\u0410\u0420\u0425\u0418\u0422\u0415\u041a\u0422\u0423\u0420\u041d\u042b\u0419 \u041f\u0420\u041e\u0422\u041e\u0422\u0418\u041f"};
   Object.assign(displayModes.ru, {"live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 \u0414\u041e\u041a\u0423\u041c\u0415\u041d\u0422\u041e\u0412 \u041f\u0414\u0424","vds_live_frontend":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420"});
   displayModes.ru.research_internal_engine = 'R&D / INTERNAL ENGINE';
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
+  displayModes.ru.proprietary_mvp = 'PROPRIETARY MVP / АРХИТЕКТУРНЫЙ ПАТЕНТ';
+  displayModes.en.proprietary_mvp = 'PROPRIETARY MVP / ARCHITECTURAL PATENT';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
-  Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438', openExternalProject: '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197' });
-  Object.assign(copy.en, { openExternalProject: 'Open product in a new tab \u2197' });
+  Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438', workflowTitle: '\u0421\u0445\u0435\u043c\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438', openExternalProject: '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197' });
+  Object.assign(copy.en, { workflowTitle: 'Processing flow', openExternalProject: 'Open product in a new tab \u2197' });
   const isPublicCatalogProject = (project) => project.id !== 'vk-bot-fsm-engine'
     && project.display_mode !== 'research_internal_engine';
   const allProjects = () => state.projects
@@ -321,7 +322,7 @@
     const matches = publicCatalog.filter((item) => {
       const categoryMatch = state.category === 'all'
         || (categories.includes(state.category) ? item.category === state.category : (item.tech_stack || []).includes(state.category));
-      const searchable = [item.name, item.name_en, item.description, item.description_en, (item.tech_stack || []).join(' ')].join(' ').toLocaleLowerCase();
+      const searchable = [item.name, item.name_en, item.description, item.description_en, item.direction, item.direction_en, (item.tech_stack || []).join(' ')].join(' ').toLocaleLowerCase();
       return categoryMatch && searchable.includes(query);
     });
     catalogRoot.replaceChildren(...matches.map((item, index) => renderCard(item, index, false)));
@@ -352,7 +353,12 @@
     image.alt = caption;
     image.loading = 'lazy';
     image.addEventListener('error', () => {
-      button.replaceChildren(element('span', 'media-thumb-unavailable', text('detailMediaUnavailable')));
+      button.remove();
+      if (gallery.childElementCount) return;
+      const section = gallery.closest('.detail-section');
+      gallery.previousElementSibling?.remove();
+      gallery.remove();
+      if (section && !section.querySelector('.media-gallery')) section.remove();
     }, { once: true });
     button.append(image);
     button.addEventListener('click', () => openMedia(source, caption, button));
@@ -369,7 +375,7 @@
 
     const facts = element('dl', 'project-facts');
     addDefinition(facts, text('detailStatus'), displayMode(project));
-    addDefinition(facts, text('detailCategory'), categoryLabel(project.category));
+    addDefinition(facts, text('detailCategory'), directionLabel(project));
     const highlightSource = state.language === 'ru' ? project.highlights : project.highlights_en;
     const highlights = Array.isArray(highlightSource) ? highlightSource.filter((item) => typeof item === 'string' && item.trim()) : [];
     if (highlights.length) {
@@ -391,6 +397,25 @@
       stackSection.append(tags);
       detailRoot.append(stackSection);
     }
+    const workflowSource = state.language === 'ru' ? project.workflow : project.workflow_en;
+    const workflow = Array.isArray(workflowSource) ? workflowSource.filter((step) => typeof step === 'string' && step.trim()) : [];
+    if (workflow.length) {
+      const workflowSection = element('section', 'detail-section detail-workflow-section');
+      workflowSection.append(addI18nText('h3', '', 'workflowTitle'));
+      const flow = element('div', 'workflow-flow');
+      workflow.forEach((step, index) => {
+        flow.append(element('span', 'workflow-step', step));
+        if (index < workflow.length - 1) flow.append(element('span', 'workflow-arrow', '→'));
+      });
+      workflowSection.append(flow);
+      detailRoot.append(workflowSection);
+    }
+    const accessNote = state.language === 'ru' ? project.access_note : project.access_note_en;
+    if (typeof accessNote === 'string' && accessNote.trim()) {
+      const note = element('p', 'access-note', accessNote);
+      note.setAttribute('role', 'note');
+      detailRoot.append(note);
+    }
 
     const actions = element('div', 'project-actions');
     const githubUrl = project.is_private === false ? publicGithubUrl(project.github_url) : null;
@@ -408,9 +433,9 @@
     }
     if (actions.childElementCount) detailRoot.append(actions);
 
-    const demoSection = element('section', 'detail-section');
-    demoSection.append(addI18nText('h3', '', project.display_mode === 'on_demand_knowledge_presentation' ? 'presentationTitle' : 'detailDemo'));
     if (demoUrl) {
+      const demoSection = element('section', 'detail-section');
+      demoSection.append(addI18nText('h3', '', project.display_mode === 'on_demand_knowledge_presentation' ? 'presentationTitle' : 'detailDemo'));
       const frame = element('iframe', 'demo-frame');
       frame.src = demoUrl.href;
       frame.title = name + ' — ' + text('detailDemo');
@@ -419,32 +444,27 @@
       frame.setAttribute('sandbox', 'allow-scripts allow-forms');
       frame.setAttribute('allow', 'fullscreen');
       demoSection.append(frame);
-    } else if (project.display_mode === 'on_demand_knowledge_presentation') demoSection.append(addI18nText('p', 'detail-empty', 'presentationNotice'));
-    else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode.startsWith('protected') || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
-    if (!presentationUrl || project.display_mode === 'on_demand_knowledge_presentation') detailRoot.append(demoSection);
+      detailRoot.append(demoSection);
+    }
 
     const screenshots = Array.isArray(project.screenshots) ? project.screenshots.filter(safeMediaPath) : [];
     const diagram = safeMediaPath(project.architecture_diagram) ? project.architecture_diagram : null;
-    const mediaSection = element('section', 'detail-section');
-    mediaSection.append(addI18nText('h3', '', 'detailMedia'));
-    if (diagram) {
-      mediaSection.append(addI18nText('h4', 'detail-subheading', 'detailArchitecture'));
-      const diagramGallery = element('div', 'media-gallery architecture-gallery');
-      addMediaButton(diagramGallery, diagram, name + ' — ' + text('detailArchitecture'));
-      mediaSection.append(diagramGallery);
-    }
-    if (screenshots.length) {
-      mediaSection.append(addI18nText('h4', 'detail-subheading', 'detailScreenshots'));
-      const gallery = element('div', 'media-gallery');
-      screenshots.forEach((source, index) => addMediaButton(gallery, source, name + ' — ' + text('detailScreenshots') + ' ' + (index + 1)));
-      mediaSection.append(gallery);
-    }
-    if (!diagram && !screenshots.length) mediaSection.append(addI18nText('p', 'detail-empty', 'detailNoMedia'));
-    detailRoot.append(mediaSection);
-    if (!githubUrl) {
-      const sourceNote = element('p', 'source-visibility-note', text('detailSourceUnavailable'));
-      sourceNote.setAttribute('role', 'note');
-      detailRoot.append(sourceNote);
+    if (diagram || screenshots.length) {
+      const mediaSection = element('section', 'detail-section');
+      mediaSection.append(addI18nText('h3', '', 'detailMedia'));
+      if (diagram) {
+        mediaSection.append(addI18nText('h4', 'detail-subheading', 'detailArchitecture'));
+        const diagramGallery = element('div', 'media-gallery architecture-gallery');
+        addMediaButton(diagramGallery, diagram, name + ' — ' + text('detailArchitecture'));
+        mediaSection.append(diagramGallery);
+      }
+      if (screenshots.length) {
+        mediaSection.append(addI18nText('h4', 'detail-subheading', 'detailScreenshots'));
+        const gallery = element('div', 'media-gallery');
+        screenshots.forEach((source, index) => addMediaButton(gallery, source, name + ' — ' + text('detailScreenshots') + ' ' + (index + 1)));
+        mediaSection.append(gallery);
+      }
+      detailRoot.append(mediaSection);
     }
   };
 

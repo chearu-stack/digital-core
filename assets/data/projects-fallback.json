@@ -664,16 +664,22 @@
       ]
     },
     {
-      "id": "diana",
-      "name": "Концепт для газовых трейдеров",
-      "name_en": "Gas trading concept — DIANA",
-      "category": "architecture_docs",
-      "description": "Концепт системы для газовых трейдеров. Технологии, компоненты и сценарии работы пока не описаны.",
-      "description_en": "A concept for gas traders. Its technologies, components, and operating workflows have not yet been specified.",
-      "tech_stack": [],
-      "status": "Концепт",
-      "status_en": "Concept",
-      "display_mode": "research_prototype",
+      "id": "gas-trader-concept",
+      "name": "AI Guard: Шлюз автоматического контроля операций и сделок",
+      "name_en": "AI Guard: Automated Operations and Deal Control Gateway",
+      "category": "ai_automation",
+      "description": "Двухуровневая система автоматического разбора неструктурированных заявок (чаты, письма) с детерминированной проверкой бизнес-правил и лимитов.",
+      "description_en": "A two-layer system that parses unstructured requests from chats and emails, then deterministically checks business rules and limits.",
+      "tech_stack": [
+        "Python Core Engine",
+        "LLM NLU Parsing",
+        "Typed Schema Validation",
+        "Deterministic Rule Engine",
+        "Automated Report Generation"
+      ],
+      "status": "Proprietary MVP",
+      "status_en": "Proprietary MVP",
+      "display_mode": "proprietary_mvp",
       "github_url": null,
       "demo_url": null,
       "is_private": true,
@@ -681,10 +687,30 @@
       "screenshots": [],
       "architecture_diagram": null,
       "highlights": [
-        "Концепция системы для газовых трейдеров."
+        "Двухконтурная защита: LLM извлекает факты из текста, а изолированное Python-ядро жестко проверяет регламенты и лимиты",
+        "Трехпозиционная матрица аудита: автоматическое выявление операций, выходящих за рамки формализованных правил",
+        "Готовый комплект архитектурной документации и бизнес-моделей (RU/EN спецификации)"
       ],
       "highlights_en": [
-        "A system concept for gas traders."
+        "Two-layer control: the LLM extracts facts from text while an isolated Python core checks policies and limits deterministically.",
+        "Three-outcome audit matrix: automatically identifies operations outside formalized rules.",
+        "A complete set of architecture documents and business models, including RU/EN specifications."
+      ],
+      "direction": "ИИ-Аудит & Автоматизация Рисков",
+      "direction_en": "AI Audit & Risk Automation",
+      "access_note": "Показ архитектуры и спецификаций — по запросу (NDA).",
+      "access_note_en": "Architecture and specifications are available on request under NDA.",
+      "workflow": [
+        "Текст заявки",
+        "LLM-парсинг",
+        "Python-валидатор",
+        "Отчёт"
+      ],
+      "workflow_en": [
+        "Request text",
+        "LLM parsing",
+        "Python validator",
+        "Report"
       ]
     }
   ]
