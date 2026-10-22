@@ -237,18 +237,15 @@
     },
     {
       "id": "piceatom",
-      "name": "Сметная программа для закрытого использования",
-      "name_en": "Cost Estimating Software for Restricted Use",
+      "name": "Закрытая система контроля",
+      "name_en": "Protected Control System",
       "category": "web_interface",
-      "description": "Программа автоматизирует подготовку смет на ремонтные работы: преобразует описание работ в позиции сметы, помогает рассчитать объёмы и стоимость, сохраняет результаты и формирует выгрузки. Доступ предоставляется по логину и паролю. Проект закрыт соглашением о неразглашении; демонстрация — по согласованию.",
-      "description_en": "The program automates the preparation of repair-work cost estimates: it turns work descriptions into estimate line items, helps calculate quantities and costs, stores results and produces exports. Access is by login and password. The project is covered by a non-disclosure agreement; demonstration by arrangement.",
+      "description": "Изолированный серверный контур системы контроля. Подробный показ предоставляется по запросу.",
+      "description_en": "An isolated server environment for a control system. A detailed walkthrough is available on request.",
       "tech_stack": [
-        "Python",
-        "Streamlit",
-        "SQLite",
-        "Docker",
-        "LLM API",
-        "Excel/PDF"
+        "HTML",
+        "CSS",
+        "JavaScript"
       ],
       "status": "Implemented",
       "status_en": "Implemented",
@@ -263,6 +260,45 @@
       "architecture_diagram": null,
       "ambient_color": "#94a3b8",
       "cover_image": "assets/images/projects/protected-control-system/control-system.png",
+      "highlights": [
+        "Работать в изолированной среде управления на частном сервере VDS.",
+        "Исключить внешние счётчики, метрики и публичные точки входа согласно архитектуре проекта.",
+        "Защищать каналы связи и применять ролевое управление доступом."
+      ],
+      "highlights_en": [
+        "Operate an isolated control environment on a private VDS server.",
+        "Avoid external counters, metrics, and public entry points as required by the project architecture.",
+        "Protect communication channels and apply role-based access control."
+      ]
+    },
+    {
+      "id": "rf-smeta",
+      "name": "Сметная программа для закрытого использования",
+      "name_en": "Cost Estimating Software for Restricted Use",
+      "category": "construction",
+      "description": "Программа автоматизирует подготовку смет на ремонтные работы: преобразует описание работ в позиции сметы, помогает рассчитать объёмы и стоимость, сохраняет результаты и формирует выгрузки. Доступ предоставляется по логину и паролю. Проект закрыт соглашением о неразглашении; демонстрация — по согласованию.",
+      "description_en": "The program automates the preparation of repair-work cost estimates: it turns work descriptions into estimate line items, helps calculate quantities and costs, stores results and produces exports. Access is by login and password. The project is covered by a non-disclosure agreement; demonstration by arrangement.",
+      "tech_stack": [
+        "Python",
+        "Streamlit",
+        "SQLite",
+        "Docker",
+        "LLM API",
+        "Excel/PDF"
+      ],
+      "status": "Implemented",
+      "status_en": "Implemented",
+      "display_mode": "protected_contour",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [
+        "assets/images/projects/estimate-suite/estimate-screen.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png",
+      "ambient_color": "#94a3b8",
       "highlights": [
         "Формировать позиции сметы из описаний ремонтных работ.",
         "Распределять работы по категориям, рассчитывать объёмы и стоимость.",
@@ -280,41 +316,6 @@
         "Export results to Excel and PDF.",
         "Potential savings of up to 30% of the time spent preparing estimates.",
         "Assess ROI and KPIs based on estimate preparation time and labor per request."
-      ]
-    },
-    {
-      "id": "rf-smeta",
-      "name": "Сметный комплекс",
-      "name_en": "Estimate Suite",
-      "category": "construction",
-      "description": "Профессиональная система расчёта строительных смет. Доступ предоставляется по запросу в защищённом контуре.",
-      "description_en": "A professional construction estimating suite available on request through a protected access channel.",
-      "tech_stack": [
-        "Construction",
-        "Estimating"
-      ],
-      "status": "Implemented",
-      "status_en": "Implemented",
-      "display_mode": "protected_contour",
-      "github_url": null,
-      "demo_url": null,
-      "is_private": true,
-      "visibility_status": "not_applicable",
-      "screenshots": [
-        "assets/images/projects/estimate-suite/estimate-screen.png"
-      ],
-      "architecture_diagram": null,
-      "cover_image": "assets/images/projects/estimate-suite/estimate-screen.png",
-      "ambient_color": "#94a3b8",
-      "highlights": [
-        "Выполнять сметные вычисления с точной десятичной арифметикой Decimal.",
-        "Предоставлять доступ к инструменту через защищённый контур.",
-        "Собирать исходные данные с помощью опросников."
-      ],
-      "highlights_en": [
-        "Perform estimate calculations with exact Decimal arithmetic.",
-        "Provide access to the tool through a protected environment.",
-        "Collect input data with questionnaires."
       ]
     }
   ],
