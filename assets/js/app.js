@@ -125,7 +125,8 @@
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
-  Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438' });
+  Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438', openExternalProject: '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197' });
+  Object.assign(copy.en, { openExternalProject: 'Open product in a new tab \u2197' });
   const isPublicCatalogProject = (project) => project.id !== 'vk-bot-fsm-engine'
     && project.display_mode !== 'research_internal_engine';
   const allProjects = () => state.projects
@@ -397,7 +398,10 @@
     const demoUrl = safeHttpsUrl(project.demo_url);
     const presentationUrl = safeHttpsUrl(project.presentation_url);
     if (demoUrl) addLink(actions, text('openExternal'), demoUrl.href, 'detail-action external-action');
-    if (presentationUrl && project.display_mode === 'on_demand_knowledge_presentation') addLink(actions, text('openPresentation'), presentationUrl.href, 'detail-action external-action');
+    if (presentationUrl) {
+      const presentationLabel = project.display_mode === 'on_demand_knowledge_presentation' ? 'openPresentation' : 'openExternalProject';
+      addLink(actions, text(presentationLabel), presentationUrl.href, 'detail-action external-action');
+    }
     if (typeof project.contact_email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(project.contact_email)) {
       const label = state.language === 'ru' ? '\u041e\u0431\u0441\u0443\u0434\u0438\u0442\u044c \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435' : 'Discuss implementation';
       addLink(actions, label, 'mailto:' + project.contact_email, 'detail-action contact-action');
@@ -417,7 +421,7 @@
       demoSection.append(frame);
     } else if (project.display_mode === 'on_demand_knowledge_presentation') demoSection.append(addI18nText('p', 'detail-empty', 'presentationNotice'));
     else demoSection.append(addI18nText('p', 'detail-empty', (project.display_mode === 'b2b_offer' || project.display_mode.startsWith('protected') || project.display_mode === 'wake_on_demand_knowledge_base') ? 'accessByRequest' : 'demoUnavailable'));
-    detailRoot.append(demoSection);
+    if (!presentationUrl || project.display_mode === 'on_demand_knowledge_presentation') detailRoot.append(demoSection);
 
     const screenshots = Array.isArray(project.screenshots) ? project.screenshots.filter(safeMediaPath) : [];
     const diagram = safeMediaPath(project.architecture_diagram) ? project.architecture_diagram : null;
