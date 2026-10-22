@@ -241,8 +241,8 @@
       "name": "Закрытая система контроля",
       "name_en": "Protected Control System",
       "category": "web_interface",
-      "description": "По проекту описание можно дополнить так. Я разделил реализованное и заложенное в проект: изолированный VDS и меры защиты описаны как целевая архитектура, но развёртывания и настройки безопасности в репозитории пока нет. Изолированное размещение на частном VDS, защищённые каналы и ролевое управление — целевые требования проекта. Внешние счётчики и публичные точки входа не подключены в текущем прототипе; окончательная конфигурация контура и средств защиты должна быть определена при развёртывании.",
-      "description_en": "The project description can be expanded as follows. I have separated implemented elements from planned ones: the isolated VDS and security measures are described as target architecture, but deployment and security configuration are not yet present in the repository. Isolated hosting on a private VDS, secure channels, and role-based access are project requirements. External counters and public entry points are not connected in the current prototype; the final configuration of the environment and security measures is to be determined during deployment.",
+      "description": "В репозитории представлен работающий фронтенд прототипа; серверная часть и настройка средств защиты пока не реализованы. Целевая архитектура предусматривает размещение в закрытом контуре на частном VDS, защищённые каналы связи и ролевое управление. Внешние счётчики и публичные точки входа в прототипе не подключены. Параметры контура и меры защиты предстоит определить при развёртывании.",
+      "description_en": "The repository contains a working frontend prototype; the backend and security configuration have not yet been implemented. The target architecture calls for deployment in a closed environment on a private VDS, secure communication channels, and role-based access. External counters and public entry points are not connected in the prototype. The environment configuration and security measures are to be defined during deployment.",
       "tech_stack": [
         "React 19",
         "TypeScript",
