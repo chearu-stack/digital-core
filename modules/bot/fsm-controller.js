@@ -3,10 +3,15 @@ import { calendarAdapter, SLOT_DURATION_MINUTES } from './calendarAdapter.js';
 import { docsAdapter } from './docsAdapter.js';
 
 const STORAGE_KEY = 'digital-core-bot-session-v1';
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 const MAX_FIELD_LENGTH = 2000;
 const MAX_MESSAGE_LENGTH = 8000;
 const MAX_MESSAGES = 200;
+const FIELD_LIMITS = Object.freeze({
+  goal: { min: 4, max: 160 },
+  details: { min: 20, max: 1000 },
+  contact: { min: 4, max: 180 }
+});
 
 const STATES = Object.freeze({
   IDLE: 'IDLE',
@@ -31,7 +36,7 @@ export const labels = {
     placeholders: {
       AWAITING_GOAL: 'Например: Архитектура RAG-системы или аудит кода...',
       AWAITING_DETAILS: 'Суть задачи или ожидаемый результат...',
-      AWAITING_CONTACT: 'Имя и Telegram / WhatsApp / телефон...'
+      AWAITING_CONTACT: 'Имя и телефон (звонок/WhatsApp) / email / Telegram...'
     },
     send: 'Отправить',
     welcome: 'Здравствуйте. Я помогу сформировать вводные по вашей задаче и проверю свободное время. Диалог хранится только в этой вкладке и не отправляется на сервер. Если захотите продолжить общение в мессенджере, скопируйте сводку и отправьте её сами.',
@@ -64,6 +69,12 @@ export const labels = {
     interrupted: 'Проверка прервалась. Выберите время, чтобы проверить его снова.',
     choose: 'Выберите вариант кнопкой ниже.',
     invalidText: 'Пожалуйста, введите ответ текстом.',
+    invalidGoal: 'Добавьте немного подробностей о вопросе или проекте (не менее 4 символов).',
+    longGoal: 'Сократите описание вопроса или проекта до 160 символов.',
+    invalidDetails: 'Добавьте контекст задачи или ожидаемого результата (не менее 20 символов).',
+    longDetails: 'Сократите описание задачи до 1000 символов.',
+    invalidContact: 'Укажите имя и способ связи: телефон, email или Telegram (@имя).',
+    longContact: 'Сократите контактные данные до 180 символов.',
     step: 'step'
   },
   en: {
@@ -76,7 +87,7 @@ export const labels = {
     placeholders: {
       AWAITING_GOAL: 'For example: RAG system architecture or code audit...',
       AWAITING_DETAILS: 'The task or expected outcome...',
-      AWAITING_CONTACT: 'Name and Telegram / WhatsApp / phone...'
+      AWAITING_CONTACT: 'Name and phone (call/WhatsApp) / email / Telegram...'
     },
     send: 'Send',
     welcome: 'Hello. I’ll help outline your request and check available times. This conversation is stored only in this tab and is not sent to a server. If you want to continue in a messenger, copy the summary and send it yourself.',
@@ -109,6 +120,12 @@ export const labels = {
     interrupted: 'The check was interrupted. Select a time to check it again.',
     choose: 'Choose an option using the button below.',
     invalidText: 'Please enter a text response.',
+    invalidGoal: 'Please add a little more detail about your question or project (at least 4 characters).',
+    longGoal: 'Shorten the question or project description to 160 characters.',
+    invalidDetails: 'Please add context about the task or expected outcome (at least 20 characters).',
+    longDetails: 'Shorten the task description to 1000 characters.',
+    invalidContact: 'Enter your name and a contact method: phone, email, or Telegram (@username).',
+    longContact: 'Shorten the contact details to 180 characters.',
     step: 'step'
   }
 };
@@ -130,6 +147,45 @@ function safeString(value) {
 
 function safeMessage(value) {
   return typeof value === 'string' ? value.slice(0, MAX_MESSAGE_LENGTH) : '';
+}
+
+function normalizeAnswer(value) {
+  if (typeof value !== 'string') return '';
+  return value
+    .normalize('NFC')
+    .replace(/[\u0000-\u001f\u007f-\u009f\u200b-\u200f\u202a-\u202e\u2060\u2066-\u2069\ufeff]/gu, ' ')
+    .replace(/[\s\u2028\u2029]+/gu, ' ')
+    .trim();
+}
+
+function validateAnswer(field, value) {
+  const limit = FIELD_LIMITS[field];
+  const length = Array.from(value).length;
+  if (length < limit.min) return `invalid${field[0].toUpperCase()}${field.slice(1)}`;
+  if (length > limit.max) return `long${field[0].toUpperCase()}${field.slice(1)}`;
+  if (field !== 'contact') return null;
+
+  const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/u;
+  const telegramPattern = /(?:^|\s)@[A-Za-z0-9_]{5,32}(?=$|[\s,;.!?])/u;
+  const telegramLinkPattern = /(?:https?:\/\/)?t\.me\/[A-Za-z0-9_]{5,32}/iu;
+  const phonePattern = /\+?\d[\d\s().-]{7,}\d/gu;
+  const phoneMatches = value.match(phonePattern) || [];
+  const hasPhone = phoneMatches.some(candidate => {
+    const digits = candidate.replace(/\D/gu, '').length;
+    return digits >= 10 && digits <= 15;
+  });
+  const hasEmail = emailPattern.test(value);
+  const hasTelegram = telegramPattern.test(value) || telegramLinkPattern.test(value);
+  if (!hasPhone && !hasEmail && !hasTelegram) return 'invalidContact';
+
+  const name = value
+    .replace(emailPattern, ' ')
+    .replace(phonePattern, ' ')
+    .replace(telegramPattern, ' ')
+    .replace(telegramLinkPattern, ' ')
+    .replace(/(?:^|[^\p{L}\p{N}])(?:telegram|телеграм(?:м)?|телега|whatsapp|ватсап|вотсап|email|e-mail|почта|телефон|phone|tg|wa)(?=$|[^\p{L}\p{N}])/giu, ' ')
+    .replace(/[^\p{L}]/gu, '');
+  return Array.from(name).length >= 2 ? null : 'invalidContact';
 }
 
 function restoreState() {
@@ -348,7 +404,7 @@ export class WidgetFSM {
       return;
     }
 
-    const text = safeString(value).trim();
+    const text = normalizeAnswer(value);
     if (!text) {
       this.addMessage(this.t('invalidText'));
       this.publish();
@@ -357,6 +413,13 @@ export class WidgetFSM {
 
     const index = [STATES.AWAITING_GOAL, STATES.AWAITING_DETAILS, STATES.AWAITING_CONTACT].indexOf(this.state.step);
     const field = QUESTIONS[index];
+    const validationError = validateAnswer(field, text);
+    if (validationError) {
+      this.addMessage(this.t(validationError));
+      this.publish();
+      return;
+    }
+
     this.addMessage(text, true);
     this.state.lead[field] = text;
     this.persist();
