@@ -12,7 +12,13 @@ const CORE = [
   'assets/images/brand-logo.jpg',
   'assets/images/hero-anchor.webp',
   'assets/data/projects.json',
-  'assets/data/projects-fallback.json'
+  'assets/data/projects-fallback.json',
+  'modules/bot/bot-widget.css',
+  'modules/bot/main.js',
+  'modules/bot/fsm-controller.js',
+  'modules/bot/briefAdapter.js',
+  'modules/bot/calendarAdapter.js',
+  'modules/bot/docsAdapter.js'
 ];
 const EXTERNAL = ['https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap'];
 const EXTERNAL_MODE = 'no-cors'; // 'cors' ТОЛЬКО если у link в index.html есть атрибут crossorigin

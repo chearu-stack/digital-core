@@ -223,6 +223,7 @@
   const applyLanguage = (language) => {
     state.language = language;
     document.documentElement.lang = language;
+    if (window.LeadBot) window.LeadBot.setLanguage(language);
     document.title = language === 'ru' ? '\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f' : 'Digital Core \u2014 engineering products';
     document.querySelectorAll('[data-i18n]').forEach((node) => {
       const value = copy[language][node.dataset.i18n];

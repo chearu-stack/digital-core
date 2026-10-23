@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=ai-guard-1">
+  <link rel="stylesheet" href="modules/bot/bot-widget.css">
   <script defer src="assets/js/color-mesh.js"></script>
   <script defer src="assets/js/app.js?v=ai-guard-1"></script>
 </head>
@@ -83,5 +84,7 @@
   <dialog class="media-dialog" id="media-dialog" aria-labelledby="media-caption" data-i18n-aria="mediaDialogLabel">
     <div class="media-dialog-shell"><button class="dialog-close media-close" type="button" data-close-dialog aria-label="Закрыть просмотр" data-i18n-aria="dialogClose">×</button><img id="media-full-image" alt=""><p id="media-caption"></p></div>
   </dialog>
+  <div id="bot-root"></div>
+  <script type="module" src="modules/bot/main.js"></script>
 </body>
 </html>
