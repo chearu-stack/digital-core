@@ -258,8 +258,8 @@
         "Node.js",
         "npm"
       ],
-      "status": "Implemented",
-      "status_en": "Implemented",
+      "status": "Фронтенд-прототип реализован",
+      "status_en": "Frontend prototype implemented",
       "display_mode": "protected_vds_isolated_contour",
       "github_url": null,
       "demo_url": null,
