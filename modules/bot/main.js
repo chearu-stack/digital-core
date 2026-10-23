@@ -6,6 +6,7 @@ if (!root) throw new Error('Missing #bot-root mount point');
 let language = document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'ru';
 let isOpen = false;
 let firstRender = true;
+let lastOpener = null;
 
 function text(key) {
   return labels[language][key];
@@ -14,6 +15,7 @@ function text(key) {
 root.innerHTML = `<button class="bot-launcher" type="button" aria-label="${text('launcher')}" aria-expanded="false">✳</button><section class="bot-panel" aria-label="${text('panel')}" hidden><div class="bot-head"><span class="bot-drag-indicator" aria-hidden="true"></span><div><strong>${text('title')}</strong></div><button class="bot-close" type="button" aria-label="${text('close')}">×</button></div><div class="bot-messages" aria-live="polite"></div><div class="bot-options"></div><form class="bot-input"><label class="sr-only" for="bot-text">${text('input')}</label><input id="bot-text" autocomplete="off" placeholder="${text('placeholder')}"><button type="submit" aria-label="${text('send')}">↑</button></form></section>`;
 
 const panel = root.querySelector('.bot-panel');
+const launcher = root.querySelector('.bot-launcher');
 const messages = root.querySelector('.bot-messages');
 const options = root.querySelector('.bot-options');
 const form = root.querySelector('.bot-input');
@@ -25,7 +27,8 @@ function render(view) {
     firstRender = false;
   }
   panel.hidden = !isOpen;
-  root.querySelector('.bot-launcher').setAttribute('aria-expanded', String(isOpen));
+  launcher.hidden = isOpen;
+  launcher.setAttribute('aria-expanded', String(isOpen));
 
   messages.replaceChildren();
   for (const message of view.messages) {
@@ -53,6 +56,34 @@ function render(view) {
 
 const fsm = new WidgetFSM({ onChange: render, language });
 
+function syncVisibility() {
+  panel.hidden = !isOpen;
+  launcher.hidden = isOpen;
+  launcher.setAttribute('aria-expanded', String(isOpen));
+}
+
+function openWidget(opener = document.activeElement) {
+  if (isOpen) {
+    root.querySelector('.bot-close').focus();
+    return;
+  }
+  lastOpener = opener && typeof opener.focus === 'function' && opener !== document.body ? opener : launcher;
+  isOpen = true;
+  syncVisibility();
+  fsm.handleAction({ type: 'OPEN' });
+  requestAnimationFrame(() => root.querySelector('.bot-close').focus());
+}
+
+function closeWidget() {
+  if (!isOpen) return;
+  isOpen = false;
+  panel.style.transform = '';
+  syncVisibility();
+  const focusTarget = lastOpener?.isConnected && !lastOpener.hidden ? lastOpener : launcher;
+  lastOpener = null;
+  focusTarget.focus();
+}
+
 function setLanguage(next) {
   if (!labels[next]) return;
   language = next;
@@ -65,28 +96,25 @@ function setLanguage(next) {
   fsm.setLanguage(next);
 }
 
-root.querySelector('.bot-launcher').addEventListener('click', () => {
-  isOpen = !isOpen;
-  root.querySelector('.bot-launcher').setAttribute('aria-expanded', String(isOpen));
-  panel.hidden = false;
-  if (isOpen) fsm.handleAction({ type: 'OPEN' });
-  else panel.hidden = true;
+launcher.addEventListener('click', () => {
+  if (isOpen) closeWidget();
+  else openWidget(launcher);
 });
 
 root.querySelector('.bot-close').addEventListener('click', () => {
-  isOpen = false;
-  root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
-  panel.style.transform = '';
-  panel.hidden = true;
+  closeWidget();
 });
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    isOpen = false;
-    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
-    panel.style.transform = '';
-    panel.hidden = true;
-  }
+  if (event.key === 'Escape' && isOpen) closeWidget();
+});
+
+document.addEventListener('click', event => {
+  if (!(event.target instanceof Element)) return;
+  const trigger = event.target.closest('.js-start-conversation');
+  if (!trigger) return;
+  event.preventDefault();
+  openWidget(trigger);
 });
 
 options.addEventListener('click', event => {
@@ -109,18 +137,9 @@ form.addEventListener('submit', event => {
 });
 
 window.LeadBot = {
-  open() {
-    isOpen = true;
-    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'true');
-    panel.hidden = false;
-    fsm.handleAction({ type: 'OPEN' });
-  },
-  close() {
-    isOpen = false;
-    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
-    panel.style.transform = '';
-    panel.hidden = true;
-  },
+  get isOpen() { return isOpen; },
+  open: openWidget,
+  close: closeWidget,
   setLanguage
 };
 
@@ -155,9 +174,7 @@ function finishHeaderTouch() {
   const elapsed = Math.max(performance.now() - touchStartTime, 1);
   const velocity = touchDistance / elapsed;
   if (touchDistance > panel.offsetHeight * 0.3 || (touchDistance > 36 && velocity > 0.6)) {
-    isOpen = false;
-    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
-    panel.hidden = true;
+    closeWidget();
   }
   panel.style.transform = '';
   touchDistance = 0;
