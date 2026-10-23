@@ -3,7 +3,7 @@ import { WidgetFSM, labels } from './fsm-controller.js';
 const root = document.getElementById('bot-root');
 if (!root) throw new Error('Missing #bot-root mount point');
 
-let language = 'ru';
+let language = document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'ru';
 let isOpen = false;
 let firstRender = true;
 
@@ -11,7 +11,7 @@ function text(key) {
   return labels[language][key];
 }
 
-root.innerHTML = `<button class="bot-launcher" type="button" aria-label="${text('launcher')}">✳</button><section class="bot-panel" aria-label="${text('panel')}" hidden><div class="bot-head"><div><strong>${text('title')}</strong></div><button class="bot-close" type="button" aria-label="${text('close')}">×</button></div><div class="bot-messages" aria-live="polite"></div><div class="bot-options"></div><form class="bot-input"><label class="sr-only" for="bot-text">${text('input')}</label><input id="bot-text" autocomplete="off" placeholder="${text('placeholder')}"><button type="submit" aria-label="${text('send')}">↑</button></form></section>`;
+root.innerHTML = `<button class="bot-launcher" type="button" aria-label="${text('launcher')}" aria-expanded="false">✳</button><section class="bot-panel" aria-label="${text('panel')}" hidden><div class="bot-head"><span class="bot-drag-indicator" aria-hidden="true"></span><div><strong>${text('title')}</strong></div><button class="bot-close" type="button" aria-label="${text('close')}">×</button></div><div class="bot-messages" aria-live="polite"></div><div class="bot-options"></div><form class="bot-input"><label class="sr-only" for="bot-text">${text('input')}</label><input id="bot-text" autocomplete="off" placeholder="${text('placeholder')}"><button type="submit" aria-label="${text('send')}">↑</button></form></section>`;
 
 const panel = root.querySelector('.bot-panel');
 const messages = root.querySelector('.bot-messages');
@@ -25,6 +25,7 @@ function render(view) {
     firstRender = false;
   }
   panel.hidden = !isOpen;
+  root.querySelector('.bot-launcher').setAttribute('aria-expanded', String(isOpen));
 
   messages.replaceChildren();
   for (const message of view.messages) {
@@ -65,19 +66,25 @@ function setLanguage(next) {
 }
 
 root.querySelector('.bot-launcher').addEventListener('click', () => {
-  isOpen = true;
+  isOpen = !isOpen;
+  root.querySelector('.bot-launcher').setAttribute('aria-expanded', String(isOpen));
   panel.hidden = false;
-  fsm.handleAction({ type: 'OPEN' });
+  if (isOpen) fsm.handleAction({ type: 'OPEN' });
+  else panel.hidden = true;
 });
 
 root.querySelector('.bot-close').addEventListener('click', () => {
   isOpen = false;
+  root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
+  panel.style.transform = '';
   panel.hidden = true;
 });
 
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     isOpen = false;
+    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
+    panel.style.transform = '';
     panel.hidden = true;
   }
 });
@@ -104,12 +111,57 @@ form.addEventListener('submit', event => {
 window.LeadBot = {
   open() {
     isOpen = true;
+    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'true');
     panel.hidden = false;
     fsm.handleAction({ type: 'OPEN' });
   },
   close() {
     isOpen = false;
+    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
+    panel.style.transform = '';
     panel.hidden = true;
   },
   setLanguage
 };
+
+const header = root.querySelector('.bot-head');
+let touchStartY = 0;
+let touchStartTime = 0;
+let touchDistance = 0;
+let trackingTouch = false;
+
+header.addEventListener('touchstart', event => {
+  if (event.touches.length !== 1 || event.target.closest('button, a, input, select, textarea')) return;
+  trackingTouch = true;
+  touchStartY = event.touches[0].clientY;
+  touchStartTime = performance.now();
+  touchDistance = 0;
+}, { passive: true });
+
+header.addEventListener('touchmove', event => {
+  if (!trackingTouch || !isOpen || event.touches.length !== 1) return;
+  const distance = event.touches[0].clientY - touchStartY;
+  if (distance <= 0) return;
+  touchDistance = distance;
+  event.preventDefault();
+  panel.classList.add('is-dragging');
+  panel.style.transform = `translateY(${distance}px)`;
+}, { passive: false });
+
+function finishHeaderTouch() {
+  if (!trackingTouch) return;
+  trackingTouch = false;
+  panel.classList.remove('is-dragging');
+  const elapsed = Math.max(performance.now() - touchStartTime, 1);
+  const velocity = touchDistance / elapsed;
+  if (touchDistance > panel.offsetHeight * 0.3 || (touchDistance > 36 && velocity > 0.6)) {
+    isOpen = false;
+    root.querySelector('.bot-launcher').setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
+  }
+  panel.style.transform = '';
+  touchDistance = 0;
+}
+
+header.addEventListener('touchend', finishHeaderTouch, { passive: true });
+header.addEventListener('touchcancel', finishHeaderTouch, { passive: true });

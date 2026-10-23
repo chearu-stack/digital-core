@@ -3,7 +3,7 @@ import { calendarAdapter, SLOT_DURATION_MINUTES } from './calendarAdapter.js';
 import { docsAdapter } from './docsAdapter.js';
 
 const STORAGE_KEY = 'digital-core-bot-session-v1';
-const SCHEMA_VERSION = 3;
+const SCHEMA_VERSION = 4;
 const MAX_FIELD_LENGTH = 2000;
 const MAX_MESSAGE_LENGTH = 8000;
 const MAX_MESSAGES = 200;
@@ -209,9 +209,29 @@ function restoreState() {
         time: safeString(stored.lead.time)
       },
       messages: stored.messages
-        .filter(message => message && typeof message.text === 'string')
+        .filter(message => message && ['user', 'system', 'slot_selection', 'brief'].includes(message.type))
         .slice(-MAX_MESSAGES)
-        .map(message => ({ text: safeMessage(message.text), user: Boolean(message.user) }))
+        .map(message => {
+          if (message.type === 'user') return { type: 'user', text: safeMessage(message.text) };
+          if (message.type === 'system') return { type: 'system', key: typeof message.key === 'string' ? message.key : '' };
+          if (message.type === 'slot_selection') return {
+            type: 'slot_selection',
+            payload: {
+              date: isValidDate(message.payload?.date) ? message.payload.date : '',
+              time: isValidTime(message.payload?.time) ? message.payload.time : ''
+            }
+          };
+          return {
+            type: 'brief',
+            payload: {
+              goal: safeString(message.payload?.goal),
+              details: safeString(message.payload?.details),
+              contact: safeString(message.payload?.contact),
+              date: isValidDate(message.payload?.date) ? message.payload.date : '',
+              time: isValidTime(message.payload?.time) ? message.payload.time : ''
+            }
+          };
+        })
     };
   } catch {
     return emptyState();
@@ -255,7 +275,7 @@ export class WidgetFSM {
 
     if (this.state.step === STATES.CHECKING) {
       this.state.step = STATES.AWAITING_TIME;
-      this.addMessage(this.t('interrupted'));
+      this.addSystemMessage('interrupted');
     }
 
     this.persist();
@@ -268,17 +288,32 @@ export class WidgetFSM {
   }
 
   formatBrief() {
+    return this.formatBriefFor(this.state.lead);
+  }
+
+  formatBriefFor(source) {
     const lead = {
-      ...this.state.lead,
-      date: this.state.lead.date ? formatDate(this.state.lead.date, this.language) : ''
+      ...source,
+      date: source.date ? formatDate(source.date, this.language) : ''
     };
     return briefAdapter.format(lead, labels[this.language]);
+  }
+
+  renderMessage(message) {
+    if (message.type === 'user') return { text: message.text, user: true };
+    if (message.type === 'system') return { text: this.t(message.key), user: false };
+    if (message.type === 'slot_selection') {
+      const { date, time } = message.payload;
+      return { text: `${date ? formatDate(date, this.language) : ''}${time ? ` · ${time}` : ''}`, user: true };
+    }
+    if (message.type === 'brief') return { text: this.formatBriefFor(message.payload), user: false };
+    return { text: '', user: false };
   }
 
   view() {
     return {
       step: this.state.step,
-      messages: this.state.messages,
+      messages: this.state.messages.map(message => this.renderMessage(message)),
       options: this.options,
       busy: this.pending,
       active: this.state.messages.length > 0
@@ -297,8 +332,26 @@ export class WidgetFSM {
     }
   }
 
-  addMessage(text, user = false) {
-    this.state.messages.push({ text, user });
+  addSystemMessage(key) {
+    this.state.messages.push({ type: 'system', key });
+    if (this.state.messages.length > MAX_MESSAGES) this.state.messages.shift();
+    this.persist();
+  }
+
+  addUserMessage(text) {
+    this.state.messages.push({ type: 'user', text });
+    if (this.state.messages.length > MAX_MESSAGES) this.state.messages.shift();
+    this.persist();
+  }
+
+  addSlotSelection(date, time = '') {
+    this.state.messages.push({ type: 'slot_selection', payload: { date, time } });
+    if (this.state.messages.length > MAX_MESSAGES) this.state.messages.shift();
+    this.persist();
+  }
+
+  addBriefMessage() {
+    this.state.messages.push({ type: 'brief', payload: { ...this.state.lead } });
     if (this.state.messages.length > MAX_MESSAGES) this.state.messages.shift();
     this.persist();
   }
@@ -344,7 +397,7 @@ export class WidgetFSM {
     switch (action.type) {
       case 'OPEN':
         if (!this.state.messages.length) {
-          this.addMessage(this.t('welcome'));
+          this.addSystemMessage('welcome');
           this.setStep(STATES.IDLE);
           this.showStart();
         }
@@ -393,20 +446,20 @@ export class WidgetFSM {
       return;
     }
     this.setStep([STATES.AWAITING_GOAL, STATES.AWAITING_DETAILS, STATES.AWAITING_CONTACT][index]);
-    this.addMessage(this.t(`question${field[0].toUpperCase()}${field.slice(1)}`));
+    this.addSystemMessage(`question${field[0].toUpperCase()}${field.slice(1)}`);
     this.setOptions([]);
   }
 
   submitText(value) {
     if (![STATES.AWAITING_GOAL, STATES.AWAITING_DETAILS, STATES.AWAITING_CONTACT].includes(this.state.step)) {
-      this.addMessage(this.t('choose'));
+      this.addSystemMessage('choose');
       this.publish();
       return;
     }
 
     const text = normalizeAnswer(value);
     if (!text) {
-      this.addMessage(this.t('invalidText'));
+      this.addSystemMessage('invalidText');
       this.publish();
       return;
     }
@@ -415,12 +468,12 @@ export class WidgetFSM {
     const field = QUESTIONS[index];
     const validationError = validateAnswer(field, text);
     if (validationError) {
-      this.addMessage(this.t(validationError));
+      this.addSystemMessage(validationError);
       this.publish();
       return;
     }
 
-    this.addMessage(text, true);
+    this.addUserMessage(text);
     this.state.lead[field] = text;
     this.persist();
     if (index < QUESTIONS.length - 1) this.askQuestion(index + 1);
@@ -429,7 +482,7 @@ export class WidgetFSM {
 
   async askDate() {
     this.setStep(STATES.AWAITING_DATE);
-    this.addMessage(this.t('date'));
+    this.addSystemMessage('date');
     await this.populateDates();
   }
 
@@ -439,7 +492,7 @@ export class WidgetFSM {
       const dates = (await this.calendar.getAvailableDates()).filter(isValidDate);
       if (!dates.length) {
         this.setStep(STATES.UNAVAILABLE);
-        this.addMessage(this.t('unavailable'));
+        this.addSystemMessage('unavailable');
         this.showRestart();
         return;
       }
@@ -448,7 +501,7 @@ export class WidgetFSM {
         action: { type: 'SELECT_DATE', payload: date }
       })));
     } catch {
-      this.addMessage(this.t('error'));
+      this.addSystemMessage('error');
       this.setOptions([{ label: this.t('retry'), action: { type: 'RETRY_DATES' } }]);
     }
   }
@@ -470,17 +523,17 @@ export class WidgetFSM {
     } catch {
       if (requestId !== this.requestId) return;
       this.pending = false;
-      this.addMessage(this.t('error'));
+      this.addSystemMessage('error');
       this.setOptions([{ label: this.t('retry'), action: { type: 'RETRY_DATES' } }]);
       return;
     }
     if (requestId !== this.requestId) return;
     this.state.lead.date = date;
     this.state.lead.time = '';
-    this.addMessage(formatDate(date, this.language), true);
+    this.addSlotSelection(date);
     this.persist();
     this.setStep(STATES.AWAITING_TIME);
-    this.addMessage(this.t('time'));
+    this.addSystemMessage('time');
     try {
       await this.populateTimes();
     } finally {
@@ -504,7 +557,7 @@ export class WidgetFSM {
       }
       this.setOptions(validSlots.map(time => ({ label: time, action: { type: 'SELECT_TIME', payload: time } })));
     } catch {
-      this.addMessage(this.t('error'));
+      this.addSystemMessage('error');
       this.setOptions([{ label: this.t('retry'), action: { type: 'RETRY_TIMES' } }]);
     }
   }
@@ -520,8 +573,8 @@ export class WidgetFSM {
     const requestId = ++this.requestId;
     this.pending = true;
     this.setStep(STATES.CHECKING);
-    this.addMessage(isAlternative ? `${formatDate(date, this.language)} · ${time}` : time, true);
-    this.addMessage(this.t('checking'));
+    this.addSlotSelection(date, time);
+    this.addSystemMessage('checking');
     this.setOptions([]);
     this.publish();
 
@@ -534,25 +587,25 @@ export class WidgetFSM {
         this.state.lead.date = date;
         this.persist();
         this.setStep(STATES.RESULT);
-        this.addMessage(this.t('available'));
-        this.addMessage(this.t('confirm'));
-        this.addMessage(this.formatBrief());
+        this.addSystemMessage('available');
+        this.addSystemMessage('confirm');
+        this.addBriefMessage();
         this.showResultActions();
         return;
       }
 
       if (isFree !== false) throw new Error('Calendar adapter returned a non-boolean status');
       this.setStep(STATES.AWAITING_TIME);
-      this.addMessage(this.t('busy'));
+      this.addSystemMessage('busy');
       const alternatives = await this.findAlternatives(date, time);
       if (alternatives.length) {
-        this.addMessage(this.t('alternatives'));
+        this.addSystemMessage('alternatives');
         this.setOptions(alternatives.map(slot => ({
           label: `${formatDate(slot.date, this.language)} · ${slot.time}`,
           action: { type: 'SELECT_ALTERNATIVE', payload: slot }
         })));
       } else {
-        this.addMessage(this.t('unavailable'));
+        this.addSystemMessage('unavailable');
         this.setStep(STATES.UNAVAILABLE);
         this.showRestart();
       }
@@ -560,7 +613,7 @@ export class WidgetFSM {
       if (requestId !== this.requestId) return;
       this.pending = false;
       if (this.state.step === STATES.CHECKING) this.setStep(STATES.AWAITING_TIME);
-      this.addMessage(this.t('error'));
+      this.addSystemMessage('error');
       this.setOptions([{ label: this.t('retry'), action: { type: 'RETRY_TIMES' } }]);
     } finally {
       if (requestId === this.requestId) {
@@ -603,9 +656,9 @@ export class WidgetFSM {
   async copyBrief() {
     try {
       await this.documents.copy(this.formatBrief());
-      this.addMessage(this.t('copied'));
+      this.addSystemMessage('copied');
     } catch {
-      this.addMessage(this.t('copyError'));
+      this.addSystemMessage('copyError');
     }
     this.showResultActions();
   }
