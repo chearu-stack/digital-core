@@ -3,20 +3,24 @@
   "flagship_projects": [
     {
       "id": "vpfarm",
-      "name": "Ваша Птица Ферма",
-      "name_en": "Your Poultry Farm",
+      "name": "Ваша Птица Ферма — сайт и каталоги",
+      "name_en": "Vasha Ptitsa Farm — website and catalogs",
       "category": "commerce",
-      "description": "Коммерческий каталог фермерского хозяйства с учётом продукции, фильтрами и приёмом заявок. Каталог получает данные через API; localStorage и резервный JSON помогают сохранить доступ к уже загруженным данным при нестабильном интернете. Интеграция локального учёта с облачной базой рассматривается как способ исключить повторный ввод.",
-      "description_en": "A commercial farm catalog with product tracking, filters, and inquiry intake. The catalog loads data through an API; localStorage and a fallback JSON file preserve access to previously loaded data on unstable connections. Integrating local records with a cloud database is an identified goal to avoid duplicate entry.",
+      "description": "Цифровая витрина фермерского хозяйства, отражающая два вектора его работы: племенное птицеводство и готовую фермерскую продукцию. Проект разделяет эти процессы на уровне данных и UX: для птенцов реализован прямой сбор заявок в базу учета, для продукции — наглядный каталог с выходом на прямой контакт через MAX. Раздельные источники данных сохраняют автономность каждого направления без усложнения системы сквозной прослеживаемостью.",
+      "description_en": "A digital storefront for a farm, presenting two sides of its business: poultry breeding and finished farm products. The project separates these workflows at the data and user-experience levels: chick inquiries are collected directly in the accounting database, while products are shown in a clear catalog with a direct contact path through MAX. Separate data sources preserve the autonomy of each direction without adding end-to-end traceability to the system.",
       "tech_stack": [
         "HTML",
         "CSS",
         "Python",
         "JavaScript",
-        "API",
-        "JSON",
-        "localStorage",
-        "GitHub Pages"
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Supabase",
+        "Streamlit",
+        "Google Sheets CSV",
+        "Docker",
+        "Cloudflare Turnstile"
       ],
       "status": "Implemented",
       "status_en": "Implemented",
@@ -32,14 +36,14 @@
       "ambient_color": "#22c55e",
       "cover_image": "assets/images/projects/vpfarm/vpfarm-showcase.png",
       "highlights": [
-        "Показывать каталог продукции и принимать заявки через онлайн-витрину хозяйства.",
-        "Получать каталог через API и сохранять доступ к загруженным данным в localStorage и резервном JSON.",
-        "Обновлять каталог по Stale-While-Revalidate, чтобы данные оставались доступны при нестабильном интернете."
+        "Каталог пород связан с FastAPI API и PostgreSQL; форма передаёт заявку с согласием на обработку данных.",
+        "Каталог продукции отделён от каталога пород и поддерживает CSV-адаптер, статусы товара, кэш и помеченный резервный снимок.",
+        "Streamlit-админка содержит операции управления каталогом продукции и загрузку изображений."
       ],
       "highlights_en": [
-        "Present farm products and accept inquiries through the online catalog.",
-        "Load catalog data through an API and keep previously loaded data available in localStorage and a fallback JSON file.",
-        "Refresh catalog data with Stale-While-Revalidate so available data remains accessible on unstable connections."
+        "The breed catalog connects to a FastAPI API and PostgreSQL; the inquiry form submits a request with recorded data-processing consent.",
+        "The product catalog is separate from the breed catalog and supports a CSV adapter, product statuses, caching, and a labeled fallback snapshot.",
+        "The Streamlit admin app contains product-catalog management and image upload."
       ]
     },
     {
