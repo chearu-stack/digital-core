@@ -51,8 +51,8 @@
       "name": "Авторский литературный архив",
       "name_en": "Bibliotheca",
       "category": "web_interface",
-      "description": "Автоматизированная цифровая библиотека прозы и поэзии. Python-сборщик забирает и разбирает публикации с двух внешних сайтов, обновляет собственную базу и библиотечный сайт; ежедневный запуск cron запланирован на 06:00 по Москве. Архив включает 143 произведения.",
-      "description_en": "An automated digital library of prose and poetry. A Python collector parses publications from two external sites and updates its own database and library site; a daily cron run is scheduled for 06:00 Moscow time. The archive contains 143 works.",
+      "description": "Публичный литературный архив объединяет 150 произведений Евгения Александровича Чернышева: 111 стихотворений с сайта Stihi.ru и 39 прозаических произведений с Proza.ru. Архив автоматически обновляется по расписанию; автор также может запустить обновление через админку. Для подготовки и обработки иллюстраций предусмотрена отдельная Illustration Studio: её интерфейс опубликован в сети, а backend работает локально у автора. Такой подход позволяет выполнять авторские задачи без постоянно работающего сервера.",
+      "description_en": "The public literary archive brings together 150 works by Evgeny Aleksandrovich Chernyshev: 111 poems published on Stihi.ru and 39 prose works published on Proza.ru. The archive updates automatically on a schedule, and the author can also trigger an update through the admin interface. A separate Illustration Studio supports illustration preparation and processing: its interface is published online, while its backend runs locally at the author’s workspace. This approach lets the author handle these tasks without a continuously running server.",
       "tech_stack": [
         "Python",
         "cron",
@@ -76,14 +76,14 @@
       "ambient_color": "#b45309",
       "cover_image": "assets/images/projects/bibliotheca/bibliotheca-preview.png",
       "highlights": [
-        "Автоматически собирать и разбирать публикации с двух внешних сайтов.",
-        "Обновлять собственную базу и библиотечный сайт без ручного переноса каждого произведения.",
-        "Планировать ежедневный сбор через cron; зафиксированный архив — 143 произведения."
+        "Объединять 150 произведений автора с Proza.ru и Stihi.ru в публичном архиве с поиском и страницами чтения.",
+        "Автоматически обновлять архив по расписанию и запускать обновление вручную через админку.",
+        "Подготавливать и обрабатывать иллюстрации в отдельной Illustration Studio с локальным backend."
       ],
       "highlights_en": [
-        "Automatically collect and parse publications from two external sites.",
-        "Update the library database and website without manually transferring each work.",
-        "Schedule daily collection with cron; the documented archive contains 143 works."
+        "Bring together 150 of the author's works from Proza.ru and Stihi.ru in a public archive with search and dedicated reading pages.",
+        "Update the archive automatically on a schedule and trigger updates manually through the admin interface.",
+        "Prepare and process illustrations in a separate Illustration Studio with a locally run backend."
       ]
     },
     {
