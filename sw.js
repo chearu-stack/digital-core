@@ -1,6 +1,6 @@
 'use strict';
 
-const VERSION = 'digital-core-v1';
+const VERSION = 'digital-core-v2';
 const CORE = [
   'index.html',
   'assets/images/favicon.png',
@@ -11,6 +11,7 @@ const CORE = [
   'assets/js/app.js',
   'assets/images/brand-logo.jpg',
   'assets/images/hero-anchor.webp',
+  'assets/images/expertise-methodology.png',
   'assets/data/projects.json',
   'assets/data/projects-fallback.json',
   'modules/bot/bot-widget.css',

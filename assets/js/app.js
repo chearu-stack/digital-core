@@ -44,6 +44,33 @@
   Object.assign(copy.ru, {locationLabel:'ЛОКАЦИЯ',locationCity:'Павлово, Нижегородская область',locationCoordinates:'55°58′ N · 43°04′ E',heroVisualLabel:'Инженерная визуализация Digital Core — перейти к проектам',heroImageAlt:'Инженерная цифровая структура с неоновыми линиями на тёмном фоне',heroSystems:'СИСТЕМЫ',heroData:'ДАННЫЕ',heroInterfaces:'ИНТЕРФЕЙСЫ'});
   Object.assign(copy.ru, {locationCoordinates:'55\u00b058\u2032 \u0441. \u0448. \xb7 43\u00b004\u2032 \u0432. \u0434.'});
   Object.assign(copy.en, {locationLabel:'ЛОКАЦИЯ',locationCity:'Pavlovo, Nizhny Novgorod Oblast',locationCoordinates:'55°58′ N · 43°04′ E',heroVisualLabel:'Digital Core engineering visualization — view projects',heroImageAlt:'Engineered digital structure with neon lines against a dark background',heroSystems:'SYSTEMS',heroData:'DATA',heroInterfaces:'INTERFACES'});
+  Object.assign(copy.ru, {
+    sectionExpertiseKicker: '04 / ЭКСПЕРТИЗА И МЕТОДОЛОГИЯ',
+    sectionFooterKicker: '05 / СВЯЗЬ',
+    expertiseTitle: 'Архив исследований и инженерных публикаций на vc.ru',
+    expertiseSummary: 'Системные ограничения LLM, архитектурные сбои, семантический дрейф, детерминированные контуры проверки и методология разработки с помощью ИИ. Более 50 публикаций, последовательно развивающих идеи — от анализа ошибок генерации до проектирования управляемых интеллектуальных систем.',
+    expertiseTopicsTitle: 'Ключевые направления:',
+    expertiseTopicOne: 'Архитектура ИИ и системные причины ошибок.',
+    expertiseTopicTwo: 'Методологии проверки, Red Team-аудита и борьбы с AI-мусором.',
+    expertiseTopicThree: 'Детерминированные конвейеры и формализация логики.',
+    expertiseTopicFour: 'Организация совместной работы человека и ИИ.',
+    expertiseCta: 'Перейти к архиву исследований на vc.ru',
+    expertiseImageAlt: 'Иллюстрация детерминированного конвейера обработки и проверки данных'
+  });
+  Object.assign(copy.en, {
+    sectionExpertiseKicker: '04 / EXPERTISE & METHODOLOGY',
+    sectionFooterKicker: '05 / CONTACT',
+    expertiseTitle: 'Research and engineering publications on vc.ru',
+    expertiseSummary: 'Systemic limits of LLMs, architectural failures, semantic drift, deterministic verification loops, and AI-assisted development methodology. More than 50 publications developing these ideas from the analysis of generation failures to the design of governed intelligent systems.',
+    expertiseTopicsTitle: 'Key topics:',
+    expertiseTopicOne: 'AI architecture and systemic causes of failure.',
+    expertiseTopicTwo: 'Verification methods, Red Team audits, and filtering AI-generated slop.',
+    expertiseTopicThree: 'Deterministic pipelines and formalized logic.',
+    expertiseTopicFour: 'Organizing collaboration between people and AI.',
+    expertiseCta: 'Explore the research archive on vc.ru',
+    expertiseImageAlt: 'Concept illustration of a deterministic data processing and verification pipeline'
+  });
+
   const $ = (selector) => document.querySelector(selector);
   const projectDialog = $('#project-dialog');
   const mediaDialog = $('#media-dialog');
