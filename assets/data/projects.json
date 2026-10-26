@@ -3,6 +3,7 @@
   "flagship_projects": [
     {
       "id": "vpfarm",
+      "showcase_slot": 1,
       "name": "Ваша Птица Ферма — сайт и каталоги",
       "name_en": "Vasha Ptitsa Farm — website and catalogs",
       "category": "commerce",
@@ -40,16 +41,19 @@
       "highlights": [
         "Каталог пород связан с FastAPI API и PostgreSQL; форма передаёт заявку с согласием на обработку данных.",
         "Каталог продукции отделён от каталога пород и поддерживает CSV-адаптер, статусы товара, кэш и помеченный резервный снимок.",
-        "Streamlit-админка содержит операции управления каталогом продукции и загрузку изображений."
+        "Streamlit-админка содержит операции управления каталогом продукции и загрузку изображений.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "The breed catalog connects to a FastAPI API and PostgreSQL; the inquiry form submits a request with recorded data-processing consent.",
         "The product catalog is separate from the breed catalog and supports a CSV adapter, product statuses, caching, and a labeled fallback snapshot.",
-        "The Streamlit admin app contains product-catalog management and image upload."
+        "The Streamlit admin app contains product-catalog management and image upload.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
       "id": "bibliotheca",
+      "showcase_slot": 2,
       "name": "Авторский литературный архив",
       "name_en": "Bibliotheca",
       "category": "web_interface",
@@ -82,16 +86,19 @@
       "highlights": [
         "Агрегировать и структурировать распределённые публикации автора или организации в едином публичном архиве с удобным поиском и страницами чтения.",
         "Автоматизировать работу с контентом: парсить материалы из внешних источников, сохранять их в файловой системе без необходимости подключать отдельную СУБД и синхронизировать по расписанию или команде из админки. При росте объёма или изменении требований СУБД можно подключить.",
-        "Подготавливать и обрабатывать иллюстрации в отдельной Illustration Studio с сетевым интерфейсом и локальным backend. Для личной работы не нужен постоянно работающий сервер."
+        "Подготавливать и обрабатывать иллюстрации в отдельной Illustration Studio с сетевым интерфейсом и локальным backend. Для личной работы не нужен постоянно работающий сервер.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Aggregate and structure an author's or organization's distributed publications in a single public archive with convenient search and dedicated reading pages.",
         "Automate content workflows: parse materials from external sources, store them in the file system without requiring a separate DBMS, and synchronize them on a schedule or by command from the admin interface. A DBMS can be connected as volumes grow or requirements change.",
-        "Prepare and process illustrations in a separate Illustration Studio with a web interface and a local backend. Personal use does not require a continuously running server."
+        "Prepare and process illustrations in a separate Illustration Studio with a web interface and a local backend. Personal use does not require a continuously running server.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
       "id": "faralab",
+      "showcase_slot": 3,
       "name": "Сервис по автомобильному свету",
       "name_en": "FARALAB",
       "category": "web_interface",
@@ -121,27 +128,35 @@
       "ambient_color": "#38bdf8",
       "cover_image": "assets/images/projects/faralab/faralab-showcase.png",
       "highlights": [
-        "Представить услуги и выполненные работы в едином визуальном пространстве, адаптированном для мобильных устройств.",
+        "Представить услуги и выполненные работы в едином визуальном пространстве, адаптированном для десктопа и мобильных устройств.",
         "Организовать обновление галереи через файловую систему, без отдельной админки и базы данных.",
         "Развернуть сайт на статическом хостинге без собственного backend-сервера и расходов на его обслуживание."
       ],
       "highlights_en": [
-        "Present services and completed work in a unified visual space adapted for mobile devices.",
+        "Present services and completed work in a unified visual space adapted for desktop and mobile devices.",
         "Update the gallery through the file system without a separate admin panel or database.",
         "Deploy the site on static hosting without an owned backend server or its ongoing maintenance costs."
       ]
     },
     {
       "id": "fvk-content-factory",
+      "showcase_slot": 4,
       "name": "Фабрика контента FVK",
       "name_en": "FVK Content Factory",
       "category": "ai_automation",
-      "description": "Система подготовки контента: преобразует исходные заметки и материалы в черновики публикаций, оставляя решение о публикации за редактором. Код, настройки профиля, промпты и рабочие материалы разделены по отдельным файлам и каталогам.",
-      "description_en": "A content preparation system that turns source notes and materials into publication drafts while leaving publication approval to a human editor. System code, profile settings, prompts, and working materials are kept in separate files and directories.",
+      "description": "Автоматизированная система подготовки публикаций на Python: анализирует и инвентаризирует исходные материалы, формирует планы и черновики с помощью LLM, проверяет результаты генерации по заданным правилам и поддерживает редакторский цикл доработки. Архитектура предусматривает разделение кода, профильных настроек, системных промптов и рабочих материалов. Финальное решение о публикации остаётся за редактором.",
+      "description_en": "An automated Python-based publication preparation system that analyzes and inventories source materials, creates plans and drafts with an LLM, checks generated results against defined rules, and supports an editorial revision cycle. Its architecture separates code, profile settings, system prompts, and working materials. The final publication decision remains with the editor.",
       "tech_stack": [
         "Python",
         "JSON",
-        "Prompt files"
+        "DeepSeek API (text generation and analysis)",
+        "HTTP/HTTPS (API communication)",
+        "Prompt files",
+        "Markdown",
+        "DOCX",
+        "Pillow (optional image processing, if installed)",
+        "Streamlit (project presentation page)",
+        "Windows Batch (.bat)"
       ],
       "status": "Implemented",
       "status_en": "Implemented",
@@ -161,55 +176,67 @@
       "highlights": [
         "Преобразовывать исходные заметки и материалы в черновики публикаций.",
         "Разделять системный код, profile.json, промпты и рабочие материалы.",
-        "Оставлять редактору проверку и окончательное решение о публикации."
+        "Оставлять редактору проверку и окончательное решение о публикации.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Turn source notes and materials into publication drafts.",
         "Keep system code, profile.json, prompts, and working materials separate.",
-        "Leave review and final publication approval to a human editor."
+        "Leave review and final publication approval to a human editor.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
-      "id": "herbarium-ai",
-      "name": "Конструктор гербарных листов",
-      "name_en": "Herbarium AI",
+      "id": "spo-schedule-system",
+      "showcase_slot": 5,
+      "name": "Система формирования расписания СПО",
+      "name_en": "Vocational College Timetabling System",
       "category": "ai_automation",
-      "description": "Браузерный конструктор гербарных листов: принимает данные о растении и изображение, формирует структурированный лист и экспортирует PDF. Доступны ручной и ИИ-сценарии; ручной режим работает без API-ключа, а DeepSeek подключается как дополнительный помощник.",
-      "description_en": "A browser-based herbarium sheet builder that accepts plant details and an image, creates a structured sheet, and exports it as PDF. It supports manual and AI-assisted workflows; manual use does not require an API key, and DeepSeek is an optional assistant.",
+      "direction": "Сайты и цифровые продукты · ИИ и автоматизация · комбинаторная оптимизация",
+      "direction_en": "Websites and digital products · AI and automation · combinatorial optimization",
+      "description": "Прототип системы автоматизированного формирования и ведения расписания занятий для колледжей и техникумов. Решение учитывает многомерную матрицу ограничений: версии учебных планов, календарные недели, группы и подгруппы, смены, временные сетки, кабинеты и доступность преподавателей.\n\nАрхитектура построена на принципе Human-in-the-loop: система рассчитывает детерминированный черновик расписания через солвер, подсвечивает компромиссы и нераспределённые часы, а завуч проверяет и при необходимости точечно редактирует результат с гарантией соблюдения жёстких правил.\n\nЕсли существует несколько допустимых решений, если часть нагрузки не удаётся распределить или приходится выбирать между мягкими приоритетами, система показывает результат и компромиссы. Но она не подменяет ответственного человека.\n\nСолвер вычисляет. Система проверяет. Завуч решает и отвечает за решение.\n\nЭто не недостаток автоматизации, а принцип её устройства. Здесь Human-in-the-loop — не декоративная формулировка, а распределение полномочий и ответственности.",
+      "description_en": "A prototype system for automatically creating and maintaining class schedules for vocational colleges and technical schools. It handles a multidimensional constraint matrix: curriculum versions, calendar weeks, groups and subgroups, shifts, time grids, classrooms, and teacher availability.\n\nThe architecture follows a human-in-the-loop approach: a solver calculates a deterministic draft schedule and highlights trade-offs and unassigned hours. The deputy principal reviews and, when needed, edits the result while hard constraints remain enforced.\n\nWhen several valid solutions exist, some of the teaching load cannot be assigned, or soft priorities require trade-offs, the system presents the result and the compromises. It does not replace the responsible person.\n\nThe solver calculates. The system validates. The deputy principal decides and is accountable for the decision.\n\nThis is not a limitation of automation but a principle of its design. Here, human-in-the-loop is not a decorative phrase; it is a distribution of authority and responsibility.",
       "tech_stack": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Browser-side processing",
-        "PDF",
-        "DeepSeek API"
+        "Python",
+        "FastAPI",
+        "OR-Tools (CP-SAT solver)",
+        "PostgreSQL",
+        "React",
+        "Vite",
+        "Excel (openpyxl)"
       ],
-      "status": "Implemented",
-      "status_en": "Implemented",
-      "display_mode": "live_client_constructor_pdf",
+      "status": "Прототип / MVP",
+      "status_en": "Prototype / MVP",
+      "display_mode": "prototype_b2b",
       "github_url": null,
-      "demo_url": "https://chearu-stack.github.io/herbarium/",
+      "demo_url": null,
       "is_private": true,
       "visibility_status": "verified",
       "screenshots": [
-        "assets/images/projects/herbarium-ai/herbarium-constructor.png"
+        "assets/images/projects/spo-schedule-system/01-schedule-overview.png",
+        "assets/images/projects/spo-schedule-system/02-constraints-matrix.png",
+        "assets/images/projects/spo-schedule-system/03-solver-tradeoffs.png",
+        "assets/images/projects/spo-schedule-system/04-manual-editing.png"
       ],
       "architecture_diagram": null,
-      "ambient_color": "#84cc16",
-      "cover_image": "assets/images/projects/herbarium-ai/herbarium-constructor.png",
       "highlights": [
-        "Собирать сведения о растении, таксономии, месте и дате сбора вместе с изображением.",
-        "Формировать структурированный гербарный лист и PDF в браузере.",
-        "Работать вручную без API-ключа; использовать DeepSeek только как дополнительный режим."
+        "Рассчитывать расписание с помощью OR-Tools CP-SAT: автоматически распределять пары по 2 академических часа, учитывая жёсткие ограничения, включая специальные типы кабинетов, и мягкие приоритеты — квалификацию и доступность преподавателей.",
+        "Проверять ручные правки завуча на соблюдение ограничений и выявлять компромиссы и нераспределённые часы.",
+        "Загружать исходные спецификации и экспортировать готовое расписание в Excel.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств.",
+        "Солвер вычисляет. Система проверяет. Завуч решает и отвечает за решение."
       ],
       "highlights_en": [
-        "Collect plant, taxonomy, collection place and date, and image details.",
-        "Create a structured herbarium sheet and PDF in the browser.",
-        "Support a complete manual workflow without an API key, with DeepSeek as an optional mode."
+        "Calculate schedules with OR-Tools CP-SAT, assigning two-academic-hour classes while accounting for hard constraints, including special classroom types, and soft priorities for teacher qualifications and availability.",
+        "Validate the deputy principal's manual edits against constraints and identify trade-offs and unassigned hours.",
+        "Load source specifications and export the completed schedule to Excel.",
+        "The interface is adapted for desktop and mobile devices.",
+        "The solver calculates. The system validates. The deputy principal decides and is accountable for the decision."
       ]
     },
     {
       "id": "techbase-os",
+      "showcase_slot": 6,
       "name": "База знаний для СТО и мотодилеров",
       "name_en": "TechBase OS",
       "category": "ai_automation",
@@ -238,16 +265,19 @@
       "highlights": [
         "Искать технические сведения в PDF-руководствах и документации VOGE.",
         "Отделять детерминированный поиск от генерации ответа языковой моделью.",
-        "Проверять выводы по первоисточникам технической документации."
+        "Проверять выводы по первоисточникам технической документации.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Search technical facts across PDF manuals and VOGE documentation.",
         "Separate deterministic retrieval from language-model answer generation.",
-        "Check answers against the original technical documents."
+        "Check answers against the original technical documents.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
       "id": "piceatom",
+      "showcase_slot": 7,
       "name": "Закрытая система контроля",
       "name_en": "Protected Control System",
       "category": "web_interface",
@@ -286,18 +316,21 @@
         "При переходе предусмотрено сохранить рабочие процессы, правила и связи.",
         "Фронтенд работает; поэтапное внедрение предполагает проверку данных и логики на контрольных примерах.",
         "Техническое задание описывает бэкенд, включая ролевой доступ, историю изменений и контроль сроков; бэкенд пока не реализован.",
-        "Связи данных нужно уточнить до реализации хранения в PostgreSQL; закрытый контур на частном VDS — целевое требование."
+        "Связи данных нужно уточнить до реализации хранения в PostgreSQL; закрытый контур на частном VDS — целевое требование.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Moving task tracking from Excel into a unified system is a project objective.",
         "The transition is intended to preserve workflows, rules, and relationships.",
         "The frontend works; phased implementation calls for checking data and logic against test cases.",
         "The technical specification describes the backend, including role-based access, change history, and deadline tracking; the backend has not yet been implemented.",
-        "Data relationships need to be defined before implementing PostgreSQL storage; deployment in a closed environment on a private VDS is a target requirement."
+        "Data relationships need to be defined before implementing PostgreSQL storage; deployment in a closed environment on a private VDS is a target requirement.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
       "id": "rf-smeta",
+      "showcase_slot": 8,
       "name": "Сметная программа для закрытого использования",
       "name_en": "Cost Estimating Software for Restricted Use",
       "category": "construction",
@@ -331,7 +364,8 @@
         "Сохранять сметы и историю работы.",
         "Экспортировать результаты в Excel и PDF.",
         "Потенциал экономии — до 30% времени на подготовку смет.",
-        "Оценка ROI и KPI по времени подготовки сметы и трудозатратам."
+        "Оценка ROI и KPI по времени подготовки сметы и трудозатратам.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Generate estimate line items from descriptions of repair work.",
@@ -340,11 +374,53 @@
         "Save estimates and work history.",
         "Export results to Excel and PDF.",
         "Potential savings of up to 30% of the time spent preparing estimates.",
-        "Assess ROI and KPIs based on estimate preparation time and labor per request."
+        "Assess ROI and KPIs based on estimate preparation time and labor per request.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     }
   ],
   "catalog": [
+    {
+      "id": "herbarium-ai",
+      "name": "Конструктор гербарных листов",
+      "name_en": "Herbarium AI",
+      "category": "ai_automation",
+      "description": "Браузерный конструктор гербарных листов: принимает данные о растении и изображение, формирует структурированный лист и экспортирует PDF. Доступны ручной и ИИ-сценарии; ручной режим работает без API-ключа, а DeepSeek подключается как дополнительный помощник.",
+      "description_en": "A browser-based herbarium sheet builder that accepts plant details and an image, creates a structured sheet, and exports a PDF. It supports manual and AI-assisted workflows; manual use does not require an API key, and DeepSeek is an optional assistant.",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Browser-side processing",
+        "PDF",
+        "DeepSeek API"
+      ],
+      "status": "Implemented",
+      "status_en": "Implemented",
+      "display_mode": "live_client_constructor_pdf",
+      "github_url": null,
+      "demo_url": "https://chearu-stack.github.io/herbarium/",
+      "is_private": true,
+      "visibility_status": "verified",
+      "screenshots": [
+        "assets/images/projects/herbarium-ai/herbarium-constructor.png"
+      ],
+      "architecture_diagram": null,
+      "ambient_color": "#84cc16",
+      "cover_image": "assets/images/projects/herbarium-ai/herbarium-constructor.png",
+      "highlights": [
+        "Собирать сведения о растении, таксономии, месте и дате сбора вместе с изображением.",
+        "Формировать структурированный гербарный лист и PDF в браузере.",
+        "Работать вручную без API-ключа; использовать DeepSeek только как дополнительный режим.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
+      ],
+      "highlights_en": [
+        "Collect plant, taxonomy, collection place and date, and image details.",
+        "Create a structured herbarium sheet and PDF in the browser.",
+        "Support a complete manual workflow without an API key, with DeepSeek as an optional mode.",
+        "The interface is adapted for desktop and mobile devices."
+      ]
+    },
     {
       "id": "stroy-calc",
       "name": "Строительные расчёты",
@@ -371,12 +447,14 @@
       "highlights": [
         "Рассчитывать теплопотери, радиаторы, расширительный бак и насос отдельными модулями.",
         "Передавать HeatingResults между связанными калькуляторами отопления через localStorage с возможностью ручного ввода.",
-        "Сохранять калькулятор расширительного бака автономным и показывать, где получить недостающие исходные данные."
+        "Сохранять калькулятор расширительного бака автономным и показывать, где получить недостающие исходные данные.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Calculate heat loss, radiators, expansion tanks, and pumps in separate modules.",
         "Pass HeatingResults between connected heating calculators through localStorage, with manual input as an alternative.",
-        "Keep the expansion tank calculator independent and show where to obtain missing inputs."
+        "Keep the expansion tank calculator independent and show where to obtain missing inputs.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
@@ -404,12 +482,14 @@
       "highlights": [
         "Выполнять денежные вычисления с Decimal вместо float.",
         "Предоставлять персональный финансовый калькулятор MoneyWise Pro на Streamlit.",
-        "Работать без рекламы и обязательной регистрации; в описании проекта указано 60 проходивших тестов."
+        "Работать без рекламы и обязательной регистрации; в описании проекта указано 60 проходивших тестов.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Use Decimal rather than float for monetary calculations.",
         "Provide the MoneyWise Pro personal finance calculator on Streamlit.",
-        "Work without ads or mandatory registration; the project notes report 60 passing tests."
+        "Work without ads or mandatory registration; the project notes report 60 passing tests.",
+        "The interface is adapted for desktop and mobile devices."
       ],
       "presentation_url": "https://money-wise-pro.streamlit.app/"
     },
@@ -437,12 +517,14 @@
       "highlights": [
         "Анализировать требования вакансии или заказа.",
         "Сопоставлять запрос с локальной базой проектов и накопленным опытом.",
-        "Поддерживать первичную оценку соответствия без неподтверждённых обещаний о рейтинге."
+        "Поддерживать первичную оценку соответствия без неподтверждённых обещаний о рейтинге.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Analyze requirements from a job or contract offer.",
         "Match the request against a local project database and accumulated experience.",
-        "Support an initial fit assessment without assuming an unconfirmed scoring method."
+        "Support an initial fit assessment without assuming an unconfirmed scoring method.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
@@ -467,11 +549,13 @@
       "architecture_diagram": null,
       "highlights": [
         "Задавать состояния диалога и допустимые переходы формальной логикой FSM.",
-        "Управлять сценарием предсказуемо, не полагаясь только на свободную генерацию текста."
+        "Управлять сценарием предсказуемо, не полагаясь только на свободную генерацию текста.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Define dialog states and allowed transitions with FSM logic.",
-        "Keep scenario control predictable instead of relying only on free-form text generation."
+        "Keep scenario control predictable instead of relying only on free-form text generation.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
@@ -496,11 +580,13 @@
       "architecture_diagram": null,
       "highlights": [
         "Маршрутизировать запросы между компонентами через диспетчер команд.",
-        "Отделять логику диспетчеризации от выполнения операций."
+        "Отделять логику диспетчеризации от выполнения операций.",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Route requests between components through a command dispatcher.",
-        "Separate dispatch decisions from operation execution."
+        "Separate dispatch decisions from operation execution.",
+        "The interface is adapted for desktop and mobile devices."
       ]
     },
     {
@@ -529,12 +615,14 @@
       "highlights": [
         "Двухконтурная защита: LLM извлекает факты из текста, а изолированное Python-ядро жестко проверяет регламенты и лимиты",
         "Трехпозиционная матрица аудита: автоматическое выявление операций, выходящих за рамки формализованных правил",
-        "Готовый комплект архитектурной документации и бизнес-моделей (RU/EN спецификации)"
+        "Готовый комплект архитектурной документации и бизнес-моделей (RU/EN спецификации)",
+        "Интерфейс адаптирован для десктопа и мобильных устройств."
       ],
       "highlights_en": [
         "Two-layer control: the LLM extracts facts from text while an isolated Python core checks policies and limits deterministically.",
         "Three-outcome audit matrix: automatically identifies operations outside formalized rules.",
-        "A complete set of architecture documents and business models, including RU/EN specifications."
+        "A complete set of architecture documents and business models, including RU/EN specifications.",
+        "The interface is adapted for desktop and mobile devices."
       ],
       "direction": "ИИ-Аудит & Автоматизация Рисков",
       "direction_en": "AI Audit & Risk Automation",

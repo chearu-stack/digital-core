@@ -122,6 +122,8 @@
   Object.assign(displayModes.ru, {"live_client_constructor_pdf":"\u0414\u0415\u0419\u0421\u0422\u0412\u0423\u042e\u0429\u0418\u0419 \u041a\u041e\u041d\u0421\u0422\u0420\u0423\u041a\u0422\u041e\u0420 \u0414\u041e\u041a\u0423\u041c\u0415\u041d\u0422\u041e\u0412 \u041f\u0414\u0424","vds_live_frontend":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0420\u041e\u0414\u0423\u041a\u0422 / \u0421\u041e\u0411\u0421\u0422\u0412\u0415\u041d\u041d\u042b\u0419 \u0421\u0415\u0420\u0412\u0415\u0420"});
   displayModes.ru.live_static_showcase = 'ДЕЙСТВУЮЩИЙ САЙТ / ПОКАЗ УСЛУГ / ПРЕМИАЛЬНОЕ ПРЕДСТАВИТЕЛЬСТВО';
   displayModes.en.live_static_showcase = 'LIVE SITE / SERVICE SHOWCASE / PREMIUM REPRESENTATION';
+  displayModes.ru.prototype_b2b = 'ПРОТОТИП / ПРЕДЛОЖЕНИЕ ДЛЯ БИЗНЕСА';
+  displayModes.en.prototype_b2b = 'PROTOTYPE / B2B PROPOSAL';
   displayModes.ru.research_internal_engine = 'R&D / INTERNAL ENGINE';
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
   displayModes.ru.proprietary_mvp = 'PROPRIETARY MVP / АРХИТЕКТУРНЫЙ ПАТЕНТ';
@@ -135,6 +137,10 @@
   const allProjects = () => state.projects
     ? [...state.projects.flagship_projects, ...state.projects.catalog.filter(isPublicCatalogProject)]
     : [];
+  const flagshipSlotCount = () => Math.max(
+    state.projects.flagship_projects.length,
+    ...state.projects.flagship_projects.map((project) => project.showcase_slot || 0)
+  );
 
   const catalogCacheKey = 'digital-core-project-catalog-v1';
   const isValidProject = (project) => project && typeof project.id === 'string' && typeof project.name === 'string'
@@ -278,7 +284,8 @@
         card.append(preview);
       }
       const number = element('div', 'project-number');
-      number.append(element('span', '', String(index + 1).padStart(2, '0') + ' / ' + String(state.projects.flagship_projects.length).padStart(2, '0')));
+      const slot = project.showcase_slot || index + 1;
+      number.append(element('span', '', String(slot).padStart(2, '0') + ' / ' + String(flagshipSlotCount()).padStart(2, '0')));
       number.append(element('span', '', displayMode(project)));
       card.append(number);
       const body = element('div', 'project-body');
@@ -307,7 +314,7 @@
     const featured = $('#featured-grid');
     const catalogRoot = $('#catalog-list');
     featured.replaceChildren(...state.projects.flagship_projects.map((project, index) => renderCard(project, index, true)));
-    const featuredCount = String(state.projects.flagship_projects.length).padStart(2, '0');
+    const featuredCount = String(flagshipSlotCount()).padStart(2, '0');
     $('#featured-count').textContent = featuredCount + ' / 2022–26';
 
     const publicCatalog = state.projects.catalog.filter(isPublicCatalogProject);
