@@ -1,7 +1,23 @@
 import { WidgetFSM, labels } from './fsm-controller.js';
 
-const root = document.getElementById('bot-root');
-if (!root) throw new Error('Missing #bot-root mount point');
+let root = document.getElementById('bot-root');
+if (!root) {
+  root = document.createElement('div');
+  root.id = 'bot-root';
+  document.body.append(root);
+}
+
+const stylesheetUrl = new URL('./bot-widget.css', import.meta.url).href;
+if (![...document.querySelectorAll('link[rel="stylesheet"]')].some(link => link.href === stylesheetUrl)) {
+  await new Promise((resolve, reject) => {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = stylesheetUrl;
+    stylesheet.addEventListener('load', resolve, { once: true });
+    stylesheet.addEventListener('error', reject, { once: true });
+    document.head.append(stylesheet);
+  });
+}
 
 let language = document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'ru';
 let isOpen = false;

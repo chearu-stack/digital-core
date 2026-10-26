@@ -10,10 +10,12 @@ export const briefAdapter = {
   format(lead, copy) {
     return [
       copy.briefTitle,
+      '',
       `${copy.goalLabel}: ${singleLine(lead.goal)}`,
       `${copy.detailsLabel}: ${singleLine(lead.details)}`,
+      '',
       `${copy.contactLabel}: ${singleLine(lead.contact)}`,
-      `${copy.slotLabel}: ${singleLine(lead.date)} · ${singleLine(lead.time)} (${copy.timeZone})`
+      `${copy.slotLabel}: ${singleLine(lead.date)} · ${singleLine(lead.time)} ${copy.timeZone}`
     ].join('\n');
   }
 };

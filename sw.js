@@ -1,6 +1,6 @@
 'use strict';
 
-const VERSION = 'digital-core-v2';
+const VERSION = 'digital-core-v4';
 const CORE = [
   'index.html',
   'assets/images/favicon.png',
@@ -12,6 +12,7 @@ const CORE = [
   'assets/images/brand-logo.jpg',
   'assets/images/hero-anchor.webp',
   'assets/images/expertise-methodology.png',
+  'assets/images/projects/nova-pack/01-storefront-overview.jpeg',
   'assets/data/projects.json',
   'assets/data/projects-fallback.json',
   'modules/bot/bot-widget.css',
@@ -19,7 +20,8 @@ const CORE = [
   'modules/bot/fsm-controller.js',
   'modules/bot/briefAdapter.js',
   'modules/bot/calendarAdapter.js',
-  'modules/bot/docsAdapter.js'
+  'modules/bot/docsAdapter.js',
+  'modules/bot/bookingAdapter.js'
 ];
 const EXTERNAL = ['https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap'];
 const EXTERNAL_MODE = 'no-cors'; // 'cors' ТОЛЬКО если у link в index.html есть атрибут crossorigin

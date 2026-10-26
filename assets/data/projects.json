@@ -377,6 +377,48 @@
         "Assess ROI and KPIs based on estimate preparation time and labor per request.",
         "The interface is adapted for desktop and mobile devices."
       ]
+    },
+    {
+      "id": "nova-pack-store",
+      "showcase_slot": 9,
+      "name": "NOVA PACK — B2B/B2C-магазин",
+      "name_en": "NOVA PACK — B2B/B2C Store Concept",
+      "category": "commerce",
+      "direction": "E-commerce · цифровые продукты · адаптивный веб-дизайн",
+      "direction_en": "E-commerce · digital products · responsive web design",
+      "description": "Демонстрационный интернет-магазин NOVA PACK для продажи упаковки, одноразовой посуды, бытовой химии и расходных материалов. Концепция объединяет розничные покупки и оптовое обслуживание кафе, ресторанов и других компаний в одном интерфейсе: посетители могут изучить каталог, сравнить форматы цен и перейти к условиям для бизнеса. В проекте представлены главная страница, каталог, карточка товара, корзина, личный кабинет и информационные страницы. Функции поиска, корзины и аккаунта показаны как прототип; подключение оплаты, авторизации и реальной обработки заказов не реализовано.",
+      "description_en": "A demonstration online store for NOVA PACK, featuring packaging, disposable tableware, household chemicals, and supplies. The concept combines retail shopping and wholesale service for cafés, restaurants, and other businesses in one interface: visitors can explore the catalog, compare pricing formats, and review business terms. The project presents a home page, catalog, product page, basket, personal account, and informational pages. Search, basket, and account functions are prototypes; payments, authentication, and real order processing are not connected.",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive layout",
+        "GitHub Pages"
+      ],
+      "status": "Фронтенд-прототип реализован",
+      "status_en": "Frontend prototype implemented",
+      "display_mode": "concept_b2b_b2c_ecommerce",
+      "github_url": null,
+      "demo_url": "https://chearu-stack.github.io/horecapack/",
+      "is_private": true,
+      "visibility_status": "verified",
+      "screenshots": [
+        "assets/images/projects/nova-pack/01-storefront-overview.jpeg"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/nova-pack/01-storefront-overview.jpeg",
+      "highlights": [
+        "Объединить розничный каталог и оптовое предложение для бизнеса в одном магазине.",
+        "Представить товары для кафе, ресторанов и повседневных закупок через тематические категории и карточки товаров.",
+        "Показать, как могут работать оптовые цены, специальные условия и личный кабинет корпоративного клиента.",
+        "Подготовить структуру магазина к дальнейшему подключению каталога, заказов и клиентских аккаунтов."
+      ],
+      "highlights_en": [
+        "Bring a retail catalog and a wholesale business offer together in one store.",
+        "Present products for cafés, restaurants, and everyday purchases through themed categories and product cards.",
+        "Show how wholesale pricing, special terms, and a corporate customer account could work.",
+        "Prepare the store structure for future catalog, order, and customer-account integrations."
+      ]
     }
   ],
   "catalog": [
