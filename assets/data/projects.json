@@ -53,13 +53,15 @@
       "name": "Авторский литературный архив",
       "name_en": "Bibliotheca",
       "category": "web_interface",
-      "description": "Публичный литературный архив объединяет 150 произведений Евгения Александровича Чернышева: 111 стихотворений с сайта Stihi.ru и 39 прозаических произведений с Proza.ru. Архив автоматически обновляется по расписанию; автор также может запустить обновление через админку. Для подготовки и обработки иллюстраций предусмотрена отдельная Illustration Studio: её интерфейс опубликован в сети, а backend работает локально у автора. Такой подход позволяет выполнять авторские задачи без постоянно работающего сервера.",
-      "description_en": "The public literary archive brings together 150 works by Evgeny Aleksandrovich Chernyshev: 111 poems published on Stihi.ru and 39 prose works published on Proza.ru. The archive updates automatically on a schedule, and the author can also trigger an update through the admin interface. A separate Illustration Studio supports illustration preparation and processing: its interface is published online, while its backend runs locally at the author’s workspace. This approach lets the author handle these tasks without a continuously running server.",
+      "direction": "Сайты и цифровые продукты · автоматизация данных · парсинг",
+      "direction_en": "Websites and digital products · data automation · parsing",
+      "description": "Публичный архив объединяет 150 произведений Евгения Александровича Чернышева: 111 стихотворений с Stihi.ru и 39 прозаических произведений с Proza.ru с подтверждённым статусом официальных свидетельств о публикации.\n\nСистема автоматизирует работу с накопленным контентом. Вместо ручного переноса каждой публикации архив сам парсит материалы из источников, синхронизирует и обновляет их — по расписанию или прямой команде из административного интерфейса. Тот же принцип масштабируется на любые большие массивы статей, публикаций и документов для авторов и организаций.",
+      "description_en": "The public archive brings together 150 works by Evgeny Aleksandrovich Chernyshev: 111 poems from Stihi.ru and 39 prose works from Proza.ru, with confirmed status as official evidence of publication.\n\nThe system automates work with accumulated content. Instead of manually transferring each publication, the archive parses materials from their sources, synchronizes and updates them—on a schedule or by direct command from the administrative interface. The same principle scales to large collections of articles, publications, and documents for authors and organizations.",
       "tech_stack": [
         "Python",
+        "File-based storage (no DB required)",
+        "Web scraping / parsing",
         "cron",
-        "Web scraping",
-        "Database",
         "HTML",
         "CSS",
         "JavaScript"
@@ -78,14 +80,14 @@
       "ambient_color": "#b45309",
       "cover_image": "assets/images/projects/bibliotheca/bibliotheca-preview.png",
       "highlights": [
-        "Объединять 150 произведений автора с Proza.ru и Stihi.ru в публичном архиве с поиском и страницами чтения.",
-        "Автоматически обновлять архив по расписанию и запускать обновление вручную через админку.",
-        "Подготавливать и обрабатывать иллюстрации в отдельной Illustration Studio с локальным backend."
+        "Агрегировать и структурировать распределённые публикации автора или организации в едином публичном архиве с удобным поиском и страницами чтения.",
+        "Автоматизировать работу с контентом: парсить материалы из внешних источников, сохранять их в файловой системе без необходимости подключать отдельную СУБД и синхронизировать по расписанию или команде из админки. При росте объёма или изменении требований СУБД можно подключить.",
+        "Подготавливать и обрабатывать иллюстрации в отдельной Illustration Studio с сетевым интерфейсом и локальным backend. Для личной работы не нужен постоянно работающий сервер."
       ],
       "highlights_en": [
-        "Bring together 150 of the author's works from Proza.ru and Stihi.ru in a public archive with search and dedicated reading pages.",
-        "Update the archive automatically on a schedule and trigger updates manually through the admin interface.",
-        "Prepare and process illustrations in a separate Illustration Studio with a locally run backend."
+        "Aggregate and structure an author's or organization's distributed publications in a single public archive with convenient search and dedicated reading pages.",
+        "Automate content workflows: parse materials from external sources, store them in the file system without requiring a separate DBMS, and synchronize them on a schedule or by command from the admin interface. A DBMS can be connected as volumes grow or requirements change.",
+        "Prepare and process illustrations in a separate Illustration Studio with a web interface and a local backend. Personal use does not require a continuously running server."
       ]
     },
     {
