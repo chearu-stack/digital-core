@@ -682,6 +682,64 @@
         "Python validator",
         "Report"
       ]
+    },
+    {
+      "id": "graphloom",
+      "name": "GraphLoom — управляемый ИИ-агент для разработки на Python",
+      "name_en": "GraphLoom — Controlled AI Agent for Python Development",
+      "category": "ai_automation",
+      "description": "Пользователь описывает задачу обычным языком. GraphLoom уточняет цель, строит план из связанных шагов и показывает его на утверждение. После согласования агент создаёт Python-код, запускает предусмотренные проверки и возвращает результат. Проект создаётся, чтобы сделать работу ИИ-агента с кодом управляемой: человек утверждает план и принимает результат, а система выполняет согласованные шаги и проверяет код. Декомпозиция задачи и передача каждому шагу нужного контекста помогают удерживать контекст и качество при длительной работе. GraphLoom развивается как специализированный рабочий инструмент, а не универсальный готовый продукт.",
+      "description_en": "The user describes a task in natural language. GraphLoom clarifies the goal, builds a plan of connected steps, and presents it for approval. Once approved, the agent creates Python code, runs the applicable checks, and returns the result. The project aims to make AI-assisted coding controllable: a person approves the plan and accepts the result while the system performs the agreed steps and checks the code. Breaking work into steps and passing each step the relevant context helps preserve context and quality over longer tasks. GraphLoom is developing as a specialized working tool, not a universal ready-made product.",
+      "tech_stack": [
+        "Python",
+        "LLM",
+        "Task DAG",
+        "Docker Sandbox",
+        "Ruff",
+        "Mypy",
+        "Pytest"
+      ],
+      "status": "Рабочий инструмент на стадии развития",
+      "status_en": "Working tool in development",
+      "display_mode": "engineering_tool_in_development",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [],
+      "architecture_diagram": null,
+      "highlights": [
+        "Уточнять цель и готовить план связанных шагов для утверждения пользователем.",
+        "Разбивать задачу на связанные этапы и передавать каждому необходимый контекст.",
+        "Создавать Python-код по согласованному плану.",
+        "Запускать применимые проверки и повторять исправление кода при ошибках.",
+        "Сохранять проверенный результат, оставляя принятие итогового решения за человеком."
+      ],
+      "highlights_en": [
+        "Clarify the goal and prepare a plan of connected steps for user approval.",
+        "Break work into related stages and pass each step the context it needs.",
+        "Create Python code from the approved plan.",
+        "Run applicable checks and retry code fixes when errors occur.",
+        "Preserve the checked result while leaving final acceptance to the person."
+      ],
+      "direction": "ИИ-агенты · автоматизация разработки · оркестрация задач",
+      "direction_en": "AI agents · development automation · task orchestration",
+      "workflow": [
+        "Задача пользователя",
+        "Уточнение цели и план связанных шагов",
+        "Утверждение плана",
+        "Генерация Python-кода",
+        "Проверки и исправление ошибок",
+        "Проверенный результат"
+      ],
+      "workflow_en": [
+        "User task",
+        "Goal clarification and connected-step plan",
+        "Plan approval",
+        "Python code generation",
+        "Checks and error correction",
+        "Verified result"
+      ]
     }
   ]
 }
