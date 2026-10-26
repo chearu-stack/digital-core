@@ -159,6 +159,10 @@
   displayModes.en.concept_b2b_b2c_ecommerce = 'E-COMMERCE CONCEPT / B2B & B2C / WHOLESALE & RETAIL';
   displayModes.ru.engineering_tool_in_development = 'РАБОЧИЙ ИНЖЕНЕРНЫЙ ИНСТРУМЕНТ / В РАЗВИТИИ';
   displayModes.en.engineering_tool_in_development = 'ENGINEERING TOOL / IN DEVELOPMENT';
+  displayModes.ru.entertainment_experimental = 'РАЗВЛЕЧЕНИЯ / ЭКСПЕРИМЕНТАЛЬНЫЙ ПРОЕКТ';
+  displayModes.en.entertainment_experimental = 'ENTERTAINMENT / EXPERIMENTAL PROJECT';
+  copy.ru.filters.entertainment_software = 'Развлекательное ПО';
+  copy.en.filters.entertainment_software = 'Entertainment software';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
 
   Object.assign(copy.ru, { detailStack: '\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438', detailHighlights: '\u0420\u0435\u0448\u0430\u0435\u043c\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438', workflowTitle: '\u0421\u0445\u0435\u043c\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438', openExternalProject: '\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197' });

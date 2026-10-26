@@ -740,6 +740,65 @@
         "Checks and error correction",
         "Verified result"
       ]
+    },
+    {
+      "id": "astrology-events",
+      "name": "Астрологический разбор событий",
+      "name_en": "Astrological Event Analysis",
+      "category": "entertainment_software",
+      "description": "Развлекательный веб-проект для наглядного представления астрологических правил и результатов вычислений. Пользователь вводит данные рождения и события жизни; программа рассчитывает карту и проверяет выбранные техники в заданном диапазоне времени, показывая найденные аспекты и орбисы, а также события, для которых заданный порог не достигнут. Расчёты выполняются локально. Текстовое объяснение результатов через LLM API запланировано, но пока не подключено. Интерпретации предназначены для развлечения и не подтверждают факты или точность времени рождения.",
+      "description_en": "An entertainment web project for presenting astrological rules and calculation results. The user enters birth details and life events; the program calculates a chart and checks selected techniques across a specified time range, showing detected aspects and orbs as well as events that do not reach the selected threshold. Calculations run locally. LLM API explanations are planned but are not connected yet. Interpretations are for entertainment and do not establish facts or confirm the accuracy of a birth time.",
+      "tech_stack": [
+        "Python",
+        "Flask",
+        "pyswisseph",
+        "HTML",
+        "CSS",
+        "unittest",
+        "LLM API (planned)"
+      ],
+      "status": "Экспериментальный проект",
+      "status_en": "Experimental project",
+      "display_mode": "entertainment_experimental",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [
+        "assets/images/projects/astrology-events/01-event-analysis.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/astrology-events/01-event-analysis.png",
+      "highlights": [
+        "Вводить дату и время рождения, место, часовой пояс и события жизни.",
+        "Перебирать варианты времени рождения в заданном диапазоне и с выбранным шагом.",
+        "Показывать совпадения отдельно по событиям и группам техник.",
+        "Раскрывать использованные аспекты, орбисы, даты выборки и события ниже заданного порога.",
+        "Формировать понятное текстовое объяснение через LLM API — этот слой пока в планах; трактовать результаты только как развлекательные."
+      ],
+      "highlights_en": [
+        "Enter birth date and time, location, time zone, and life events.",
+        "Scan candidate birth times across a selected range and step.",
+        "Show matches separately by life event and technique group.",
+        "Inspect the aspects, orbs, sampled dates, and events below the selected threshold.",
+        "Generate a plain-language explanation through an LLM API, a planned layer not yet connected; present interpretations for entertainment only."
+      ],
+      "direction": "Развлекательное ПО · астрология · интерпретация вычислительных результатов",
+      "direction_en": "Entertainment software · astrology · interpretation of computational results",
+      "workflow": [
+        "Данные рождения и события жизни",
+        "Диапазон и шаг перебора, выбор техник",
+        "Локальный расчёт карты и проверка техник",
+        "Сопоставление результатов по событиям",
+        "Развлекательная интерпретация; LLM API — в планах"
+      ],
+      "workflow_en": [
+        "Birth details and life events",
+        "Time range and scan step, technique selection",
+        "Local chart calculation and technique checks",
+        "Compare results by life event",
+        "Entertainment interpretation; LLM API planned"
+      ]
     }
   ]
 }
