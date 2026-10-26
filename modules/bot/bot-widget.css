@@ -1,5 +1,4 @@
 /* Lead assistant widget styles. */
-#bot-root{color-scheme:dark;--bg:#10100e;--panel:#171715;--ink:#eeece5;--muted:#85847e;--line:#34342f;--lime:#c9f36b;--mono:'DM Mono',monospace;--sans:'Manrope',sans-serif}
 .bot-launcher{position:fixed;z-index:8;right:28px;bottom:24px;width:54px;height:54px;border-radius:50%;border:1px solid var(--lime);background:var(--lime);color:var(--bg);font-family:var(--mono);font-size:21px;cursor:pointer;box-shadow:0 5px 30px color-mix(in srgb,var(--bg) 55%,transparent)}
 .bot-panel{position:fixed;z-index:9;right:28px;bottom:92px;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 125px));background:color-mix(in srgb,var(--panel) 94%,transparent);color:var(--ink);border:1px solid var(--line);box-shadow:0 20px 80px color-mix(in srgb,var(--bg) 65%,transparent);backdrop-filter:blur(12px);display:flex;flex-direction:column;transition:transform .22s ease-out}
 .bot-panel[hidden]{display:none}

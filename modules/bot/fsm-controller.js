@@ -1,10 +1,9 @@
 import { briefAdapter } from './briefAdapter.js';
 import { calendarAdapter, SLOT_DURATION_MINUTES } from './calendarAdapter.js';
-import { bookingAdapter, BookingRequestError } from './bookingAdapter.js';
 import { docsAdapter } from './docsAdapter.js';
 
 const STORAGE_KEY = 'digital-core-bot-session-v1';
-const SCHEMA_VERSION = 5;
+const SCHEMA_VERSION = 4;
 const MAX_FIELD_LENGTH = 2000;
 const MAX_MESSAGE_LENGTH = 8000;
 const MAX_MESSAGES = 200;
@@ -23,9 +22,7 @@ const STATES = Object.freeze({
   AWAITING_TIME: 'AWAITING_TIME',
   CHECKING: 'CHECKING',
   UNAVAILABLE: 'UNAVAILABLE',
-  RESULT: 'RESULT',
-  BOOKING: 'BOOKING',
-  BOOKED: 'BOOKED'
+  RESULT: 'RESULT'
 });
 
 export const labels = {
@@ -42,7 +39,7 @@ export const labels = {
       AWAITING_CONTACT: 'Имя и телефон (звонок/WhatsApp) / email / Telegram...'
     },
     send: 'Отправить',
-    welcome: 'Здравствуйте. Я помогу сформировать вводные по вашей задаче и проверить свободное время. До подтверждения встречи диалог хранится только в этой вкладке. При нажатии «Подтвердить встречу» бриф и контакт будут переданы сервису календаря и сохранены в Google Calendar.',
+    welcome: 'Здравствуйте. Я помогу сформировать вводные по вашей задаче и проверю свободное время. Диалог хранится только в этой вкладке и не отправляется на сервер. Если захотите продолжить общение в мессенджере, скопируйте сводку и отправьте её сами.',
     start: 'Начать',
     questionGoal: 'С каким вопросом или проектом вы планируете работать?',
     questionDetails: 'Опишите ключевую задачу или ожидаемый результат. Пара предложений — этого достаточно для первичного контекста.',
@@ -54,18 +51,13 @@ export const labels = {
     alternatives: 'Вот ближайшие свободные окна:',
     unavailable: 'На ближайшие 7 дней свободных окон нет. Попробуйте позже.',
     available: 'Время свободно. Добавил его в бриф.',
-    confirm: 'Сводка готова. Подтвердите встречу, чтобы сохранить время и бриф в Google Calendar. Или скопируйте бриф и продолжите общение в мессенджере.',
-    briefTitle: 'Хочу обсудить проект',
-    goalLabel: 'Что нужно',
-    detailsLabel: 'О проекте',
-    contactLabel: 'Для связи',
-    slotLabel: 'Удобное время для разговора',
-    timeZone: 'МСК',
-    confirmBooking: 'Подтвердить встречу',
-    booking: 'Подтверждаю время и сохраняю бриф в Google Calendar…',
-    booked: 'Встреча подтверждена и сохранена в Google Calendar.',
-    bookingError: 'Не удалось подтвердить встречу. Время не сохранено. Можно повторить попытку.',
-    bookingInterrupted: 'Подтверждение прервалось. Повторите его — сервис проверит результат предыдущего запроса.',
+    confirm: 'Сводка готова. Скопируйте её и выберите, где продолжить общение с Евгением:',
+    briefTitle: 'Сводка сессии:',
+    goalLabel: 'Задача',
+    detailsLabel: 'Контекст',
+    contactLabel: 'Контакт',
+    slotLabel: 'Запрошенный слот',
+    timeZone: 'Europe/Moscow',
     copy: 'Скопировать бриф',
     copied: 'Бриф скопирован. Откройте мессенджер и вставьте текст.',
     copyError: 'Не удалось скопировать. Выделите текст брифа и скопируйте вручную.',
@@ -98,7 +90,7 @@ export const labels = {
       AWAITING_CONTACT: 'Name and phone (call/WhatsApp) / email / Telegram...'
     },
     send: 'Send',
-    welcome: 'Hello. I’ll help outline your request and check available times. Until you confirm the meeting, this conversation stays in this tab. When you select “Confirm meeting,” the brief and contact details are sent to the calendar service and saved in Google Calendar.',
+    welcome: 'Hello. I’ll help outline your request and check available times. This conversation is stored only in this tab and is not sent to a server. If you want to continue in a messenger, copy the summary and send it yourself.',
     start: 'Get started',
     questionGoal: 'What question or project would you like to work on?',
     questionDetails: 'Describe the key task or expected outcome. A couple of sentences is enough for initial context.',
@@ -110,18 +102,13 @@ export const labels = {
     alternatives: 'Here are the nearest available times:',
     unavailable: 'There are no open times in the next 7 days. Please try again later.',
     available: 'The time is free. I added it to your brief.',
-    confirm: 'Your summary is ready. Confirm the meeting to save the time and brief to Google Calendar, or copy the brief and continue in a messenger.',
-    briefTitle: 'I’d like to discuss a project',
-    goalLabel: 'What I need',
-    detailsLabel: 'About the project',
-    contactLabel: 'Contact details',
-    slotLabel: 'Convenient time to talk',
-    timeZone: 'Moscow time',
-    confirmBooking: 'Confirm meeting',
-    booking: 'Confirming the time and saving the brief to Google Calendar…',
-    booked: 'The meeting is confirmed and saved in Google Calendar.',
-    bookingError: 'Could not confirm the meeting. The time was not saved. You can try again.',
-    bookingInterrupted: 'The confirmation was interrupted. Retry it so the service can check the previous request.',
+    confirm: 'Your summary is ready. Copy it and choose where to continue the conversation with Evgeny:',
+    briefTitle: 'Session summary:',
+    goalLabel: 'Request',
+    detailsLabel: 'Context',
+    contactLabel: 'Contact',
+    slotLabel: 'Requested time',
+    timeZone: 'Europe/Moscow',
     copy: 'Copy brief',
     copied: 'Brief copied. Open a messenger and paste the text.',
     copyError: 'Could not copy. Select and copy the brief manually.',
@@ -150,15 +137,8 @@ function emptyState() {
     schema: SCHEMA_VERSION,
     step: STATES.IDLE,
     lead: { goal: '', details: '', contact: '', date: '', time: '' },
-    bookingRequestId: '',
-    bookedEventId: '',
     messages: []
   };
-}
-
-function newBookingRequestId() {
-  // This is an idempotency key, not an authentication secret. Keep it usable on HTTP test origins.
-  return `${Date.now().toString(16)}${Math.random().toString(16).slice(2, 26)}`.slice(0, 32).padEnd(32, '0');
 }
 
 function safeString(value) {
@@ -228,10 +208,6 @@ function restoreState() {
         date: safeString(stored.lead.date),
         time: safeString(stored.lead.time)
       },
-      bookingRequestId: typeof stored.bookingRequestId === 'string' && /^[0-9a-f]{32}$/u.test(stored.bookingRequestId)
-        ? stored.bookingRequestId
-        : '',
-      bookedEventId: typeof stored.bookedEventId === 'string' ? stored.bookedEventId.slice(0, 1024) : '',
       messages: stored.messages
         .filter(message => message && ['user', 'system', 'slot_selection', 'brief'].includes(message.type))
         .slice(-MAX_MESSAGES)
@@ -287,10 +263,9 @@ function compareSlots(left, right) {
 }
 
 export class WidgetFSM {
-  constructor({ onChange = () => {}, calendar = calendarAdapter, booking = bookingAdapter, documents = docsAdapter, language = 'ru' } = {}) {
+  constructor({ onChange = () => {}, calendar = calendarAdapter, documents = docsAdapter, language = 'ru' } = {}) {
     this.onChange = onChange;
     this.calendar = calendar;
-    this.booking = booking;
     this.documents = documents;
     this.language = labels[language] ? language : 'ru';
     this.state = restoreState();
@@ -301,10 +276,6 @@ export class WidgetFSM {
     if (this.state.step === STATES.CHECKING) {
       this.state.step = STATES.AWAITING_TIME;
       this.addSystemMessage('interrupted');
-    }
-    if (this.state.step === STATES.BOOKING) {
-      this.state.step = STATES.RESULT;
-      this.addSystemMessage('bookingInterrupted');
     }
 
     this.persist();
@@ -412,9 +383,6 @@ export class WidgetFSM {
       case STATES.RESULT:
         this.showResultActions();
         break;
-      case STATES.BOOKED:
-        this.showResultActions();
-        break;
     }
   }
 
@@ -457,9 +425,6 @@ export class WidgetFSM {
         break;
       case 'COPY_BRIEF':
         await this.copyBrief();
-        break;
-      case 'CONFIRM_BOOKING':
-        await this.confirmBooking();
         break;
       case 'OPEN_MAX':
         this.documents.openMessenger('max');
@@ -565,8 +530,6 @@ export class WidgetFSM {
     if (requestId !== this.requestId) return;
     this.state.lead.date = date;
     this.state.lead.time = '';
-    this.state.bookingRequestId = '';
-    this.state.bookedEventId = '';
     this.addSlotSelection(date);
     this.persist();
     this.setStep(STATES.AWAITING_TIME);
@@ -622,8 +585,6 @@ export class WidgetFSM {
       if (isFree === true) {
         this.state.lead.time = time;
         this.state.lead.date = date;
-        this.state.bookingRequestId = '';
-        this.state.bookedEventId = '';
         this.persist();
         this.setStep(STATES.RESULT);
         this.addSystemMessage('available');
@@ -684,81 +645,12 @@ export class WidgetFSM {
   }
 
   showResultActions() {
-    const actions = [];
-    if (this.state.step !== STATES.BOOKED) {
-      actions.push({ label: this.t('confirmBooking'), action: { type: 'CONFIRM_BOOKING' } });
-    }
-    actions.push(
+    this.setOptions([
       { label: this.t('copy'), action: { type: 'COPY_BRIEF' } },
       { label: this.t('max'), action: { type: 'OPEN_MAX' } },
       { label: this.t('vk'), action: { type: 'OPEN_VK' } },
       { label: this.t('restart'), action: { type: 'RESTART' } }
-    );
-    this.setOptions(actions);
-  }
-
-  async confirmBooking() {
-    if (
-      this.state.step !== STATES.RESULT ||
-      !this.state.lead.date ||
-      !this.state.lead.time ||
-      this.pending
-    ) return;
-
-    const requestId = ++this.requestId;
-    const selected = { date: this.state.lead.date, time: this.state.lead.time };
-    this.state.bookingRequestId ||= newBookingRequestId();
-    this.pending = true;
-    this.setStep(STATES.BOOKING);
-    this.addSystemMessage('booking');
-    this.setOptions([]);
-
-    try {
-      const result = await this.booking.book(this.state.lead, this.state.bookingRequestId);
-      if (requestId !== this.requestId) return;
-      this.state.bookedEventId = result.eventId;
-      this.setStep(STATES.BOOKED);
-      this.addSystemMessage('booked');
-      this.showResultActions();
-    } catch (error) {
-      if (requestId !== this.requestId) return;
-      if (error instanceof BookingRequestError && error.code === 'slot_unavailable') {
-        this.pending = false;
-        this.state.lead.time = '';
-        this.state.bookingRequestId = '';
-        this.setStep(STATES.AWAITING_TIME);
-        this.addSystemMessage('busy');
-        try {
-          const alternatives = await this.findAlternatives(selected.date, selected.time);
-          if (requestId !== this.requestId) return;
-          if (alternatives.length) {
-            this.addSystemMessage('alternatives');
-            this.setOptions(alternatives.map(slot => ({
-              label: `${formatDate(slot.date, this.language)} · ${slot.time}`,
-              action: { type: 'SELECT_ALTERNATIVE', payload: slot }
-            })));
-          } else {
-            this.addSystemMessage('unavailable');
-            this.setStep(STATES.UNAVAILABLE);
-            this.showRestart();
-          }
-        } catch {
-          if (requestId !== this.requestId) return;
-          this.addSystemMessage('error');
-          this.setOptions([{ label: this.t('retry'), action: { type: 'RETRY_TIMES' } }]);
-        }
-        return;
-      }
-
-      this.setStep(STATES.RESULT);
-      this.addSystemMessage('bookingError');
-      this.showResultActions();
-    } finally {
-      if (requestId === this.requestId) {
-        this.pending = false;
-        this.publish();
-      }
-    }
+    ]);
   }
 
   async copyBrief() {
