@@ -96,13 +96,16 @@
       "name": "Сервис по автомобильному свету",
       "name_en": "FARALAB",
       "category": "web_interface",
-      "description": "Сайт лаборатории автомобильного освещения: каталог работ и фотографий, услуги, контакты, адрес и карта. Скрипт сканирует папку с изображениями и автоматически собирает галерею; интерфейс включает мобильную навигацию и видеоматериалы.",
-      "description_en": "A website for an automotive lighting lab, with a work and photo catalog, services, contacts, address, and map. A script scans the image folder and builds the gallery automatically; the interface also includes mobile navigation and video content.",
+      "direction": "Сайты и цифровые продукты · дизайн и брендинг · автоматизация контента",
+      "direction_en": "Websites and digital products · design and branding · content automation",
+      "description": "Премиальный сайт-представительство лаборатории автомобильного освещения: услуги, каталог выполненных работ, видеоматериалы, контакты и интерактивная карта.\n\nГалерея без отдельной админки. Сайт автоматически формирует галерею на основе файлов проекта: добавление, замена и удаление изображений не требуют ручного редактирования страниц или отдельной панели управления. Статическая архитектура позволяет развернуть сайт на любом статическом хостинге — от GitHub Pages до платной инфраструктуры, без собственного backend-сервера.",
+      "description_en": "A premium showcase website for an automotive lighting laboratory, featuring services, a catalog of completed work, videos, contact details, and an interactive map.\n\nA gallery without a separate admin panel. The site builds its gallery automatically from project files: adding, replacing, or removing images requires no manual page edits or separate management panel. Its static architecture allows deployment on any static hosting, from GitHub Pages to paid infrastructure, without an owned backend server.",
       "tech_stack": [
         "HTML",
         "CSS",
         "JavaScript",
         "GitHub Pages",
+        "Static hosting",
         "File-based gallery automation"
       ],
       "status": "Implemented",
@@ -119,14 +122,14 @@
       "ambient_color": "#38bdf8",
       "cover_image": "assets/images/projects/faralab/faralab-showcase.png",
       "highlights": [
-        "Автоматически формировать галерею, сканируя папку с фотографиями.",
-        "Показывать каталог выполненных работ и услуг лаборатории.",
-        "Помогать клиентам связаться с лабораторией через мобильный интерфейс, контакты и карту."
+        "Представить услуги и выполненные работы в едином визуальном пространстве, адаптированном для мобильных устройств.",
+        "Организовать обновление галереи через файловую систему, без отдельной админки и базы данных.",
+        "Развернуть сайт на статическом хостинге без собственного backend-сервера и расходов на его обслуживание."
       ],
       "highlights_en": [
-        "Build the gallery automatically by scanning the image directory.",
-        "Present the lab’s completed work and services.",
-        "Help clients reach the lab through a mobile interface, contact details, and map."
+        "Present services and completed work in a unified visual space adapted for mobile devices.",
+        "Update the gallery through the file system without a separate admin panel or database.",
+        "Deploy the site on static hosting without an owned backend server or its ongoing maintenance costs."
       ]
     },
     {
