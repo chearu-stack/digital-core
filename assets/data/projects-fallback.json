@@ -1,5 +1,5 @@
 {
-  "fallback_updated_at": "2026-10-27",
+  "fallback_updated_at": "2026-10-28",
   "technical_debt": [],
   "flagship_projects": [
     {
@@ -799,6 +799,66 @@
         "Local chart calculation and technique checks",
         "Compare results by life event",
         "Entertainment interpretation; LLM API planned"
+      ]
+    },
+    {
+      "id": "digital-business-card-builder",
+      "name": "Конструктор цифровых визиток «Образ»",
+      "name_en": "Obraz Digital Business Card Builder",
+      "category": "computer_vision",
+      "description": "Работающий браузерный конструктор цифровых визиток. Он отделяет портрет или логотип от фона, позволяет вручную поправить результат кистью и собрать HTML-визитку для телефона. Цвета можно подобрать автоматически по изображению или вручную — выбрать фон карточки и подходящий к нему акцент. Визитку можно скачать как автономный HTML-файл со встроенными изображениями и сохранить контакт в VCF. Сохранение контакта проверено на Samsung и realme.",
+      "description_en": "A working browser-based digital business card builder. It separates a portrait or logo from its background, lets users refine the result with a brush, and assembles an HTML business card for a phone. Colors can be sampled from an image or selected manually as a coordinated card background and accent. The card can be downloaded as a standalone HTML file with embedded images, and the contact can be saved as a VCF. Contact saving has been verified on Samsung and realme devices.",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Canvas API",
+        "Hugging Face Transformers.js · ModNet",
+        "ONNX Runtime Web · WebGPU/WASM",
+        "Cache Storage",
+        "Standalone HTML · VCF"
+      ],
+      "status": "Работающий конструктор цифровых визиток",
+      "status_en": "Working digital business card builder",
+      "display_mode": "working_digital_business_card_builder",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [
+        "assets/images/projects/digital-business-card-builder/01-business-card-builder.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/digital-business-card-builder/01-business-card-builder.png",
+      "highlights": [
+        "Отделять портреты и логотипы от фона, корректировать маску кистью и скачивать PNG с прозрачностью.",
+        "Подбирать цвета по изображению или вручную настраивать фон визитки и акцент.",
+        "Собирать и просматривать телефонную визитку с контактами, портретом и логотипом.",
+        "Скачивать автономную HTML-визитку со встроенными изображениями и сохранять контакт в VCF.",
+        "Интерфейс конструктора адаптирован для компьютеров и мобильных устройств."
+      ],
+      "highlights_en": [
+        "Separate portraits and logos from their backgrounds, refine the mask with a brush, and download transparent PNGs.",
+        "Sample colors from an image or set the card background and accent manually.",
+        "Assemble and preview a phone-ready card with contact details, portrait, and logo.",
+        "Download a standalone HTML card with embedded images and save the contact as VCF.",
+        "The builder interface is adapted for desktop and mobile devices."
+      ],
+      "direction": "Компьютерное зрение · браузерная обработка изображений · цифровые продукты",
+      "direction_en": "Computer vision · browser-based image processing · digital products",
+      "workflow": [
+        "Загрузка портрета или логотипа",
+        "Удаление фона и ручная коррекция маски",
+        "Подбор палитры и оформление карточки",
+        "Предпросмотр телефонной визитки",
+        "Экспорт автономного HTML и контакта VCF"
+      ],
+      "workflow_en": [
+        "Upload a portrait or logo",
+        "Remove the background and refine the mask",
+        "Choose a palette and style the card",
+        "Preview the phone-ready card",
+        "Export standalone HTML and a VCF contact"
       ]
     }
   ]
