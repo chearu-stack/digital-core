@@ -1,5 +1,5 @@
 {
-  "fallback_updated_at": "2026-10-28",
+  "fallback_updated_at": "2026-10-29",
   "technical_debt": [],
   "flagship_projects": [
     {
@@ -279,11 +279,11 @@
     {
       "id": "piceatom",
       "showcase_slot": 7,
-      "name": "Закрытая система контроля",
-      "name_en": "Protected Control System",
+      "name": "Система управления задачами РТС",
+      "name_en": "RTS Task Management System",
       "category": "web_interface",
-      "description": "В репозитории представлен работающий фронтенд прототипа; серверная часть и настройка средств защиты пока не реализованы. Целевая архитектура предусматривает размещение в закрытом контуре на частном VDS, защищённые каналы связи и ролевое управление. Внешние счётчики и публичные точки входа в прототипе не подключены. Параметры контура и меры защиты предстоит определить при развёртывании.",
-      "description_en": "The repository contains a working frontend prototype; the backend and security configuration have not yet been implemented. The target architecture calls for deployment in a closed environment on a private VDS, secure communication channels, and role-based access. External counters and public entry points are not connected in the prototype. The environment configuration and security measures are to be defined during deployment.",
+      "description": "Задачи проходят единый и прозрачный путь — от постановки до приёмки и закрытия. Сотрудники видят текущий этап, ответственных, сроки и историю действий; руководители — ход работ и рабочие очереди. Это помогает не терять задачи при передаче между участниками и быстрее замечать задержки.\n\nАрхитектура и требования информационной безопасности спроектированы для размещения на локальном сервере предприятия, внутри его контура. Предусмотрена и возможность внешнего размещения — при выполнении требований ИБ и согласовании с ответственными за безопасность предприятия. Ролевая модель учитывает полномочия сотрудников и правила предприятия.\n\nБизнес-логику можно реализовать двумя путями: перенести существующие правила и расчёты из Excel или разработать их по точному описанию процесса предприятия — без Excel. В обоих случаях логика переносится в бэкенд и сверяется с контрольными сценариями.\n\nИнтерактивный фронтенд-прототип готов. Архитектура бэкенда и API спроектированы; серверная часть пока не реализована. Для её запуска нужны исходные требования к процессу: этапы, роли, правила, исключения и контрольные сценарии. Проект рассчитан на адаптацию под рабочий процесс конкретного предприятия.",
+      "description_en": "Tasks follow one clear path from creation to acceptance and closure. Employees can see each task’s current stage, owners, deadlines, and activity history; managers can see work queues and progress. This helps prevent tasks from being lost during handoffs and makes delays easier to spot.\n\nThe architecture and information-security requirements are designed for deployment on the enterprise’s local server, inside its network perimeter. External hosting is also supported, subject to the enterprise’s security requirements and approval by its security team. Role-based access reflects employee responsibilities and enterprise rules.\n\nBusiness logic can be implemented in either of two ways: by transferring existing rules and calculations from Excel, or by defining them from a precise description of the enterprise process—with no Excel files required. In either case, the logic is implemented in the backend and checked against agreed scenarios.\n\nThe interactive frontend prototype is ready. The backend architecture and API are designed; the server-side implementation has not started. To begin, the process requirements are needed: stages, roles, rules, exceptions, and control scenarios. The system is intended to be tailored to the enterprise’s actual workflow.",
       "tech_stack": [
         "React 19",
         "TypeScript",
@@ -299,8 +299,8 @@
         "Node.js",
         "npm"
       ],
-      "status": "Фронтенд-прототип реализован",
-      "status_en": "Frontend prototype implemented",
+      "status": "Фронтенд готов · бэкенд спроектирован",
+      "status_en": "Frontend ready · backend designed",
       "display_mode": "protected_vds_isolated_contour",
       "github_url": null,
       "demo_url": null,
@@ -313,20 +313,20 @@
       "ambient_color": "#94a3b8",
       "cover_image": "assets/images/projects/protected-control-system/control-system.png",
       "highlights": [
-        "Перенос учёта задач из Excel в единую систему — цель проекта.",
-        "При переходе предусмотрено сохранить рабочие процессы, правила и связи.",
-        "Фронтенд работает; поэтапное внедрение предполагает проверку данных и логики на контрольных примерах.",
-        "Техническое задание описывает бэкенд, включая ролевой доступ, историю изменений и контроль сроков; бэкенд пока не реализован.",
-        "Связи данных нужно уточнить до реализации хранения в PostgreSQL; закрытый контур на частном VDS — целевое требование.",
-        "Интерфейс адаптирован для десктопа и мобильных устройств."
+        "Видеть путь каждой задачи: этап, ответственных, срок и историю действий.",
+        "Передавать задачи между сотрудниками с понятными следующими шагами и ответственностью.",
+        "Работать с очередями задач, календарём и сводной аналитикой.",
+        "Архитектура и требования ИБ спроектированы для локального размещения; внешний вариант — при выполнении требований и согласовании ИБ.",
+        "Реализовать бизнес-логику по Excel-файлам или по описанию процесса — Excel не обязателен.",
+        "Фронтенд-прототип готов; архитектура и API бэкенда спроектированы."
       ],
       "highlights_en": [
-        "Moving task tracking from Excel into a unified system is a project objective.",
-        "The transition is intended to preserve workflows, rules, and relationships.",
-        "The frontend works; phased implementation calls for checking data and logic against test cases.",
-        "The technical specification describes the backend, including role-based access, change history, and deadline tracking; the backend has not yet been implemented.",
-        "Data relationships need to be defined before implementing PostgreSQL storage; deployment in a closed environment on a private VDS is a target requirement.",
-        "The interface is adapted for desktop and mobile devices."
+        "See each task’s stage, owners, deadline, and activity history.",
+        "Hand tasks between employees with clear next steps and ownership.",
+        "Work with task queues, a calendar, and summary analytics.",
+        "The architecture and security requirements are designed for local deployment; external hosting is subject to security requirements and approval.",
+        "Implement business logic from Excel or a process description; Excel is optional.",
+        "The frontend prototype is ready; the backend architecture and API are designed."
       ]
     },
     {
