@@ -297,7 +297,8 @@
         "PostgreSQL",
         "psycopg",
         "Node.js",
-        "npm"
+        "npm",
+        "LLM (planned extension)"
       ],
       "status": "Фронтенд готов · бэкенд спроектирован",
       "status_en": "Frontend ready · backend designed",
