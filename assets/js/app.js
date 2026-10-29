@@ -81,6 +81,8 @@
   let mediaTrigger = null;
 
   const text = (key) => copy[state.language][key];
+  copy.ru.filters.enterprise_systems = 'Внутренние системы';
+  copy.en.filters.enterprise_systems = 'Enterprise systems';
   const categoryLabel = (key) => copy[state.language].filters[key] || key;
   const directionLabel = (project) => (state.language === 'ru' ? project.direction : project.direction_en) || categoryLabel(project.category);
   const safeHttpsUrl = (value) => {
