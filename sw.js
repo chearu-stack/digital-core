@@ -1,6 +1,6 @@
 'use strict';
 
-const VERSION = 'digital-core-v6';
+const VERSION = 'digital-core-v7';
 const CORE = [
   'index.html',
   'assets/images/favicon.png',
