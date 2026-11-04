@@ -17,7 +17,7 @@
       detailStatus:'Статус',detailCategory:'Направление',detailStack:'Технологии',detailMedia:'Визуальные материалы',detailArchitecture:'Архитектура и схема',
       detailScreenshots:'Скриншоты',
       detailSource:'Исходный код',
-      githubAction:'GitHub / Исходный код',detailDemo:'Живое демо',openExternal:'Открыть демо отдельно ↗',
+      githubAction:'GitHub / Исходный код',detailDemo:'Живое демо',openExternal:'Открыть демо отдельно ↗',openFvkDemo:'Открыть демо',fvkDemoWait:'Первый запуск может занять немного времени — дождитесь загрузки приложения.',
       openImage:'Открыть изображение'},
     en: {
       navWork:'Work',navCatalog:'Catalog',navAbout:'Approach',contact:'Start a conversation',
@@ -35,7 +35,7 @@
       detailStatus:'Mode',detailCategory:'Direction',detailStack:'Technology stack',detailHighlights:'Problems addressed',detailMedia:'Visual proof',detailArchitecture:'Architecture diagram',
       detailScreenshots:'Screenshots',
       detailSource:'Source code',
-      githubAction:'GitHub / Source code',detailDemo:'Live demo',openExternal:'Open demo in a new tab ↗',
+      githubAction:'GitHub / Source code',detailDemo:'Live demo',openExternal:'Open demo in a new tab ↗',openFvkDemo:'Open demo',fvkDemoWait:'The first launch may take a little longer. Please wait for the app to load.',
       openImage:'View image'}
   };
   Object.assign(copy.ru, {"heroCopy":"Проектирую и создаю цифровые продукты. Специализация — интеграция ИИ-решений (RAG, агенты) в существующие бизнес-процессы. Не обещаю «магию», а строю работающие инструменты.","catalogCopy":"\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u044b\u0435 \u0437\u0430\u043c\u0435\u0442\u043a\u0438<br>\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430.","filters":{"all":"\u0412\u0441\u0435","ai_automation":"\u0418\u0418 \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f","commerce":"\u041a\u043e\u043c\u043c\u0435\u0440\u0446\u0438\u044f","web_interface":"\u0421\u0430\u0439\u0442\u044b \u0438 \u0432\u0435\u0431-\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b","architecture_docs":"\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430","fsm":"\u041b\u043e\u0433\u0438\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0439","construction":"\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e"},"projectDetailKicker":"\u041f\u0420\u041e\u0415\u041a\u0422 / \u041f\u041e\u0414\u0420\u041e\u0411\u041d\u041e\u0421\u0422\u0418","detailStack":"\u0421\u043e\u0441\u0442\u0430\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438","detailScreenshots":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f","detailSource":"\u041e\u0442\u043a\u0440\u044b\u0442\u044b\u0439 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","githubAction":"\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434","detailDemo":"\u041f\u043e\u043a\u0430\u0437 \u043f\u0440\u043e\u0435\u043a\u0442\u0430","openExternal":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043a\u0430\u0437 \u0432 \u043d\u043e\u0432\u043e\u0439 \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u2197","presentationTitle":"\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u0431\u0430\u0437\u044b \u0437\u043d\u0430\u043d\u0438\u0439","openPresentation":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044e \u2197","heroVisualLabel":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u2014 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c","heroImageAlt":"\u0421\u0445\u0435\u043c\u0430 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0441 \u0441\u0432\u0435\u0442\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u043b\u0438\u043d\u0438\u044f\u043c\u0438 \u043d\u0430 \u0442\u0451\u043c\u043d\u043e\u043c \u0444\u043e\u043d\u0435","heroCoordinates":"\u042f\u0414\u0420\u041e\u201401 / 55.9678\u00b0 \u0421\u0428 \u00b7 43.0768\u00b0 \u0412\u0414","brandMark":"\u0426\u042f","brandCaption":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415<br>\u042f\u0414\u0420\u041e","brandAria":"\u0426\u0438\u0444\u0440\u043e\u0432\u043e\u0435 \u044f\u0434\u0440\u043e \u2014 \u043d\u0430\u0432\u0435\u0440\u0445","languageSwitch":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a","menuOpen":"\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e","heroLabel":"\u041d\u0415\u0417\u0410\u0412\u0418\u0421\u0418\u041c\u0410\u042f \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u0410\u042f \u041f\u0420\u0410\u041a\u0422\u0418\u041a\u0410","heroRule":"\u041b\u0418\u0421\u0422\u0410\u0419\u0422\u0415, \u0427\u0422\u041e\u0411\u042b \u0418\u0421\u0421\u041b\u0415\u0414\u041e\u0412\u0410\u0422\u042c","sectionWorkKicker":"01 / \u0418\u0417\u0411\u0420\u0410\u041d\u041d\u042b\u0415 \u0420\u0415\u0428\u0415\u041d\u0418\u042f","sectionCatalogKicker":"02 / \u0418\u041d\u0416\u0415\u041d\u0415\u0420\u041d\u042b\u0419 \u0423\u041a\u0410\u0417\u0410\u0422\u0415\u041b\u042c","sectionAboutKicker":"03 / \u041f\u0420\u0418\u041d\u0426\u0418\u041f\u042b","sectionFooterKicker":"04 / \u0421\u0412\u042f\u0417\u042c","principleOne":"\u042f\u0421\u041d\u041e\u0421\u0422\u042c","principleTwo":"\u041d\u0410\u0414\u0401\u0416\u041d\u041e\u0421\u0422\u042c","principleThree":"\u041c\u0410\u0421\u0422\u0415\u0420\u0421\u0422\u0412\u041e","backToTop":"\u0412\u0412\u0415\u0420\u0425 \u2191","copyright":"\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0415 \u042f\u0414\u0420\u041e 2026","dialogClose":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043e\u043a\u043d\u043e","aboutCopy":"\u042f \u0438\u0437\u0443\u0447\u0430\u044e \u0437\u0430\u0434\u0430\u0447\u0443, \u0432\u044b\u0434\u0435\u043b\u044f\u044e \u0433\u043b\u0430\u0432\u043d\u043e\u0435 \u0438 \u0441\u043e\u0437\u0434\u0430\u044e \u044f\u0441\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435. \u0412 \u043e\u0441\u043d\u043e\u0432\u0435 \u2014 \u0430\u043a\u043a\u0443\u0440\u0430\u0442\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430, \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0438 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043d\u0435 \u043c\u0435\u0448\u0430\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u0435."});
@@ -468,13 +468,14 @@
       detailRoot.append(note);
     }
 
-    const actions = element('div', 'project-actions');
+    const isFvkFactory = project.id === 'fvk-content-factory';
+    const actions = element('div', isFvkFactory ? 'project-actions project-actions--fvk' : 'project-actions');
     const githubUrl = project.is_private === false ? publicGithubUrl(project.github_url) : null;
     if (githubUrl) addLink(actions, text('githubAction'), githubUrl, 'detail-action github-action');
     const demoUrl = safeHttpsUrl(project.demo_url);
     const presentationUrl = safeHttpsUrl(project.presentation_url);
     if (demoUrl) addLink(actions, text('openExternal'), demoUrl.href, 'detail-action external-action');
-    if (presentationUrl) {
+    if (presentationUrl && !isFvkFactory) {
       const presentationLabel = project.display_mode === 'on_demand_knowledge_presentation' ? 'openPresentation' : 'openExternalProject';
       addLink(actions, text(presentationLabel), presentationUrl.href, 'detail-action external-action');
     }
@@ -482,7 +483,15 @@
       const label = state.language === 'ru' ? '\u041e\u0431\u0441\u0443\u0434\u0438\u0442\u044c \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435' : 'Discuss implementation';
       addLink(actions, label, 'mailto:' + project.contact_email, 'detail-action contact-action');
     }
-    if (actions.childElementCount) detailRoot.append(actions);
+    if (presentationUrl && isFvkFactory) {
+      const demoAction = element('div', 'project-demo-action');
+      addLink(demoAction, text('openFvkDemo'), presentationUrl.href, 'detail-action external-action fvk-demo-link');
+      demoAction.append(element('p', 'project-demo-note', text('fvkDemoWait')));
+      actions.append(demoAction);
+    }
+    if (actions.childElementCount) {
+      detailRoot.append(actions);
+    }
 
     if (demoUrl) {
       const demoSection = element('section', 'detail-section');
