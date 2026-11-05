@@ -6,6 +6,13 @@
 @media(max-width:580px){.hero-showcase{grid-template-columns:1fr;gap:24px;margin-top:0}.hero-intro{padding-top:0}.hero-location{margin-top:20px}.hero-visual{width:100%;min-height:0;aspect-ratio:1.45}.visual-stack{left:14px;bottom:38px;gap:6px}.visual-chip{font-size:7px;padding:3px 5px}.visual-index{font-size:7px;left:14px;right:auto;bottom:10px}}
 @media(prefers-reduced-motion:reduce){.hero-visual,.hero-visual img,.visual-focus{transition:none}}
 
+/* Keep the Russian catalog status readable without reserving an empty tags column. */
+html[lang="ru"] .catalog-row{grid-template-columns:42px minmax(0,1fr) minmax(190px,24%) 24px}
+html[lang="ru"] .row-tags{display:none}
+.row-status{overflow-wrap:normal;word-break:normal;hyphens:none}
+@media(max-width:800px){html[lang="ru"] .catalog-row{grid-template-columns:32px minmax(0,1fr) 20px}}
+@media(max-width:580px){.catalog-row{grid-template-columns:25px minmax(0,1fr) 20px}.catalog-row>span:nth-child(2){min-width:0}.row-title,.row-description{overflow-wrap:anywhere}.row-tags{grid-column:2;grid-row:2}}
+
 .project-dialog,.media-dialog{color:var(--ink);background:#171815;border:1px solid #535647;padding:0;box-shadow:0 24px 100px #000c}
 .project-dialog{width:min(90vw,1600px);max-width:90vw;max-height:min(92dvh,1000px);overflow:auto}
 .project-dialog::backdrop,.media-dialog::backdrop{background:rgba(5,6,5,.82);backdrop-filter:blur(8px)}
@@ -423,3 +430,10 @@ html[lang="ru"] .row-title{letter-spacing:0}
 .expertise-section{margin-top:140px;padding:46px 0;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:clamp(28px,5vw,72px);align-items:center}.expertise-copy h2{font-size:clamp(32px,4.2vw,52px);letter-spacing:-.055em;line-height:1.1;font-weight:500;margin:14px 0 20px}.expertise-summary{max-width:680px;color:#aaa9a1;font-size:13px;line-height:1.85;margin:0}.expertise-topics-title{font-size:12px;font-weight:600;margin:24px 0 10px}.expertise-topics{display:grid;gap:8px;margin:0;padding-left:18px;color:#b8b6af;font-size:12px;line-height:1.65}.expertise-topics li::marker{color:var(--lime)}.expertise-link{display:inline-flex;align-items:center;gap:14px;margin-top:26px;color:var(--lime);font-size:12px;transition:color .2s}.expertise-link span:last-child{color:var(--lime)}.expertise-link:hover{color:var(--ink)}.expertise-visual{margin:0;overflow:hidden;aspect-ratio:3/2;background:#0b0c09}.expertise-visual img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:800px){.expertise-section{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.expertise-copy h2{font-size:clamp(30px,4vw,42px)}}
 @media(max-width:580px){.expertise-section{margin-top:90px;padding:32px 0;grid-template-columns:1fr;gap:24px}.expertise-copy h2{font-size:34px}.expertise-summary,.expertise-topics{font-size:11px}.expertise-visual{grid-row:2}}
+
+@media(max-width:580px){
+  .catalog-row{grid-template-columns:25px minmax(0,1fr) 20px;grid-auto-flow:row;align-items:start}
+  .row-status{grid-column:2;grid-row:2;display:block;-webkit-line-clamp:unset;overflow:visible;text-align:left;font-size:8px;line-height:1.4;overflow-wrap:normal;word-break:normal;hyphens:none}
+  .row-tags{grid-column:2;grid-row:3}
+  .row-arrow{grid-column:3;grid-row:1;justify-self:end}
+}

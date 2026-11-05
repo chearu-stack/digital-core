@@ -157,7 +157,7 @@
   displayModes.en.prototype_b2b = 'PROTOTYPE / B2B PROPOSAL';
   displayModes.ru.research_internal_engine = 'R&D / INTERNAL ENGINE';
   displayModes.en.research_internal_engine = 'R&D / INTERNAL ENGINE';
-  displayModes.ru.proprietary_mvp = 'PROPRIETARY MVP / АРХИТЕКТУРНЫЙ ПАТЕНТ';
+  displayModes.ru.proprietary_mvp = 'СОБСТВЕННОЕ MVP / АРХИТЕКТУРНЫЙ ПАТЕНТ';
   displayModes.en.proprietary_mvp = 'PROPRIETARY MVP / ARCHITECTURAL PATENT';
   displayModes.ru.concept_b2b_b2c_ecommerce = 'КОНЦЕПТ ИНТЕРНЕТ-МАГАЗИНА / B2B И B2C / ОПТОВЫЕ И РОЗНИЧНЫЕ ПРОДАЖИ';
   displayModes.en.concept_b2b_b2c_ecommerce = 'E-COMMERCE CONCEPT / B2B & B2C / WHOLESALE & RETAIL';
