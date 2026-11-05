@@ -332,7 +332,8 @@
         "The frontend prototype is ready; the backend architecture and API are designed."
       ],
       "direction": "Внутренние системы · управление задачами · контроль исполнения",
-      "direction_en": "Internal systems · task management · execution control"
+      "direction_en": "Internal systems · task management · execution control",
+      "presentation_url": "https://app8504.195.209.219.224.nip.io/"
     },
     {
       "id": "rf-smeta",

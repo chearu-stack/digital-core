@@ -481,7 +481,9 @@
     const presentationUrl = safeHttpsUrl(project.presentation_url);
     if (demoUrl) addLink(actions, text('openExternal'), demoUrl.href, 'detail-action external-action');
     if (presentationUrl && !isFvkFactory) {
-      const presentationLabel = project.display_mode === 'on_demand_knowledge_presentation' ? 'openPresentation' : 'openExternalProject';
+      const presentationLabel = project.display_mode === 'on_demand_knowledge_presentation'
+        ? 'openPresentation'
+        : project.display_mode === 'protected_vds_isolated_contour' ? 'openExternal' : 'openExternalProject';
       addLink(actions, text(presentationLabel), presentationUrl.href, 'detail-action external-action');
     }
     if (typeof project.contact_email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(project.contact_email)) {
