@@ -865,6 +865,69 @@
         "Preview the phone-ready card",
         "Export standalone HTML and a VCF contact"
       ]
+    },
+    {
+      "id": "proxy-safe",
+      "name": "Proxy-Safe — утилита настройки HTTPS",
+      "name_en": "Proxy-Safe — HTTPS Setup Utility",
+      "category": "devops",
+      "description": "Локальная программа для настройки HTTPS-доступа к приложению на VDS. Подключается к серверу по SSH, проверяет его состояние перед изменениями, выпускает сертификат Let's Encrypt через Certbot и настраивает обратный прокси Nginx. Для каждого приложения создаётся отдельный файл конфигурации; существующие сайты и конфиги не перезаписываются. Перед применением проверяется конфигурация Nginx, а при ошибке выполняется автоматический откат. Для адресации по IP можно использовать nip.io.",
+      "description_en": "A local utility for configuring HTTPS access to an application on a VDS. It connects to the server over SSH, checks the server before making changes, obtains a Let's Encrypt certificate through Certbot, and configures an Nginx reverse proxy. Each application gets its own configuration file; existing sites and configurations are left untouched. The Nginx configuration is validated before applying it, with an automatic rollback on failure. nip.io can be used for IP-based hostnames.",
+      "tech_stack": [
+        "Python (GUI and backend)",
+        "SSH (Paramiko / OpenSSH)",
+        "Nginx (reverse proxy)",
+        "Certbot / Let's Encrypt",
+        "nip.io (IP-based DNS)",
+        "Bash (server scripts)"
+      ],
+      "status": "Рабочая утилита автоматизации HTTPS",
+      "status_en": "Working HTTPS automation utility",
+      "display_mode": "local_automation_tool",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [
+        "assets/images/projects/proxy-safe/proxy-safe.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/proxy-safe/proxy-safe.png",
+      "ambient_color": "#94a3b8",
+      "highlights": [
+        "Проверять сервер по SSH в режиме чтения до внесения изменений.",
+        "Выпускать сертификат Let's Encrypt и настраивать обратный прокси Nginx для выбранного приложения.",
+        "Создавать отдельный конфиг проекта, не перезаписывая существующие конфигурации сайтов.",
+        "Проверять конфигурацию Nginx и автоматически откатывать изменения при ошибке.",
+        "Проверять порты и DNS, защищать существующие файлы от перезаписи."
+      ],
+      "highlights_en": [
+        "Check the server over SSH in read-only mode before making changes.",
+        "Obtain a Let's Encrypt certificate and configure an Nginx reverse proxy for the selected application.",
+        "Create a separate project configuration without overwriting existing site configurations.",
+        "Validate the Nginx configuration and roll back changes automatically on failure.",
+        "Check ports and DNS, and protect existing files from being overwritten."
+      ],
+      "direction": "DevOps · управление серверной инфраструктурой · безопасность веб-приложений",
+      "direction_en": "DevOps · server infrastructure management · web application security",
+      "workflow": [
+        "Ввод IP-адреса, порта и SSH-ключа",
+        "Проверка доступности сервера, DNS и занятости ресурсов",
+        "Подготовка временной конфигурации Nginx",
+        "Запрос сертификата через Certbot с хуком перезагрузки Nginx",
+        "Подготовка HTTPS-конфига обратного прокси",
+        "Проверка конфигурации и перезагрузка Nginx",
+        "Отчёт о результате или автоматический откат"
+      ],
+      "workflow_en": [
+        "Enter the IP address, port, and SSH key",
+        "Check server access, DNS, and resource availability",
+        "Prepare a temporary Nginx configuration",
+        "Request a certificate through Certbot with an Nginx reload hook",
+        "Prepare the HTTPS reverse-proxy configuration",
+        "Validate the configuration and reload Nginx",
+        "Report success or roll back automatically"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const VERSION = 'digital-core-v7';
+const VERSION = 'digital-core-v8';
 const CORE = [
   'index.html',
   'assets/images/favicon.png',
@@ -15,6 +15,7 @@ const CORE = [
   'assets/images/projects/nova-pack/01-storefront-overview.jpeg',
   'assets/images/projects/astrology-events/01-event-analysis.png',
   'assets/images/projects/digital-business-card-builder/01-business-card-builder.png',
+  'assets/images/projects/proxy-safe/proxy-safe.png',
   'assets/data/projects.json',
   'assets/data/projects-fallback.json',
   'modules/bot/bot-widget.css',

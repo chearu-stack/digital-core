@@ -83,6 +83,8 @@
   const text = (key) => copy[state.language][key];
   copy.ru.filters.enterprise_systems = 'Внутренние системы';
   copy.en.filters.enterprise_systems = 'Enterprise systems';
+  copy.ru.filters.devops = 'DevOps / Инфраструктура';
+  copy.en.filters.devops = 'DevOps / Infrastructure';
   const categoryLabel = (key) => copy[state.language].filters[key] || key;
   const directionLabel = (project) => (state.language === 'ru' ? project.direction : project.direction_en) || categoryLabel(project.category);
   const safeHttpsUrl = (value) => {
@@ -161,6 +163,8 @@
   displayModes.en.concept_b2b_b2c_ecommerce = 'E-COMMERCE CONCEPT / B2B & B2C / WHOLESALE & RETAIL';
   displayModes.ru.engineering_tool_in_development = 'РАБОЧИЙ ИНЖЕНЕРНЫЙ ИНСТРУМЕНТ / В РАЗВИТИИ';
   displayModes.en.engineering_tool_in_development = 'ENGINEERING TOOL / IN DEVELOPMENT';
+  displayModes.ru.local_automation_tool = 'ЛОКАЛЬНАЯ УТИЛИТА / АВТОМАТИЗАЦИЯ ИНФРАСТРУКТУРЫ';
+  displayModes.en.local_automation_tool = 'LOCAL UTILITY / INFRASTRUCTURE AUTOMATION';
   displayModes.ru.entertainment_experimental = 'РАЗВЛЕЧЕНИЯ / ЭКСПЕРИМЕНТАЛЬНЫЙ ПРОЕКТ';
   displayModes.en.entertainment_experimental = 'ENTERTAINMENT / EXPERIMENTAL PROJECT';
   copy.ru.filters.entertainment_software = 'Развлекательное ПО';
