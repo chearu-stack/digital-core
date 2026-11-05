@@ -576,37 +576,6 @@
       ]
     },
     {
-      "id": "vk-bot-fsm-engine",
-      "name": "Внутренний движок состояний",
-      "name_en": "Internal Dialog State Engine",
-      "category": "fsm",
-      "description": "Внутренний R&D-движок диалогового бота на конечном автомате (FSM). Формальные состояния и разрешённые переходы обеспечивают предсказуемое управление сценарием независимо от свободной генерации текста языковой моделью.",
-      "description_en": "An internal R&D dialog engine based on a finite-state machine (FSM). Explicit states and allowed transitions make scenario control predictable and independent of free-form language-model text generation.",
-      "tech_stack": [
-        "Python",
-        "FSM"
-      ],
-      "status": "Закрытый модуль R&D",
-      "status_en": "Closed R&D module",
-      "display_mode": "research_internal_engine",
-      "github_url": null,
-      "demo_url": null,
-      "is_private": true,
-      "visibility_status": "not_applicable",
-      "screenshots": [],
-      "architecture_diagram": null,
-      "highlights": [
-        "Задавать состояния диалога и допустимые переходы формальной логикой FSM.",
-        "Управлять сценарием предсказуемо, не полагаясь только на свободную генерацию текста.",
-        "Интерфейс адаптирован для десктопа и мобильных устройств."
-      ],
-      "highlights_en": [
-        "Define dialog states and allowed transitions with FSM logic.",
-        "Keep scenario control predictable instead of relying only on free-form text generation.",
-        "The interface is adapted for desktop and mobile devices."
-      ]
-    },
-    {
       "id": "core-wisdom",
       "name": "Маршрутизация команд",
       "name_en": "core_wisdom",
@@ -927,6 +896,64 @@
         "Prepare the HTTPS reverse-proxy configuration",
         "Validate the configuration and reload Nginx",
         "Report success or roll back automatically"
+      ]
+    },
+    {
+      "id": "vk-bot-fsm-engine",
+      "name": "Цифровой ассистент для записи на встречу",
+      "name_en": "Website Assistant for Project Intake and Meeting Booking",
+      "category": "fsm",
+      "description": "Браузерный бот для первичного обсуждения проекта и записи на встречу. Он последовательно собирает задачу, контекст и контакт, предлагает свободное время и проверяет выбранный слот через календарный сервис. До подтверждения диалога данные хранятся только в текущей вкладке; при подтверждении встречи бриф и контакт передаются календарному сервису и сохраняются вместе со встречей в Google Calendar. Если слот занят, бот предлагает доступные альтернативы; бриф можно скопировать и продолжить общение в мессенджере.",
+      "description_en": "A browser-based assistant for initial project discussions and meeting booking. It collects the request, context, and contact details step by step, offers available times, and checks the selected slot through a calendar service. Before confirmation, the conversation stays in the current tab; confirming the meeting sends the brief and contact details to the calendar service for storage with the event in Google Calendar. If a slot is taken, the assistant offers alternatives; the brief can also be copied for follow-up in a messenger.",
+      "tech_stack": [
+        "JavaScript",
+        "Finite-state machine (FSM)",
+        "sessionStorage",
+        "REST API",
+        "Google Calendar integration"
+      ],
+      "status": "Работающий браузерный бот",
+      "status_en": "Working browser-based assistant",
+      "display_mode": "working_browser_assistant",
+      "github_url": null,
+      "demo_url": null,
+      "is_private": true,
+      "visibility_status": "not_applicable",
+      "screenshots": [],
+      "architecture_diagram": null,
+      "highlights": [
+        "Собирать задачу, контекст и контакт последовательно, с проверкой введённых данных.",
+        "Предлагать свободные даты и временные слоты в пределах рабочего расписания.",
+        "Повторно проверять слот перед записью и предлагать альтернативы, если время занято.",
+        "После подтверждения передавать бриф и контакт календарному сервису для создания встречи.",
+        "Сохранять ход диалога в текущей вкладке и позволять скопировать бриф для мессенджера."
+      ],
+      "highlights_en": [
+        "Collect the request, context, and contact details step by step, with input validation.",
+        "Offer available dates and time slots within the configured working schedule.",
+        "Recheck the selected slot before booking and offer alternatives when it is taken.",
+        "Send the brief and contact details to the calendar service to create a meeting after confirmation.",
+        "Keep dialog progress in the current tab and let users copy the brief for a messenger."
+      ],
+      "direction": "Цифровые ассистенты · диалоговые сценарии · интеграция с календарями",
+      "direction_en": "Digital assistants · dialog workflows · calendar integrations",
+      "workflow": [
+        "Описание задачи",
+        "Контекст проекта",
+        "Контакт для связи",
+        "Выбор даты и времени",
+        "Проверка доступности слота",
+        "Подтверждение встречи и сохранение брифа в календаре",
+        "При занятом слоте — выбор доступной альтернативы"
+      ],
+      "workflow_en": [
+        "Describe the request",
+        "Provide project context",
+        "Enter contact details",
+        "Choose a date and time",
+        "Check slot availability",
+        "Confirm the meeting and save the brief to the calendar",
+        "If the slot is taken, choose an available alternative"
       ]
     }
   ]
