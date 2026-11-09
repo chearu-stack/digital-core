@@ -1,5 +1,5 @@
 {
-  "fallback_updated_at": "2026-11-05",
+  "fallback_updated_at": "2026-11-09",
   "technical_debt": [],
   "flagship_projects": [
     {
@@ -426,6 +426,52 @@
         "Present products for cafés, restaurants, and everyday purchases through themed categories and product cards.",
         "Show how wholesale pricing, special terms, and a corporate customer account could work.",
         "Prepare the store structure for future catalog, order, and customer-account integrations."
+      ]
+    },
+    {
+      "id": "maison-de-fleurs-showcase",
+      "showcase_slot": 10,
+      "name": "MAISON DE FLEURS — цифровая витрина и концепт сообщества бренда",
+      "name_en": "MAISON DE FLEURS — Digital Showcase and Brand Community Concept",
+      "category": "web_interface",
+      "direction": "Адаптивные веб-интерфейсы · цифровая витрина бренда · визуальный контент",
+      "direction_en": "Responsive web interfaces · brand showcase · visual content",
+      "description": "Концептуальный проект для премиального цветочного бизнеса: демонстрация того, как бренд может быть представлен через адаптивную веб-витрину и оформление сообщества ВКонтакте. На сайте представлены три композиции, история бренда и редакционная лента из четырёх публикаций с фильтрацией по дням недели и раскрытием полного текста. Статический фронтенд (HTML, CSS, JavaScript, Vite) развёрнут на GitHub Pages. Все визуальные материалы — личный портрет и авторские ИИ-генерации цветочных сюжетов — созданы автором проекта с использованием собственной технологии. Функционал носит демонстрационный характер: интерфейсный концепт без корзины и эквайринга.\n\nАрхитектура объединяет каталог композиций, бренд-историю и контент-ленту с фильтрацией по дням недели и разворачивающимися текстами.\n\nПредусмотрено дальнейшее развитие проекта в полноценный интернет-магазин: с корзиной, выбором доставки или самовывоза, даты и временного интервала, оформлением пожеланий к букету и оплатой онлайн. На первом этапе наличие цветов и выбранное время можно подтверждать вручную, отправляя покупателю ссылку на оплату; позднее добавить автоматическое управление заказами и доступными интервалами. Эти возможности относятся к направлению развития и пока не реализованы.",
+      "description_en": "A concept project for a premium floristry business, demonstrating how a brand can be presented through a responsive web showcase and a VKontakte community design. The site features three arrangements, a brand story, and an editorial feed of four posts with weekday filtering and expandable full text. The static frontend (HTML, CSS, JavaScript, Vite) is deployed on GitHub Pages. All visual materials—the personal portrait and original AI-generated floral scenes—were created by the project author using their own technology. Functionality is demonstrational: an interface concept without a cart or payment processing.\n\nThe architecture brings together the arrangement catalog, brand story, and content feed with weekday filtering and expandable post text.\n\nFurther development is planned toward a full online store, with a cart, delivery or pickup selection, date and time-slot selection, bouquet request notes, and online payment. At the first stage, flower availability and the selected time can be confirmed manually, with a payment link sent to the buyer; later, order management and available time slots can be automated. These features are part of the future roadmap and are not implemented yet.",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vite",
+        "Responsive layout",
+        "GitHub Actions",
+        "GitHub Pages",
+        "AI image generation"
+      ],
+      "status": "Прототип",
+      "status_en": "Prototype",
+      "display_mode": "commercial_demo_brand_showcase",
+      "github_url": null,
+      "demo_url": "https://chearu-stack.github.io/flower-boutique-landing/",
+      "is_private": false,
+      "visibility_status": "verified",
+      "screenshots": [
+        "assets/images/projects/maison-de-fleurs/01-showcase.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/maison-de-fleurs/01-showcase.png",
+      "ambient_color": "#a88c57",
+      "highlights": [
+        "Показать потенциальному заказчику концепт цифрового представления цветочного бренда на сайте и в сообществе.",
+        "Объединить витрину композиций и редакционные публикации в одном адаптивном интерфейсе.",
+        "Продемонстрировать авторские визуальные материалы: личный портрет и ИИ-генерации цветочных сюжетов собственной технологии автора.",
+        "Дать посетителю фильтруемую по дням ленту публикаций с доступом к полному тексту."
+      ],
+      "highlights_en": [
+        "Show prospective clients an example of presenting a floral brand through a website and a community concept.",
+        "Bring an arrangement showcase and editorial posts together in one responsive interface.",
+        "Demonstrate owner-created visual assets: a personal portrait and original AI-generated floral scenes.",
+        "Provide a day-filtered post feed with access to each full text."
       ]
     }
   ],

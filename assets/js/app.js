@@ -173,6 +173,8 @@
   displayModes.en.working_digital_business_card_builder = 'WORKING DIGITAL BUSINESS CARD BUILDER';
   displayModes.ru.working_browser_assistant = 'РАБОТАЮЩИЙ БРАУЗЕРНЫЙ БОТ / ЗАПИСЬ НА ВСТРЕЧУ';
   displayModes.en.working_browser_assistant = 'WORKING BROWSER BOT / MEETING BOOKING';
+  displayModes.ru.commercial_demo_brand_showcase = 'КОНЦЕПТ-ПРОЕКТ / UI-ДИЗАЙН + ВЕБ-РАЗРАБОТКА';
+  displayModes.en.commercial_demo_brand_showcase = 'CONCEPT PROJECT / UI DESIGN + WEB DEVELOPMENT';
   copy.ru.filters.computer_vision = 'Компьютерное зрение';
   copy.en.filters.computer_vision = 'Computer vision';
   const displayMode = (project) => displayModes[state.language][project.display_mode] || project.display_mode || '';
