@@ -173,6 +173,8 @@
   displayModes.en.working_digital_business_card_builder = 'WORKING DIGITAL BUSINESS CARD BUILDER';
   displayModes.ru.working_browser_assistant = 'РАБОТАЮЩИЙ БРАУЗЕРНЫЙ БОТ / ЗАПИСЬ НА ВСТРЕЧУ';
   displayModes.en.working_browser_assistant = 'WORKING BROWSER BOT / MEETING BOOKING';
+  displayModes.ru.offline_first_engineering_tool = 'РАБОЧИЙ ПРОЕКТ / READY TO USE (OFFLINE-FIRST)';
+  displayModes.en.offline_first_engineering_tool = 'WORKING PROJECT / READY TO USE (OFFLINE-FIRST)';
   displayModes.ru.commercial_demo_brand_showcase = 'КОНЦЕПТ-ПРОЕКТ / UI-ДИЗАЙН + ВЕБ-РАЗРАБОТКА';
   displayModes.en.commercial_demo_brand_showcase = 'CONCEPT PROJECT / UI DESIGN + WEB DEVELOPMENT';
   copy.ru.filters.computer_vision = 'Компьютерное зрение';
@@ -429,7 +431,7 @@
     const title = element('h2', 'project-detail-title', name);
     title.id = 'project-dialog-title';
     detailRoot.append(title);
-    detailRoot.append(element('p', 'project-detail-description', description || ''));
+    detailRoot.append(element('p', project.id === 'solar-power-calculator' ? 'project-detail-description project-detail-description--solar-power' : 'project-detail-description', description || ''));
 
     const facts = element('dl', 'project-facts');
     addDefinition(facts, text('detailStatus'), displayMode(project));
@@ -529,7 +531,7 @@
       }
       if (screenshots.length) {
         mediaSection.append(addI18nText('h4', 'detail-subheading', 'detailScreenshots'));
-        const gallery = element('div', 'media-gallery');
+        const gallery = element('div', `media-gallery${project.id === 'solar-power-calculator' ? ' media-gallery--solar-power' : ''}`);
         screenshots.forEach((source, index) => addMediaButton(gallery, source, name + ' — ' + text('detailScreenshots') + ' ' + (index + 1)));
         mediaSection.append(gallery);
       }

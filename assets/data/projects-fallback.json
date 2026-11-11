@@ -1,5 +1,5 @@
 {
-  "fallback_updated_at": "2026-11-09",
+  "fallback_updated_at": "2026-11-11",
   "technical_debt": [],
   "flagship_projects": [
     {
@@ -1002,6 +1002,53 @@
         "Check slot availability",
         "Confirm the meeting and save the brief to the calendar",
         "If the slot is taken, choose an available alternative"
+      ]
+    },
+    {
+      "id": "solar-power-calculator",
+      "name": "Калькулятор автономной солнечной станции (Off-Grid Dashboard)",
+      "name_en": "Off-Grid Dashboard",
+      "category": "construction",
+      "description": "Солнечный ресурс NASA: 7 200+ точек с шагом 1°. Калькулятор считает нагрузку и аккумуляторный банк, подбирает рекомендуемое количество панелей.\n\nИнтерактивный веб-инструмент для точного расчёта автономной солнечной электростанции. Проект объединяет географическую сетку NASA, расчёт суточного энергопотребления приборов и строгую математику аккумуляторных батарей.\n\nЧто внутри и как это работает\n• Геобаза NASA (7 200+ точек): встроенная матрица солнечного ресурса с шагом 1°. Поиск по населённому пункту автоматически подставляет координаты и помесячный индекс инсоляции (Kt).\n• Точный геоконтекст: координаты объекта можно вручную скорректировать в десятичном формате.\n• Расчёт от реальной нагрузки: список приборов с мощностью, количеством и часами работы в сутки; автоматический подсчёт пиковой мощности и суточного энергопотребления.\n• Инженерная математика АКБ: ёмкость банка рассчитывается с учётом напряжения шины 12/24/48 В, КПД инвертора, дней автономности, DoD и температурных поправок.\n• Подбор панелей: калькулятор определяет рекомендуемое количество панелей по заданным характеристикам.\n• Автономная работа: расчёты выполняются локально в браузере без внешних серверов и сетевых зависимостей.",
+      "description_en": "NASA solar resource: 7,200+ points at 1° resolution. The calculator totals appliance loads and battery capacity, then recommends the number of panels.\n\nAn interactive web tool for calculating off-grid solar power systems. It combines a NASA geographic solar-resource grid, daily appliance energy-use calculations, and battery-bank sizing.\n\nHow it works\n• NASA solar-resource grid (7,200+ points): a built-in resource matrix at 1° resolution. Searching for a populated place automatically fills in coordinates and the monthly insolation index (Kt).\n• Precise location: manually adjust the installation coordinates in decimal degrees.\n• Real load calculation: list appliances with wattage, quantity, and hours of daily use; the tool totals peak power and daily energy consumption.\n• Battery engineering calculation: bank capacity accounts for 12/24/48 V system voltage, inverter efficiency, autonomy days, DoD, and temperature corrections.\n• Panel selection: the calculator recommends the number of panels from their specified characteristics.\n• Offline-first operation: calculations run locally in the browser without external servers or network dependencies.",
+      "tech_stack": [
+        "HTML5",
+        "CSS Grid and Flexbox",
+        "Vanilla JavaScript",
+        "GeoNames local search index",
+        "NASA solar-resource grid"
+      ],
+      "status": "Рабочий проект / готов к использованию (offline-first)",
+      "status_en": "Working project / ready to use (offline-first)",
+      "display_mode": "offline_first_engineering_tool",
+      "github_url": null,
+      "demo_url": null,
+      "presentation_url": "https://chearu-stack.github.io/solar_power/",
+      "is_private": false,
+      "visibility_status": "verified",
+      "screenshots": [
+        "assets/images/projects/solar-power/solar-station.png",
+        "assets/images/projects/solar-power/solar-calculator.png"
+      ],
+      "architecture_diagram": null,
+      "cover_image": "assets/images/projects/solar-power/solar-station.png",
+      "direction": "Альтернативная энергетика · автономные системы · инженерное проектирование",
+      "direction_en": "Alternative energy · off-grid systems · engineering design",
+      "highlights": [
+        "Находить населённый пункт в локальной геобазе и уточнять координаты точки установки.",
+        "Использовать помесячную сетку солнечного ресурса NASA с шагом 1°.",
+        "Считать пиковую мощность и суточное потребление по списку приборов.",
+        "Рассчитывать ёмкость аккумуляторного банка с учётом параметров системы и температуры.",
+        "Подбирать рекомендуемое количество панелей по их характеристикам.",
+        "Работать локально в браузере без внешних серверов и сетевых зависимостей."
+      ],
+      "highlights_en": [
+        "Find a populated place in the local database and refine the installation coordinates.",
+        "Use the monthly NASA solar-resource grid at 1° resolution.",
+        "Calculate peak power and daily consumption from the appliance list.",
+        "Size the battery bank based on system and temperature parameters.",
+        "Recommend the number of panels based on their specifications.",
+        "Run locally in the browser without external servers or network dependencies."
       ]
     }
   ]
